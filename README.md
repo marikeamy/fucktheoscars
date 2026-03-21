@@ -1,6 +1,9 @@
 # fucktheoscars
 Fuck the Oscars is a data vizualisation project about the word "fuck" in movies.
 
+## Figma Wireframes
+https://www.figma.com/design/Vq8WfQLqmkmZuXfzm2v5Fj/fucktheoscars?node-id=0-1&t=F7RPtT2PqeNy2wte-1
+
 ## Purpose
 We chose this subject because it meant a lot to us, it meant looking for our very favorite word in our very favorite movies. More seriously, we had a real question: do the Oscars favor "well behaved" movies? Our bet is yes. And we wanted to see just how true or wrong that is, and where the exceptions are.
 But we don’t want to just prove a point. We want to explore. So rather than building toward one single answer, this project invites you to look at the data the way we do :  with curiosity, and silliness. How does the use of "fuck" change over time? Which winners broke the mold? Does genre, director, or setting change anything? We have some ideas. You might have different ones.
