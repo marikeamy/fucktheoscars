@@ -48,7 +48,7 @@ The main data is stored in a table with the columns listed below:
 | genre | STRING | Genre of the movie |
 | director_name | STRING | Director of the movie |
 | director_id | INTEGER | Unique id of the director |
-| oscar_year | INTEGER | Release year of the movie |
+| oscar_year | INTEGER | Year of the Oscar ceremony |
 | won_oscar | BOOLEAN | True if the movie was the Best Picture Winner, false if it stayed a nominee |
 | exact_word | STRING | Exact word used (example : fucker, fucking, motherfucker…) |
 | surrounding_text | TEXT | Phrase or paragraph surrounding the occurence |
