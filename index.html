@@ -1,13 +1,128 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fucktheoscars</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fucktheoscars</title>
+</head>
+
+<body>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="section-hero">
+      <div class="section-hero__content">
+        <h1 class="section-hero__title"></h1>
+        <p class="section-hero__subtitle"></p>
+        <div class="section-hero__img-spinning"></div>
+      </div>
+    </section>
+
+    <!-- MOVIE EXPLORATION -->
+    <section class="section-exploration">
+      <div class="section-exploration__header">
+        <h2 class="section-exploration__title"></h2>
+        <p class="section-exploration__label"></p>
+      </div>
+      <div class="section-exploration__grid"></div>
+    </section>
+
+    <!-- STATUES — decade breakdown -->
+    <section class="section-statues">
+      <header class="section-statues__header">
+        <h2 class="section-statues__title"></h2>
+        <p class="section-statues__subtitle"></p>
+      </header>
+
+      <div class="section-statues__decades">
+        <div class="decade-column" data-decade="1980-1990">
+          <p class="decade-column__label">1980 – 1990</p>
+          <div class="decade-column__films"></div>
+        </div>
+        <div class="decade-column" data-decade="1990-2000">
+          <p class="decade-column__label">1990 – 2000</p>
+          <div class="decade-column__films"></div>
+        </div>
+        <div class="decade-column" data-decade="2000-2010">
+          <p class="decade-column__label">2000 – 2010</p>
+          <div class="decade-column__films"></div>
+        </div>
+        <div class="decade-column" data-decade="2010-2020">
+          <p class="decade-column__label">2010 – 2020</p>
+          <div class="decade-column__films"></div>
+        </div>
+      </div>
+
+      <footer class="section-statues__footer">
+        <p class="section-statues__caption"></p>
+        <p class="section-statues__warning"></p>
+      </footer>
+    </section>
+
+    <!-- MODAL — Guess the fucks -->
+    <div class="modal-guess" id="modal-guess" hidden>
+      <article class="modal-guess__panel">
+        <div class="modal-guess__left">
+          <h2 class="modal-guess__film-title"></h2>
+          <p class="modal-guess__meta"></p>
+          <p class="modal-guess__description"></p>
+          <p class="modal-guess__genre"></p>
+        </div>
+        <div class="modal-guess__right">
+          <input class="modal-guess__number-input" type="number" min="0" placeholder="0" />
+          <button class="modal-guess__submit" type="button">Check</button>
+          <progress class="modal-guess__progress" value="0" max="100"></progress>
+        </div>
+      </article>
+    </div>
+
+    <!-- MODAL — Result -->
+    <div class="modal-result" id="modal-result" hidden>
+      <article class="modal-result__panel">
+        <header class="modal-result__top">
+          <h2 class="modal-result__film-title"></h2>
+          <h3 class="modal-result__actual-label">Actual Total Fucks</h3>
+          <p class="modal-result__genre"></p>
+          <img class="modal-result__poster" src="" alt="" loading="lazy" />
+          <img class="modal-result__still" src="" alt="" loading="lazy" />
+        </header>
+        <div class="modal-result__left">
+          <p class="modal-result__response"></p>
+          <p class="modal-result__guess-label">Your guess</p>
+          <p class="modal-result__guess-value"></p>
+          <p class="modal-result__description"></p>
+        </div>
+        <div class="modal-result__right">
+          <p class="modal-result__citation"></p>
+        </div>
+      </article>
+    </div>
+
+    <!-- CHART — By genre -->
+    <section class="section-genre">
+      <h2 class="section-genre__title">Total fucks, displayed by genre.</h2>
+      <svg class="section-genre__graph"></svg>
+      <p class="section-genre__caption"></p>
+    </section>
+
+    <!-- CHART — Timeline -->
+    <section class="section-timeline">
+      <h2 class="section-timeline__title">But how did the number of fucks evolve with time?</h2>
+      <svg class="section-timeline__graph"></svg>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="section-conclusion">
+      <p class="section-conclusion__text"></p>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
