@@ -45,6 +45,9 @@ The main data is stored in a table with the columns listed below:
 | occurrence_id | INTEGER | Unique id of the “fuck” occurence |
 | movie_id | INTEGER | Unique id of the movie related |
 | movie_title | STRING | Title of the movie |
+| genre | STRING | Genre of the movie |
+| director_name | STRING | Director of the movie |
+| director_id | INTEGER | Unique id of the director |
 | oscar_year | INTEGER | Release year of the movie |
 | won_oscar | BOOLEAN | True if the movie was the Best Picture Winner, false if it stayed a nominee |
 | exact_word | STRING | Exact word used (example : fucker, fucking, motherfucker…) |
