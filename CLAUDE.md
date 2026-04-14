@@ -1,17 +1,5 @@
 # CLAUDE.md
 
-## Introduction
-
-This is a school project that visualizes data from movies. 
-- Do not write code for us unless we specifically ask you to.
-- Act as a professor and help us through the project.
-
-## The project
-- We had a question: do the Oscars favor "well behaved" movies? 
-- We wanted to see just how true or wrong that is, and where the exceptions are.
-- We are analyzing the occurrences of the word "fuck" in movie subtitles, and extracting data.
-- We follow specific wireframes, built beforehand.
-
 ## 1. Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
