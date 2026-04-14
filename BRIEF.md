@@ -45,14 +45,14 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 **Contenu :**
 - Titre principal : *"Are Oscars favoring well behaved movies?"*
 - Sous-titre : *"An exploration, explication, fuckation of the word fuck in Oscar Best Pictures nominees."*
-- Images : 5–6 stills de films connus (Pulp Fiction, Parasite, Forrest Gump, etc.)
+- Images : 5–6 stills de films Oscarisés (Pulp Fiction, Parasite, Forrest Gump, etc.)
 
-**Interactions :** flèche qui mène vers la prochaine page, ou scroll. Scroll horizontal.
+**Interactions :** flèche qui mène vers la prochaine page, ou scroll horizontal.
 
 ---
 
 ### 2. EXPLORE MOVIES
-**Fond :** bleu nuit  
+**Fond :** bleu nuit (#0D3349) 
 **Layout :** texte intro en haut à gauche, timeline de dots en bas, fiche film à droite au hover
 
 **Contenu :**
@@ -63,9 +63,9 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 
 **Hover sur un dot → fiche film :**
 - Image du film (poster ou still)
-- ★ Titre + année + réalisateur
+- ★ Titre + année + réalisateur (étoile si oscarisé)
 - Synopsis court (en jaune)
-- Tags genres (pills/badges)
+- Tag genre (pills/badges)
 
 **D3 :** `scaleTime()` sur X, dots positionnés, tooltip custom
 
@@ -78,13 +78,13 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 **Layout :** texte intro en haut, 4 statuettes en dots côte à côte
 
 **Contenu :**
-- Titre : *"So, is cinema supposed to be well-behaved? Try to guess the number of fucks in the movie of your choice."*
-- Sous-titre : *"Every oscars and nominees of each decade. Over to explore."*
+- Titre : *"So, is cinema supposed to be well-behaved? Try to guess the number of fucks in the Oscars."*
+- Sous-titre : *"Every oscars and nominees of each decade. Hover the Oscars to explore."*
 - 4 statuettes Oscar faites de dots, une par décennie : 1980–1990 / 1990–2000 / 2000–2010 / 2010–2020
 - Chaque dot = un film. Couleur : jaune = winner, bleu clair = nominee
 - Légende en bas
 
-**Interaction :** clic sur une statuette → ouvre le modal GUESS. On ne va pas à la prochaine page à moi d'avoir take a guess.
+**Interaction :** clic sur un dot oscarisé (jaune) → ouvre le modal GUESS. On ne va pas à la prochaine page avant d'avoir take a guess.
 
 ---
 
@@ -94,14 +94,14 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 **Contenu du modal :**
 - Titre film + réalisateur + année
 - Synopsis court
-- Tags genres
+- Tag genre
 - Image du film
-- Grand champ numérique : "160" (valeur saisie par l'utilisateur)
+- Grand champ numérique : "160" (valeur saisie par l'utilisateur dans le bar chart)
 - Bouton **Check**
-- Bar chart vide à droite (axe Y : 0–400), qui se remplit après Check
+- Bar chart vide à droite (axe Y : 0–400), qui se remplit avec le curseur
 
 **Comportement :**
-- L'utilisateur tape un nombre
+- L'utilisateur remplit le bar chart
 - Clic Check → ferme le modal → ouvre la section RÉPONSE
 
 ---
@@ -113,7 +113,7 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 **Colonne gauche :**
 - Titre film + année
 - Label *"Actual Total Fucks"*
-- Tags genres
+- Tag genre
 - Grand chiffre jaune = réponse réelle
 - *"Your guess : [X]"*
 - Feedback textuel selon proximité :
@@ -135,13 +135,13 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 **Fond :** bleu nuit  
 **Question :** *"But how did the number of fucks evolve with time?"*
 
-**Visualisation — Option 2 (PRIORITAIRE) :**
+**Visualisation — Option 1 (PRIORITAIRE) :**
 - Les bulles (une par film, taille = fuck count) sont disposées pour former le mot **"FUCK"**
 - Axe X temporel en dessous (1980 → 2020+)
 - Chaque lettre = une colonne de films d'une période
 - Bulles bleues claires, quelques-unes en jaune (winners)
 
-**Visualisation — Option 1 (fallback) :**
+**Visualisation — Option 2 (fallback) :**
 - Bubble chart classique sur axe temporel
 - Taille des bulles ∝ nombre de "fucks"
 - Baseline en bas, bulles "poussent" vers le haut
@@ -154,7 +154,7 @@ Le scrollytelling peut être horizontal, vertical, et peut être activé via une
 
 ### 7. CONCLUSION
 **Fond :** jaune ou bleu (à définir)  
-**Contenu :** (wireframe non fourni — à construire)
+**Contenu :** à décider à la fin suivant nos trouvailles
 
 Suggestions :
 - Stat finale globale (ex: total fucks toutes années confondues)
@@ -187,36 +187,17 @@ fuck-the-oscars/
 │   ├── response.js       ← section réponse
 │   └── timeline.js       ← section fuck timeline D3
 ├── data/
-│   └── movies.json       ← données films (titre, année, fucks, genres, synopsis, poster)
+│   └── movies.csv       ← données films
 └── assets/
     └── images/           ← stills de films
 ```
 
 ---
 
-## Format des données (movies.json)
+## Format des données (movies.csv)
 
-```json
-[
-  {
-    "id": "forrest-gump",
-    "title": "Forrest Gump",
-    "year": 1994,
-    "director": "Robert Zemeckis",
-    "synopsis": "The history of the United States from the 1950s...",
-    "genres": ["Drama", "Epic"],
-    "fuck_count": 3,
-    "winner": true,
-    "poster": "assets/images/forrest-gump.jpg",
-    "occurrences": [
-      {
-        "timestamp_start": "01:04:48",
-        "timestamp_end": "01:04:50",
-        "context": "ligne de dialogue contenant fuck"
-      }
-    ]
-  }
-]
+```csv
+à compléter
 ```
 
 ---
