@@ -1,178 +1,178 @@
 # BRIEF — Fuck the Oscars
-## Contexte du projet
+## Project Context
 
-Projet académique HEIG-VD, cours VisualDon.  
-Scrollytelling data visualization analysant les occurrences du mot "fuck" dans les films nominés aux Oscars Best Picture (1980–2024).
+Academic project at HEIG-VD, VisualDon course.
+Scrollytelling data visualization analyzing occurrences of the word "fuck" in Oscar Best Picture nominees (1980–2024).
 
-**Question centrale :** Les Oscars favorisent-ils les films "bien élevés" ?
-
----
-
-## Stack technique
-
-- **D3.js** pour toutes les visualisations
-- **Vanilla JS** (pas de framework)
-- **HTML/CSS** scrollytelling (Intersection Observer API ou Scrollama)
-- **Données** : JSON préparé en amont (films, fuck count, genres, timestamps, synopsis, poster URLs)
+**Central question:** Do the Oscars favor "well-behaved" movies?
 
 ---
 
-## Palette & identité visuelle
+## Tech Stack
 
-| Élément | Valeur |
+- **D3.js** for all visualizations
+- **Vanilla JS** (no framework)
+- **HTML/CSS** scrollytelling (Intersection Observer API or Scrollama)
+- **Data**: JSON prepared upstream (films, fuck count, genres, timestamps, synopsis, poster URLs)
+
+---
+
+## Palette & Visual Identity
+
+| Element | Value |
 |---|---|
-| Fond principal | `#0D3349` (bleu nuit) |
-| Accent jaune | `#F5C518` (or Oscar) |
-| Bleu clair | `#7DB8C8` (bulles/dots) |
-| Texte | `#FFFFFF` |
-| Fond jaune (sections) | `#F5C518` |
-| Texte sur jaune | `#0D3349` |
+| Main background | `#0D3349` (midnight blue) |
+| Yellow accent | `#F5C518` (Oscar gold) |
+| Light blue | `#7DB8C8` (bubbles/dots) |
+| Text | `#FFFFFF` |
+| Yellow background (sections) | `#F5C518` |
+| Text on yellow | `#0D3349` |
 
-**Typographie :**
-- Titres : fonte impact/condensed (style affiches de cinéma)
-- Body : fonte sans-serif lisible
-- Titres de section en jaune, labels en blanc
+**Typography:**
+- Titles: impact/condensed font (movie poster style)
+- Body: readable sans-serif font
+- Section titles in yellow, labels in white
 
 ---
 
-## Structure des sections (ordre scrollytelling)
-Le scrollytelling peut être horizontal, vertical, et peut être activé via une interaction utilisateur.
+## Section Structure (scrollytelling order)
+The scrollytelling can be horizontal, vertical, and can be triggered by user interaction.
 
 ### 1. INTRO
-**Fond :** jaune (`#F5C518`)  
-**Layout :** titre à gauche, colonne d'images de films à droite (stacked verticalement)
+**Background:** yellow (`#F5C518`)
+**Layout:** title on the left, column of film images on the right (stacked vertically)
 
-**Contenu :**
-- Titre principal : *"Are Oscars favoring well behaved movies?"*
-- Sous-titre : *"An exploration, explication, fuckation of the word fuck in Oscar Best Pictures nominees."*
-- Images : 5–6 stills de films connus (Pulp Fiction, Parasite, Forrest Gump, etc.)
+**Content:**
+- Main title: *"Are Oscars favoring well behaved movies?"*
+- Subtitle: *"An exploration, explication, fuckation of the word fuck in Oscar Best Pictures nominees."*
+- Images: 5–6 stills from Oscar-winning films (Pulp Fiction, Parasite, Forrest Gump, etc.)
 
-**Interactions :** flèche qui mène vers la prochaine page, ou scroll. Scroll horizontal.
+**Interactions:** arrow leading to the next page, or horizontal scroll.
 
 ---
 
 ### 2. EXPLORE MOVIES
-**Fond :** bleu nuit  
-**Layout :** texte intro en haut à gauche, timeline de dots en bas, fiche film à droite au hover
+**Background:** midnight blue (#0D3349)
+**Layout:** intro text top left, dot timeline at the bottom, film card on the right on hover
 
-**Contenu :**
-- Intro text : *"The Oscars have always been a statement about what cinema should look like. Here are every oscar winning movies, from 1980 to 2024."*
-- Timeline horizontale : 1 dot = 1 film, répartis sur l'axe X (1980→2024)
-- Axe X avec labels décennaux (1980, 1990, 2000…)
-- Scrollbar/brush en dessous pour naviguer
+**Content:**
+- Intro text: *"The Oscars have always been a statement about what cinema should look like. Here are every oscar winning movies, from 1980 to 2024."*
+- Horizontal timeline: 1 dot = 1 film, spread across the X axis (1980→2024)
+- X axis with decade labels (1980, 1990, 2000…)
+- Scrollbar/brush below for navigation
 
-**Hover sur un dot → fiche film :**
-- Image du film (poster ou still)
-- ★ Titre + année + réalisateur
-- Synopsis court (en jaune)
-- Tags genres (pills/badges)
+**Hover on a dot → film card:**
+- Film image (poster or still)
+- ★ Title + year + director (star if Oscar winner)
+- Short synopsis (in yellow)
+- Genre tag (pills/badges)
 
-**D3 :** `scaleTime()` sur X, dots positionnés, tooltip custom
+**D3:** `scaleTime()` on X, positioned dots, custom tooltip
 
-**Prochaine page:** Flèche qui mène vers la prochaine page en scroll horizontal. On évite le scroll ici parce que la barre de découverte est déjà en scroll.
+**Next page:** Arrow leading to the next page via horizontal scroll. We avoid scroll here because the discovery bar already uses scroll.
 
 ---
 
-### 3. STATUETTES (intro au jeu)
-**Fond :** bleu nuit  
-**Layout :** texte intro en haut, 4 statuettes en dots côte à côte
+### 3. STATUETTES (game intro)
+**Background:** midnight blue
+**Layout:** intro text at the top, 4 dot statuettes side by side
 
-**Contenu :**
-- Titre : *"So, is cinema supposed to be well-behaved? Try to guess the number of fucks in the movie of your choice."*
-- Sous-titre : *"Every oscars and nominees of each decade. Over to explore."*
-- 4 statuettes Oscar faites de dots, une par décennie : 1980–1990 / 1990–2000 / 2000–2010 / 2010–2020
-- Chaque dot = un film. Couleur : jaune = winner, bleu clair = nominee
-- Légende en bas
+**Content:**
+- Title: *"So, is cinema supposed to be well-behaved? Try to guess the number of fucks in the Oscars."*
+- Subtitle: *"Every oscars and nominees of each decade. Hover the Oscars to explore."*
+- 4 Oscar statuettes made of dots, one per decade: 1980–1990 / 1990–2000 / 2000–2010 / 2010–2020
+- Each dot = one film. Color: yellow = winner, light blue = nominee
+- Legend at the bottom
 
-**Interaction :** clic sur une statuette → ouvre le modal GUESS. On ne va pas à la prochaine page à moi d'avoir take a guess.
+**Interaction:** click on an Oscar-winning dot (yellow) → opens the GUESS modal. We don't go to the next page before taking a guess.
 
 ---
 
 ### 4. GUESS MODAL
-**Style :** fond jaune, texte bleu foncé — contraste total, rupture visuelle
+**Style:** yellow background, dark blue text — total contrast, visual break
 
-**Contenu du modal :**
-- Titre film + réalisateur + année
-- Synopsis court
-- Tags genres
-- Image du film
-- Grand champ numérique : "160" (valeur saisie par l'utilisateur)
-- Bouton **Check**
-- Bar chart vide à droite (axe Y : 0–400), qui se remplit après Check
+**Modal content:**
+- Film title + director + year
+- Short synopsis
+- Genre tag
+- Film image
+- Large numeric field: "160" (value entered by the user in the bar chart)
+- **Check** button
+- Empty bar chart on the right (Y axis: 0–400), filled with the cursor
 
-**Comportement :**
-- L'utilisateur tape un nombre
-- Clic Check → ferme le modal → ouvre la section RÉPONSE
+**Behavior:**
+- The user fills the bar chart
+- Click Check → closes the modal → opens the ANSWER section
 
 ---
 
-### 5. RÉPONSE
-**Fond :** bleu nuit  
-**Layout :** deux colonnes
+### 5. ANSWER
+**Background:** midnight blue
+**Layout:** two columns
 
-**Colonne gauche :**
-- Titre film + année
+**Left column:**
+- Film title + year
 - Label *"Actual Total Fucks"*
-- Tags genres
-- Grand chiffre jaune = réponse réelle
-- *"Your guess : [X]"*
-- Feedback textuel selon proximité :
+- Genre tag
+- Large yellow number = real answer
+- *"Your guess: [X]"*
+- Text feedback based on accuracy:
   - Exact → *"Perfect."*
-  - Proche → *"Close. You clearly have a feel for this."*
-  - Loin → *"Not even close. Cinema surprised you."*
-- CTA : *"Now, we need to compare it."*
+  - Close → *"Close. You clearly have a feel for this."*
+  - Far off → *"Not even close. Cinema surprised you."*
+- CTA: *"Now, we need to compare it."*
 
-**Colonne droite :**
-- Grille de stills du film (2×3 ou 3×3)
-- 2–3 extraits de dialogues contenant "fuck" avec timestamp (format `xx:xx:xx – xx:xx:xx`)
-- Extraits en jaune (highlight)
+**Right column:**
+- Grid of film stills (2×3 or 3×3)
+- 2–3 dialogue excerpts containing "fuck" with timestamp (format `xx:xx:xx – xx:xx:xx`)
+- Excerpts highlighted in yellow
 
-**Prochaine page:** Scroll vertical.
+**Next page:** Vertical scroll.
 
 ---
 
 ### 6. FUCK TIMELINE
-**Fond :** bleu nuit  
-**Question :** *"But how did the number of fucks evolve with time?"*
+**Background:** midnight blue
+**Question:** *"But how did the number of fucks evolve with time?"*
 
-**Visualisation — Option 2 (PRIORITAIRE) :**
-- Les bulles (une par film, taille = fuck count) sont disposées pour former le mot **"FUCK"**
-- Axe X temporel en dessous (1980 → 2020+)
-- Chaque lettre = une colonne de films d'une période
-- Bulles bleues claires, quelques-unes en jaune (winners)
+**Visualization — Option 1 (PRIORITY):**
+- Bubbles (one per film, size = fuck count) are arranged to form the word **"FUCK"**
+- Temporal X axis below (1980 → 2020+)
+- Each letter = a column of films from a given period
+- Light blue bubbles, a few in yellow (winners)
 
-**Visualisation — Option 1 (fallback) :**
-- Bubble chart classique sur axe temporel
-- Taille des bulles ∝ nombre de "fucks"
-- Baseline en bas, bulles "poussent" vers le haut
+**Visualization — Option 2 (fallback):**
+- Classic bubble chart on a temporal axis
+- Bubble size ∝ number of "fucks"
+- Baseline at the bottom, bubbles "grow" upward
 
-**D3 :** `forceSimulation()` avec `forceX` sur l'axe temporel, `forceCollide()` pour éviter overlap
+**D3:** `forceSimulation()` with `forceX` on the temporal axis, `forceCollide()` to avoid overlap
 
-**Prochaine page:** Scroll vertical.
+**Next page:** Vertical scroll.
 
 ---
 
 ### 7. CONCLUSION
-**Fond :** jaune ou bleu (à définir)  
-**Contenu :** (wireframe non fourni — à construire)
+**Background:** yellow or blue (TBD)
+**Content:** to be decided at the end based on our findings
 
-Suggestions :
-- Stat finale globale (ex: total fucks toutes années confondues)
-- Réponse éditoriale à la question centrale
-- CTA vers les données / GitHub
-
----
-
-## Section optionnelle (en standby — ne pas implémenter en priorité)
-
-### INFOS PAR GENRE
-Diagramme radial (soleil) : cercle central avec total global, branches = genres, cercles externes proportionnels au nombre de fucks par genre.
-- D3 : positions calculées manuellement en coordonnées polaires
-- Risque d'être coupée du projet final
+Suggestions:
+- Final global stat (e.g. total fucks across all years)
+- Editorial answer to the central question
+- CTA toward the data / GitHub
 
 ---
 
-## Structure de fichiers suggérée
+## Optional Section (on standby — not a priority to implement)
+
+### INFO BY GENRE
+Radial (sunburst) diagram: central circle with global total, branches = genres, outer circles proportional to the number of fucks per genre.
+- D3: positions calculated manually in polar coordinates
+- Risk of being cut from the final project
+
+---
+
+## Suggested File Structure
 
 ```
 fuck-the-oscars/
@@ -180,54 +180,22 @@ fuck-the-oscars/
 ├── css/
 │   └── style.css
 ├── js/
-│   ├── main.js           ← orchestration scroll + sections
+│   ├── main.js           ← scroll orchestration + sections
 │   ├── explore.js        ← section 2 timeline
 │   ├── statuettes.js     ← section 3 dot statuettes
 │   ├── guess.js          ← modal + interaction
-│   ├── response.js       ← section réponse
-│   └── timeline.js       ← section fuck timeline D3
+│   ├── response.js       ← answer section
+│   └── timeline.js       ← fuck timeline D3 section
 ├── data/
-│   └── movies.json       ← données films (titre, année, fucks, genres, synopsis, poster)
+│   └── movies.csv        ← film data
 └── assets/
-    └── images/           ← stills de films
+    └── images/           ← film stills
 ```
 
 ---
 
-## Format des données (movies.json)
+## Data Format (movies.csv)
 
-```json
-[
-  {
-    "id": "forrest-gump",
-    "title": "Forrest Gump",
-    "year": 1994,
-    "director": "Robert Zemeckis",
-    "synopsis": "The history of the United States from the 1950s...",
-    "genres": ["Drama", "Epic"],
-    "fuck_count": 3,
-    "winner": true,
-    "poster": "assets/images/forrest-gump.jpg",
-    "occurrences": [
-      {
-        "timestamp_start": "01:04:48",
-        "timestamp_end": "01:04:50",
-        "context": "ligne de dialogue contenant fuck"
-      }
-    ]
-  }
-]
+```csv
+to be completed
 ```
-
----
-
-## Instructions pour Claude Code
-
-Tu es mon professeur pour ce projet. Ton rôle :
-- Me guider étape par étape, sans tout faire à ma place
-- Me poser des questions pour vérifier ma compréhension avant de passer à l'étape suivante
-- Me donner des pistes et des snippets D3 ciblés quand je bloque
-- Valider mon code avant qu'on avance
-- Me signaler les pièges classiques (scales, data binding, scroll events)
-
-**Par où commencer :** Structure HTML de base + CSS variables + données JSON mockées pour les 3–4 premiers films.
