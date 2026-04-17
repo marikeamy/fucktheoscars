@@ -6,6 +6,9 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>fucktheoscars</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <script src="src/main.js" defer></script>
+  <script src="src/explore.js" defer></script>
 </head>
 
 <body>
@@ -25,10 +28,31 @@
     <!-- MOVIE EXPLORATION -->
     <section class="section-exploration">
       <div class="section-exploration__header">
-        <h2 class="section-exploration__title"></h2>
-        <p class="section-exploration__label"></p>
+        <p class="section-exploration__intro">
+          The Oscars have always been a statement about what cinema should look like.
+          Here are every oscar winning movies, from 1980 to 2024.
+        </p>
       </div>
-      <div class="section-exploration__grid"></div>
+
+      <!-- La viz D3 va ici -->
+      <div class="section-exploration__viz">
+        <svg class="section-exploration__timeline"></svg>
+        <svg class="section-exploration__brush"></svg>
+      </div>
+
+      <!-- Film card (tooltip) -->
+      <div class="film-card" id="film-card" hidden>
+        <img class="film-card__img" src="" alt="" />
+        <div class="film-card__body">
+          <p class="film-card__title"></p>
+          <p class="film-card__meta"></p>
+          <p class="film-card__synopsis"></p>
+          <div class="film-card__genres"></div>
+        </div>
+      </div>
+
+      <!-- Flèche next -->
+      <button class="section-exploration__next" aria-label="Next section">→</button>
     </section>
 
     <!-- STATUES — decade breakdown -->
