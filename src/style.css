@@ -1,3 +1,13 @@
+  
+/*A utiliser uniquement à la fin, quand on aura toute la mise en page
+  
+@font-face {
+  font-family: 'Brother';                                                                                                                                
+  src: url('/src/assets/Brother.otf') format('opentype');                                                                                                
+}
+
+*/
+
 :root {
   --night-blue: #023047;
   --yellow: #FFB703;
@@ -5,7 +15,7 @@
   --white: #FFFFFF;
 
   --sans: system-ui, 'Inter', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'system-ui', 'Segoe UI', Roboto, sans-serif;
 
   --whitespace: 10px;
 
@@ -58,6 +68,51 @@ p {
   margin: 0;
 }
 
-#section-hero {
+.section-hero {
   background-color: var(--yellow);
+  height: 100vh;
+  display: flex;
+}
+
+.section-hero__content {
+  display: flex;
+  width: 100%;
+}
+
+.section-hero__right {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: flex-end;
+  flex:1;
+  overflow: hidden;
+}
+
+.section-hero__filmstrip{
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+  animation : carrousel 10s linear infinite;
+}
+
+.section-hero__still {
+  display: block;
+  width: 25vw;
+  transition: transform 0.3s ease;
+}
+
+.section-hero__still:hover {
+  transform: scale(1.05);
+}
+
+.section-hero__left {
+  margin-left:5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex:1;
+}
+
+@keyframes carrousel {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
 }
