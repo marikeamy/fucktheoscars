@@ -1,3 +1,13 @@
+  
+/*A utiliser uniquement à la fin, quand on aura toute la mise en page
+  
+@font-face {
+  font-family: 'Brother';                                                                                                                                
+  src: url('/src/assets/Brother.otf') format('opentype');                                                                                                
+}
+
+*/
+
 :root {
   --night-blue: #023047;
   --yellow: #FFB703;
@@ -5,7 +15,7 @@
   --white: #FFFFFF;
 
   --sans: system-ui, 'Inter', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'system-ui', 'Segoe UI', Roboto, sans-serif;
 
   --whitespace: 10px;
 
@@ -58,6 +68,7 @@ p {
   margin: 0;
 }
 
+<<<<<<< HEAD
 /* page 2, section exploration */
 .section-exploration {
   background: #0D3349;
@@ -136,3 +147,65 @@ p {
   transition: background 0.2s;
 }
 .section-exploration__next:hover { background: rgba(245,197,24,0.15); }
+=======
+.section-hero {
+  background-color: var(--yellow);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.section-hero__content {
+  display: flex;
+  width: 100%;
+}
+
+.section-hero__right {
+  margin-right: 5vw;
+  display: flex;
+  justify-content: flex-end;
+  flex:1;
+  overflow: hidden;
+}
+
+.section-hero__filmstrip{
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+  animation : carrousel 10s linear infinite;
+}
+
+.section-hero__still {
+  display: block;
+  width: 25vw;
+  transition: transform 0.3s ease;
+}
+
+.section-hero__still:hover {
+  transform: scale(1.05);
+}
+
+.section-hero__left {
+  margin-left:5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex:1;
+}
+
+@keyframes carrousel {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-50%); }
+}
+
+.section-exploration {
+  width: 100vw;
+  display: flex;
+}
+
+/*La section du horizontal-wrapper fait 200vw divisé en deux 100vw par ses enfants. */
+.horizontal-wrapper {
+  display: flex;
+  width: 200vw;
+}
+>>>>>>> 4dc24ec61ee1b8d9e9d6b496a41ef19bd48a3492

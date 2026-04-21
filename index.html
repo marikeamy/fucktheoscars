@@ -15,13 +15,27 @@
 
 
   <main>
-
+    <!-- On crée un div qui viendra englober toute la partie en scroll horizontal -->
+ <div class="horizontal-wrapper">   
     <!-- HERO -->
     <section class="section-hero">
       <div class="section-hero__content">
-        <h1 class="section-hero__title"></h1>
-        <p class="section-hero__subtitle"></p>
-        <div class="section-hero__img-spinning"></div>
+        <div class="section-hero__left">
+        <h1 class="section-hero__title">Are Oscars favoring well-behaved movies?</h1>
+        <p class="section-hero__subtitle">An exploration, explication, fuckation of the word fuck in Oscar Best Pictures nominees.</p>
+        </div>
+        <div class="section-hero__right">
+          <div class="section-hero__filmstrip">
+          <!-- les images (x2 pour le loop) -->
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+          <!-- on duplicate pour qu'il n'y ait pas d'espace blanc avant de recommencer le loop. -->
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+        </div>
+        </div>
       </div>
     </section>
 
@@ -54,7 +68,7 @@
       <!-- Flèche next -->
       <button class="section-exploration__next" aria-label="Next section">→</button>
     </section>
-
+</div>
     <!-- STATUES — decade breakdown -->
     <section class="section-statues">
       <header class="section-statues__header">
