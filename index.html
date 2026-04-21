@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>fucktheoscars</title>
   <link rel="stylesheet" href="/src/style.css">
-  <script src="src/main.js" defer></script>
-  <script src="src/explore.js" defer></script>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/explore.js"></script>
 </head>
 
 <body>
@@ -16,59 +16,60 @@
 
   <main>
     <!-- On crée un div qui viendra englober toute la partie en scroll horizontal -->
- <div class="horizontal-wrapper">   
-    <!-- HERO -->
-    <section class="section-hero">
-      <div class="section-hero__content">
-        <div class="section-hero__left">
-        <h1 class="section-hero__title">Are Oscars favoring well-behaved movies?</h1>
-        <p class="section-hero__subtitle">An exploration, explication, fuckation of the word fuck in Oscar Best Pictures nominees.</p>
+    <div class="horizontal-wrapper">
+      <!-- HERO -->
+      <section class="section-hero">
+        <div class="section-hero__content">
+          <div class="section-hero__left">
+            <h1 class="section-hero__title">Are Oscars favoring well-behaved movies?</h1>
+            <p class="section-hero__subtitle">An exploration, explication, fuckation of the word fuck in Oscar Best
+              Pictures nominees.</p>
+          </div>
+          <div class="section-hero__right">
+            <div class="section-hero__filmstrip">
+              <!-- les images (x2 pour le loop) -->
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <!-- on duplicate pour qu'il n'y ait pas d'espace blanc avant de recommencer le loop. -->
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+            </div>
+          </div>
         </div>
-        <div class="section-hero__right">
-          <div class="section-hero__filmstrip">
-          <!-- les images (x2 pour le loop) -->
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-          <!-- on duplicate pour qu'il n'y ait pas d'espace blanc avant de recommencer le loop. -->
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-          <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+      </section>
+
+      <!-- MOVIE EXPLORATION -->
+      <section class="section-exploration">
+        <div class="section-exploration__header">
+          <h2 class="section-exploration__title">The Oscars have always been a statement about what cinema should look
+            like.
+          </h2>
+          <p class="section-exploration__intro">Here are every oscar winning movies, from 1980 to 2024. </p>
         </div>
+
+        <!-- La viz D3 va ici -->
+        <div class="section-exploration__viz">
+          <svg class="section-exploration__timeline"></svg>
+          <svg class="section-exploration__brush"></svg>
         </div>
-      </div>
-    </section>
 
-    <!-- MOVIE EXPLORATION -->
-    <section class="section-exploration">
-      <div class="section-exploration__header">
-        <p class="section-exploration__intro">
-          The Oscars have always been a statement about what cinema should look like.
-          Here are every oscar winning movies, from 1980 to 2024.
-        </p>
-      </div>
-
-      <!-- La viz D3 va ici -->
-      <div class="section-exploration__viz">
-        <svg class="section-exploration__timeline"></svg>
-        <svg class="section-exploration__brush"></svg>
-      </div>
-
-      <!-- Film card (tooltip) -->
-      <div class="film-card" id="film-card" hidden>
-        <img class="film-card__img" src="" alt="" />
-        <div class="film-card__body">
-          <p class="film-card__title"></p>
-          <p class="film-card__meta"></p>
-          <p class="film-card__synopsis"></p>
-          <div class="film-card__genres"></div>
+        <!-- Film card (tooltip) -->
+        <div class="film-card" id="film-card" hidden>
+          <img class="film-card__img" src="" alt="" />
+          <div class="film-card__body">
+            <p class="film-card__title"></p>
+            <p class="film-card__meta"></p>
+            <p class="film-card__synopsis"></p>
+            <div class="film-card__genres"></div>
+          </div>
         </div>
-      </div>
 
-      <!-- Flèche next -->
-      <button class="section-exploration__next" aria-label="Next section">→</button>
-    </section>
-</div>
+        <!-- Flèche next -->
+        <button class="section-exploration__next" aria-label="Next section">→</button>
+      </section>
+    </div>
     <!-- STATUES — decade breakdown -->
     <section class="section-statues">
       <header class="section-statues__header">
@@ -159,8 +160,6 @@
     </section>
 
   </main>
-
-  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
