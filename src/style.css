@@ -71,6 +71,7 @@ p {
 .section-hero {
   background-color: var(--yellow);
   height: 100vh;
+  width: 100vw;
   display: flex;
 }
 
@@ -115,4 +116,15 @@ p {
 @keyframes carrousel {
     from { transform: translateY(0); }
     to   { transform: translateY(-50%); }
+}
+
+.section-exploration {
+  width: 100vw;
+  display: flex;
+}
+
+/*La section du horizontal-wrapper fait 200vw divisé en deux 100vw par ses enfants. */
+.horizontal-wrapper {
+  display: flex;
+  width: 200vw;
 }
