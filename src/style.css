@@ -31,9 +31,11 @@
 html {
   padding: 0;
   margin: 0;
+  overscroll-behavior: none;
 }
 
 body {
+  margin: 0;
   background-color: var(--yellow);
   color: var(--night-blue)
 }
@@ -171,7 +173,6 @@ p {
 .section-hero {
   background-color: var(--yellow);
   height: 100vh;
-  width: 100vw;
   display: flex;
 }
 
@@ -223,8 +224,15 @@ p {
   display: flex;
 }
 
+.section-statues {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  background: #0D3349;
+}
+
 /*La section du horizontal-wrapper fait 200vw divisé en deux 100vw par ses enfants. */
 .horizontal-wrapper {
   display: flex;
-  width: 200vw;
+  width: 300vw;
 }
