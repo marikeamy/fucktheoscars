@@ -53,55 +53,57 @@
         <div class="section-exploration__viz">
           <svg class="section-exploration__timeline"></svg>
           <svg class="section-exploration__brush"></svg>
+
+          <!-- Film card (tooltip) -->
+          <div class="film-card" id="film-card">
+            <img class="film-card__img" src="" alt="" />
+            <div class="film-card__body">
+              <p class="film-card__title"></p>
+              <p class="film-card__meta"></p>
+              <p class="film-card__synopsis"></p>
+              <div class="film-card__genres"></div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Film card (tooltip) -->
-        <div class="film-card" id="film-card" hidden>
-          <img class="film-card__img" src="" alt="" />
-          <div class="film-card__body">
-            <p class="film-card__title"></p>
-            <p class="film-card__meta"></p>
-            <p class="film-card__synopsis"></p>
-            <div class="film-card__genres"></div>
-          </div>
-        </div>
 
         <!-- Flèche next -->
         <button class="section-exploration__next" aria-label="Next section">→</button>
       </section>
-    
-    <!-- STATUES — decade breakdown -->
-    <section class="section-statues">
-      <header class="section-statues__header">
-        <h2 class="section-statues__title"></h2>
-        <p class="section-statues__subtitle"></p>
-      </header>
 
-      <div class="section-statues__decades">
-        <div class="decade-column" data-decade="1980-1990">
-          <p class="decade-column__label">1980 – 1990</p>
-          <div class="decade-column__films"></div>
-        </div>
-        <div class="decade-column" data-decade="1990-2000">
-          <p class="decade-column__label">1990 – 2000</p>
-          <div class="decade-column__films"></div>
-        </div>
-        <div class="decade-column" data-decade="2000-2010">
-          <p class="decade-column__label">2000 – 2010</p>
-          <div class="decade-column__films"></div>
-        </div>
-        <div class="decade-column" data-decade="2010-2020">
-          <p class="decade-column__label">2010 – 2020</p>
-          <div class="decade-column__films"></div>
-        </div>
-      </div>
+      <!-- STATUES — decade breakdown -->
+      <section class="section-statues">
+        <header class="section-statues__header">
+          <h2 class="section-statues__title"></h2>
+          <p class="section-statues__subtitle"></p>
+        </header>
 
-      <footer class="section-statues__footer">
-        <p class="section-statues__caption"></p>
-        <p class="section-statues__warning"></p>
-      </footer>
-    </section>
-</div>
+        <div class="section-statues__decades">
+          <div class="decade-column" data-decade="1980-1990">
+            <p class="decade-column__label">1980 – 1990</p>
+            <div class="decade-column__films"></div>
+          </div>
+          <div class="decade-column" data-decade="1990-2000">
+            <p class="decade-column__label">1990 – 2000</p>
+            <div class="decade-column__films"></div>
+          </div>
+          <div class="decade-column" data-decade="2000-2010">
+            <p class="decade-column__label">2000 – 2010</p>
+            <div class="decade-column__films"></div>
+          </div>
+          <div class="decade-column" data-decade="2010-2020">
+            <p class="decade-column__label">2010 – 2020</p>
+            <div class="decade-column__films"></div>
+          </div>
+        </div>
+
+        <footer class="section-statues__footer">
+          <p class="section-statues__caption"></p>
+          <p class="section-statues__warning"></p>
+        </footer>
+      </section>
+    </div>
     <!-- MODAL — Guess the fucks -->
     <div class="modal-guess" id="modal-guess" hidden>
       <article class="modal-guess__panel">

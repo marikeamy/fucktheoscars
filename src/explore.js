@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 // DATA LOADING AND CLEANING
-const raw = await d3.csv('./data/movies.csv')
+const raw = await d3.csv('./data/allMovies.csv')
 
 const filmsMap = new Map()
 for (const row of raw) {
@@ -22,7 +22,7 @@ const oscarWinners = films
     .filter(d => d.won_oscar === true)
     .sort((a, b) => a.oscar_year - b.oscar_year);
 
-    console.log(oscarWinners.filter(d => d.oscar_year < 1990))
+console.log(oscarWinners.filter(d => d.oscar_year < 1990))
 
 // SVG, SCALES AND AXES
 
@@ -32,16 +32,14 @@ const brushSvg = d3.select('.section-exploration__brush');
 
 // Largeur basée sur le conteneur pour être responsive
 // On lit la largeur via l'attribut HTML ou on fallback sur la fenêtre
-const svgNode = timelineSvg.node();
 
-// console.log({
-//     getBounding: svgNode.getBoundingClientRect().width,
-//     clientWidth: svgNode.clientWidth,
-//     parentWidth: svgNode.parentElement?.clientWidth,
-//     offsetWidth: svgNode.offsetWidth,
-// })
+// On force le recalcul du layout avant de lire la largeur
+await new Promise(resolve => requestAnimationFrame(resolve))
 
-const width = svgNode.clientWidth || svgNode.parentElement.clientWidth || window.innerWidth - 80;const timelineHeight = 300;
+const svgNode = timelineSvg.node()
+
+const width = svgNode.clientWidth || svgNode.parentElement.clientWidth || window.innerWidth - 80; 
+const timelineHeight = 300;
 const brushHeight = 40;
 const margin = { top: 20, right: 40, bottom: 30, left: 40 };
 
@@ -107,50 +105,52 @@ const dots = dotsGroup.selectAll('.film-dot')
 // --- 6. TOOLTIP INTERACTION ---
 const tooltip = d3.select('#film-card');
 
-dots.on('mouseover', function(event, d) {
-    console.log('hover', d) // ← ajoute ça temporairement
+dots
+    .on('mouseover', function (event, d) {
+        console.log('hover', d) // ← ajoute ça temporairement
 
-    // Le point est entouré de blanc et grossit
-    d3.select(this)
-        .attr('stroke', '#fff')
-        .attr('stroke-width', 3)
-        .attr('r', 10);
+        // Le point est entouré de blanc et grossit
+        d3.select(this)
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 3)
+            .attr('r', 10);
 
-    // Injection des données dans la carte html
-    tooltip.select('.film-card__img').attr('src', d.poster_url || ''); 
-    tooltip.select('.film-card__title').text(`${d.movie_title || 'Unknown'} (${d.oscar_year})`);
-    tooltip.select('.film-card__meta').text(`★ Winner | Dir: ${d.director_name || 'Unknown'}`);
-    tooltip.select('.film-card__synopsis').text(d.synopsis || '');
+        // Injection des données dans la carte html
+        tooltip.select('.film-card__img').attr('src', d.poster_url || '');
+        tooltip.select('.film-card__title').text(`${d.movie_title || 'Unknown'} (${d.oscar_year})`);
+        tooltip.select('.film-card__meta').text(`★ Winner | Dir: ${d.director_name || 'Unknown'}`);
+        tooltip.select('.film-card__synopsis').text(d.synopsis || '');
 
-    // Génération des tags pour les genres
-    const genresContainer = tooltip.select('.film-card__genres');
-    genresContainer.html('');
-    // trim() pour éviter que les strings vides passent le if
-    if (d.genre?.trim()) {
-        d.genre.split(',').forEach(g => {
-            genresContainer.append('span')
-                .attr('class', 'film-card__genre-tag')
-                .text(g.trim());
-        });
-    }
+        // Génération des tags pour les genres
+        const genresContainer = tooltip.select('.film-card__genres');
+        genresContainer.html('');
+        // trim() pour éviter que les strings vides passent le if
+        if (d.genre?.trim()) {
+            d.genre.split(',').forEach(g => {
+                genresContainer.append('span')
+                    .attr('class', 'film-card__genre-tag')
+                    .text(g.trim());
+            });
+        }
 
-    tooltip.attr('hidden', null);
-})
-.on('mousemove', (event) => {
-    // La carte suit la souris avec un décalage
-    // pageX/pageY plutôt que clientX/clientY pour prendre en compte le scroll de la page
-    tooltip
-        .style('left', (event.pageX + 20) + 'px')
-        .style('top', (event.pageY + 20) + 'px');
-})
-.on('mouseout', function() {
-    // Le point redevient normal
-    d3.select(this)
-        .attr('stroke', 'none')
-        .attr('r', 8);
-    
-    tooltip.attr('hidden', true);
-});
+        tooltip.style('display', 'block')
+    })
+    .on('mousemove', (event) => {
+        const viz = document.querySelector('.section-exploration__viz')
+        const rect = viz.getBoundingClientRect()
+        tooltip
+            .style('left', (event.clientX - rect.left + 20) + 'px')
+            .style('top', (event.clientY - rect.top + 20) + 'px')
+    })
+
+    .on('mouseout', function () {
+        // Le point redevient normal
+        d3.select(this)
+            .attr('stroke', 'none')
+            .attr('r', 8);
+
+        tooltip.style('display', 'none')
+    });
 
 // --- 7. BRUSH (SCROLLBAR DE NAVIGATION) ---
 // Ajout de minuscules repères dans la barre de défilement
@@ -172,7 +172,7 @@ const defaultSpan = (xDomain[1] - xDomain[0]) / 3;
 brushSvg.append('g')
     .attr('class', 'brush')
     .call(brush)
-    .call(brush.move, [xDomain[0], xDomain[0] + defaultSpan].map(xBrush)); 
+    .call(brush.move, [xDomain[0], xDomain[0] + defaultSpan].map(xBrush));
 
 function brushed(event) {
     const selection = event.selection;
