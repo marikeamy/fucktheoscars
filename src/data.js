@@ -1,7 +1,7 @@
 import * as d3 from 'd3'
 
 const getData = async () => {
-    const data = await d3.csv("/data/movies.csv")
+    const data = await d3.csv("/data/allMovies.csv")
 
     //d3.group regroupe les éléments et réduit à une valeur par clé (une Map)
     //On évite ainsi les clones

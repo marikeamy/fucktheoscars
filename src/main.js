@@ -12,18 +12,29 @@ gsap.registerPlugin(ScrollTrigger)
 //L'élément qui se déplacera
 const horizontalWrapper = document.querySelector('.horizontal-wrapper');
 
+  console.log('innerWidth:', window.innerWidth)                                                                                                       
+  console.log('end:', "+=" + (window.innerWidth * 2))   
+
 //Gestion du scroll horizontal
 gsap.to(horizontalWrapper, {     
     //x = de combien on déplace horizontalement                                                                                                                             
-    x: -window.innerWidth,                                                                                                                                        
+    x: () => -(window.innerWidth * 2),                                                                                                                                        
     scrollTrigger: {                                                                                                                                  
       trigger: horizontalWrapper,
       pin: true,                                                                                                                                      
       scrub: true,
       //end définit combien de scroll vertical déclenche l'animation.
-      end: "+=" + (window.innerWidth)                                                                                                                                
+      end: () => "+=" + (window.innerWidth * 2),
+      //Voir les marqueurs de scroll, temporaire
+      markers:true,
+      //Demande à GSAP de recalculer les valeurs si la fenêtre change. Permet d'éviter les problèmes
+      //de changement de taille de page.
+      //Il faut aussi passer end et x en fonction fléchées pour que ça fonctionne.
+      invalidateOnRefresh: true                                                                                                                            
     }             
 })
+
+window._st = ScrollTrigger.getAll()
 
 const main = async () => {                                                                                                                          
       const uniqueMovies = await getData()                                                                                                            
