@@ -1,296 +1,296 @@
-movie_id,film_year,oscar_year,nominated_film,won
-1,1979,1980,Kramer vs. Kramer,1
-3,1979,1980,All That Jazz,0
-2,1979,1980,Apocalypse Now,0
-4,1979,1980,Breaking Away,0
-5,1979,1980,Norma Rae,0
-6,1980,1981,Ordinary People,1
-8,1980,1981,Coal Miner's Daughter,0
-9,1980,1981,The Elephant Man,0
-7,1980,1981,Raging Bull,0
-10,1980,1981,Tess,0
-11,1981,1982,Chariots of Fire,1
-12,1981,1982,Atlantic City,0
-13,1981,1982,On Golden Pond,0
-14,1981,1982,Raiders of the Lost Ark,0
-15,1981,1982,Reds,0
-16,1982,1983,Gandhi,1
-17,1982,1983,E.T. the Extra-Terrestrial,0
-18,1982,1983,Missing,0
-19,1982,1983,Tootsie,0
-20,1982,1983,The Verdict,0
-21,1983,1984,Terms of Endearment,1
-23,1983,1984,The Big Chill,0
-24,1983,1984,The Dresser,0
-22,1983,1984,The Right Stuff,0
-25,1983,1984,Tender Mercies,0
-26,1984,1985,Amadeus,1
-30,1984,1985,The Killing Fields,0
-27,1984,1985,A Passage to India,0
-29,1984,1985,Places in the Heart,0
-28,1984,1985,A Soldier's Story,0
-31,1985,1986,Out of Africa,1
-34,1985,1986,The Color Purple,0
-32,1985,1986,Kiss of the Spider Woman,0
-33,1985,1986,Prizzi's Honor,0
-35,1985,1986,Witness,0
-36,1986,1987,Platoon,1
-39,1986,1987,Children of a Lesser God,0
-37,1986,1987,Hannah and Her Sisters,0
-38,1986,1987,The Mission,0
-40,1986,1987,A Room With a View,0
-41,1987,1988,The Last Emperor,1
-42,1987,1988,Broadcast News,0
-43,1987,1988,Fatal Attraction,0
-44,1987,1988,Hope and Glory,0
-45,1987,1988,Moonstruck,0
-46,1988,1989,Rain Man,1
-48,1988,1989,The Accidental Tourist,0
-49,1988,1989,Dangerous Liaisons,0
-47,1988,1989,Mississippi Burning,0
-50,1988,1989,Working Girl,0
-51,1989,1990,Driving Miss Daisy,1
-53,1989,1990,Born on the Fourth of July,0
-52,1989,1990,Dead Poets Society,0
-54,1989,1990,Field of Dreams,0
-55,1989,1990,My Left Foot,0
-56,1990,1991,Dances with Wolves,1
-58,1990,1991,Awakenings,0
-59,1990,1991,Ghost,0
-57,1990,1991,The Godfather Part III,0
-60,1990,1991,Goodfellas,0
-61,1991,1992,The Silence of the Lambs,1
-62,1991,1992,Beauty and the Beast,0
-63,1991,1992,Bugsy,0
-64,1991,1992,JFK,0
-65,1991,1992,The Prince of Tides,0
-66,1992,1993,Unforgiven,1
-70,1992,1993,The Crying Game,0
-67,1992,1993,A Few Good Men,0
-68,1992,1993,Howards End,0
-69,1992,1993,Scent of a Woman,0
-71,1993,1994,Schindler's List,1
-72,1993,1994,The Fugitive,0
-73,1993,1994,In the Name of the Father,0
-74,1993,1994,The Piano,0
-75,1993,1994,The Remains of the Day,0
-76,1994,1995,Forrest Gump,1
-78,1994,1995,Four Weddings and a Funeral,0
-77,1994,1995,Pulp Fiction,0
-80,1994,1995,Quiz Show,0
-79,1994,1995,The Shawshank Redemption,0
-81,1995,1996,Braveheart,1
-82,1995,1996,Apollo 13,0
-83,1995,1996,Babe,0
-84,1995,1996,Il Postino,0
-85,1995,1996,Sense and Sensibility,0
-86,1996,1997,The English Patient,1
-87,1996,1997,Fargo,0
-88,1996,1997,Jerry Maguire,0
-89,1996,1997,Secrets & Lies,0
-90,1996,1997,Shine,0
-91,1997,1998,Titanic,1
-93,1997,1998,As Good as It Gets,0
-95,1997,1998,The Full Monty,0
-92,1997,1998,Good Will Hunting,0
-94,1997,1998,L.A. Confidential,0
-96,1998,1999,Shakespeare in Love,1
-97,1998,1999,Elizabeth,0
-98,1998,1999,Life Is Beautiful,0
-99,1998,1999,Saving Private Ryan,0
-100,1998,1999,The Thin Red Line,0
-101,1999,2000,American Beauty,1
-102,1999,2000,The Cider House Rules,0
-103,1999,2000,The Green Mile,0
-104,1999,2000,The Insider,0
-105,1999,2000,The Sixth Sense,0
-106,2000,2001,Gladiator,1
-107,2000,2001,Chocolat,0
-109,2000,2001,Crouching Tiger Hidden Dragon,0
-108,2000,2001,Erin Brockovich,0
-110,2000,2001,Traffic,0
-111,2001,2002,A Beautiful Mind,1
-112,2001,2002,Gosford Park,0
-114,2001,2002,In the Bedroom,0
-113,2001,2002,The Lord of the Rings: The Fellowship of the Ring,0
-115,2001,2002,Moulin Rouge!,0
-116,2002,2003,Chicago,1
-118,2002,2003,Gangs of New York,0
-119,2002,2003,The Hours,0
-120,2002,2003,The Lord of the Rings: The Two Towers,0
-117,2002,2003,The Pianist,0
-121,2003,2004,The Lord of the Rings: The Return of the King,1
-122,2003,2004,Lost in Translation,0
-125,2003,2004,Master and Commander: The Far Side of the World,0
-124,2003,2004,Mystic River,0
-127,2003,2004,Seabiscuit,0
-126,2004,2005,Million Dollar Baby,1
-130,2004,2005,The Aviator,0
-128,2004,2005,Finding Neverland,0
-131,2004,2005,Ray,0
-129,2004,2005,Sideways,0
-134,2005,2006,Crash,1
-132,2005,2006,Brokeback Mountain,0
-133,2005,2006,Capote,0
-137,2005,2006,Good Night and Good Luck,0
-135,2005,2006,Munich,0
-136,2006,2007,The Departed,1
-138,2006,2007,Babel,0
-139,2006,2007,Letters from Iwo Jima,0
-140,2006,2007,Little Miss Sunshine,0
-141,2006,2007,The Queen,0
-142,2007,2008,No Country for Old Men,1
-143,2007,2008,Atonement,0
-144,2007,2008,Juno,0
-145,2007,2008,Michael Clayton,0
-148,2007,2008,There Will Be Blood,0
-146,2008,2009,Slumdog Millionaire,1
-149,2008,2009,The Curious Case of Benjamin Button,0
-147,2008,2009,Frost/Nixon,0
-150,2008,2009,Milk,0
-152,2008,2009,The Reader,0
-151,2009,2010,The Hurt Locker,1
-153,2009,2010,Avatar,0
-155,2009,2010,The Blind Side,0
-154,2009,2010,District 9,0
-159,2009,2010,An Education,0
-156,2009,2010,Inglourious Basterds,0
-157,2009,2010,Precious,0
-158,2009,2010,A Serious Man,0
-160,2009,2010,Up,0
-163,2009,2010,Up in the Air,0
-161,2010,2011,The King's Speech,1
-165,2010,2011,Black Swan,0
-166,2010,2011,The Fighter,0
-168,2010,2011,Inception,0
-167,2010,2011,The Kids Are All Right,0
-164,2010,2011,127 Hours,0
-162,2010,2011,The Social Network,0
-169,2010,2011,Toy Story 3,0
-170,2010,2011,True Grit,0
-171,2010,2011,Winter's Bone,0
-172,2011,2012,The Artist,1
-174,2011,2012,The Descendants,0
-173,2011,2012,Extremely Loud & Incredibly Close,0
-175,2011,2012,The Help,0
-176,2011,2012,Hugo,0
-178,2011,2012,Midnight in Paris,0
-177,2011,2012,Moneyball,0
-179,2011,2012,The Tree of Life,0
-183,2011,2012,War Horse,0
-180,2012,2013,Argo,1
-187,2012,2013,Amour,0
-188,2012,2013,Beasts of the Southern Wild,0
-186,2012,2013,Django Unchained,0
-184,2012,2013,Les Misérables,0
-189,2012,2013,Life of Pi,0
-181,2012,2013,Lincoln,0
-185,2012,2013,Silver Linings Playbook,0
-182,2012,2013,Zero Dark Thirty,0
-196,2013,2014,12 Years a Slave,1
-191,2013,2014,American Hustle,0
-198,2013,2014,Captain Phillips,0
-192,2013,2014,Dallas Buyers Club,0
-190,2013,2014,Gravity,0
-193,2013,2014,Her,0
-197,2013,2014,Nebraska,0
-194,2013,2014,Philomena,0
-195,2013,2014,The Wolf of Wall Street,0
-202,2014,2015,Birdman,1
-199,2014,2015,American Sniper,0
-200,2014,2015,Boyhood,0
-201,2014,2015,The Grand Budapest Hotel,0
-204,2014,2015,The Imitation Game,0
-203,2014,2015,Selma,0
-210,2014,2015,The Theory of Everything,0
-205,2014,2015,Whiplash,0
-206,2015,2016,Spotlight,1
-208,2015,2016,The Big Short,0
-212,2015,2016,Bridge of Spies,0
-213,2015,2016,Brooklyn,0
-217,2015,2016,Mad Max: Fury Road,0
-209,2015,2016,The Martian,0
-207,2015,2016,The Revenant,0
-211,2015,2016,Room,0
-214,2016,2017,Moonlight,1
-219,2016,2017,Arrival,0
-218,2016,2017,Fences,0
-220,2016,2017,Hacksaw Ridge,0
-221,2016,2017,Hell or High Water,0
-222,2016,2017,Hidden Figures,0
-215,2016,2017,La La Land,0
-229,2016,2017,Lion,0
-216,2016,2017,Manchester by the Sea,0
-223,2017,2018,The Shape of Water,1
-230,2017,2018,Call Me by Your Name,0
-235,2017,2018,Darkest Hour,0
-225,2017,2018,Dunkirk,0
-227,2017,2018,Get Out,0
-226,2017,2018,Lady Bird,0
-231,2017,2018,Phantom Thread,0
-228,2017,2018,The Post,0
-224,2017,2018,Three Billboards Outside Ebbing Missouri,0
-232,2018,2019,Green Book,1
-247,2018,2019,Black Panther,0
-237,2018,2019,BlacKkKlansman,0
-238,2018,2019,Bohemian Rhapsody,0
-234,2018,2019,The Favourite,0
-233,2018,2019,Roma,0
-236,2018,2019,A Star Is Born,0
-239,2018,2019,Vice,0
-240,2019,2020,Parasite,1
-245,2019,2020,Ford v Ferrari,0
-241,2019,2020,The Irishman,0
-248,2019,2020,Jojo Rabbit,0
-243,2019,2020,Joker,0
-249,2019,2020,Little Women,0
-246,2019,2020,Marriage Story,0
-242,2019,2020,1917,0
-244,2019,2020,Once Upon a Time in Hollywood,0
-250,2020,2021,Nomadland,1
-256,2020,2021,The Father,0
-251,2020,2021,Judas and the Black Messiah,0
-255,2020,2021,Mank,0
-258,2020,2021,Minari,0
-253,2020,2021,Promising Young Woman,0
-254,2020,2021,Sound of Metal,0
-252,2020,2021,The Trial of the Chicago 7,0
-257,2021,2022,CODA,1
-263,2021,2022,Belfast,0
-264,2021,2022,Don't Look Up,0
-259,2021,2022,Drive My Car,0
-261,2021,2022,Dune,0
-262,2021,2022,King Richard,0
-260,2021,2022,Licorice Pizza,0
-265,2021,2022,Nightmare Alley,0
-266,2021,2022,The Power of the Dog,0
-280,2021,2022,West Side Story,0
-267,2022,2023,Everything Everywhere All at Once,1
-271,2022,2023,All Quiet on the Western Front,0
-270,2022,2023,The Banshees of Inisherin,0
-274,2022,2023,Elvis,0
-269,2022,2023,The Fabelmans,0
-273,2022,2023,Tár,0
-268,2022,2023,Top Gun: Maverick,0
-275,2022,2023,Triangle of Sadness,0
-276,2022,2023,Women Talking,0
-277,2023,2024,Oppenheimer,1
-279,2023,2024,American Fiction,0
-285,2023,2024,Anatomy of a Fall,0
-282,2023,2024,Barbie,0
-284,2023,2024,The Holdovers,0
-286,2023,2024,Killers of the Flower Moon,0
-278,2023,2024,Maestro,0
-283,2023,2024,Past Lives,0
-281,2023,2024,Poor Things,0
-290,2023,2024,Zone of Interest,0
-287,2024,2025,Anora,1
-288,2024,2025,The Brutalist,0
-289,2024,2025,A Complete Unknown,0
-291,2024,2025,Conclave,0
-293,2024,2025,Emilia Pérez,0
-295,2024,2025,I'm Still Here,0
-294,2024,2025,Nickel Boys,0
-296,2024,2025,The Substance,0
-297,2024,2025,Wicked,0
-298,2024,2025,September 5,0
+movie_id,movie_title,oscar_year,won_oscar,total_count_fucks,average_fucks_per_hour,genre,director_name,director_id,picture
+1,Kramer vs. Kramer,1980,True,0,0.0,Drama,Robert Benton,1,
+2,Apocalypse Now,1980,False,0,0.0,War,Francis Ford Coppola,2,
+3,All That Jazz,1980,False,6,3.51,Drama,Bob Fosse,3,
+4,Breaking Away,1980,False,0,0.0,Comedy,Peter Yates,4,
+5,Norma Rae,1980,False,0,0.0,Drama,Martin Ritt,5,
+6,Ordinary People,1981,True,8,7.26,Drama,Robert Redford,6,
+7,Raging Bull,1981,False,124,62.02,Biography,Martin Scorsese,7,
+8,Coal Miner's Daughter,1981,False,0,0.0,Biography,Michael Apted,8,
+9,The Elephant Man,1981,False,0,0.0,Biography,David Lynch,9,
+10,Tess,1981,False,0,0.0,Drama,Roman Polanski,10,
+11,Chariots of Fire,1982,True,0,0.0,Biography,Hugh Hudson,11,
+12,Atlantic City,1982,False,0,0.0,Crime,Louis Malle,12,
+13,On Golden Pond,1982,False,0,0.0,Drama,Mark Rydell,13,
+14,Raiders of the Lost Ark,1982,False,0,0.0,Action,Steven Spielberg,14,
+15,Reds,1982,False,0,0.0,Biography,Warren Beatty,15,
+16,Gandhi,1983,True,0,0.0,Biography,Richard Attenborough,16,
+17,E.T. the Extra-Terrestrial,1983,False,0,0.0,Family,Steven Spielberg,14,
+18,Missing,1983,False,3,2.96,Biography,Costa-Gavras,17,
+19,Tootsie,1983,False,0,0.0,Comedy,Sydney Pollack,18,
+20,The Verdict,1983,False,0,0.0,Drama,Sidney Lumet,19,
+21,Terms of Endearment,1984,True,2,1.43,Comedy,James L. Brooks,20,
+22,The Right Stuff,1984,False,4,1.95,Adventure,Philip Kaufman,21,
+23,The Big Chill,1984,False,0,0.0,Comedy,Lawrence Kasdan,22,
+24,The Dresser,1984,False,0,0.0,Drama,Peter Yates,4,
+25,Tender Mercies,1984,False,0,0.0,Drama,Bruce Beresford,23,
+26,Amadeus,1985,True,0,0.0,Biography,Miloš Forman,24,
+27,A Passage to India,1985,False,0,0.0,Drama,David Lean,25,
+28,A Soldier's Story,1985,False,4,2.58,Crime,Norman Jewison,26,
+29,Places in the Heart,1985,False,0,0.0,Drama,Robert Benton,1,
+30,The Killing Fields,1985,False,18,9.72,Biography,Roland Joffé,27,
+31,Out of Africa,1986,True,0,0.0,Biography,Sydney Pollack,18,
+32,Kiss of the Spider Woman,1986,False,8,4.23,Drama,Hector Babenco,28,
+33,Prizzi's Honor,1986,False,6,3.48,Comedy,John Huston,29,
+34,The Color Purple,1986,False,0,0.0,Drama,Steven Spielberg,14,
+35,Witness,1986,False,8,4.66,Crime,Peter Weir,30,
+36,Platoon,1987,True,158,85.21,Drama,Oliver Stone,31,
+37,Hannah and Her Sisters,1987,False,0,0.0,Comedy,Woody Allen,32,
+38,The Mission,1987,False,0,0.0,Adventure,Roland Joffé,27,
+39,Children of a Lesser God,1987,False,6,3.32,Drama,Randa Haines,33,
+40,A Room With a View,1987,False,0,0.0,Drama,James Ivory,34,
+41,The Last Emperor,1988,True,0,0.0,Biography,Bernardo Bertolucci,35,
+42,Broadcast News,1988,False,0,0.0,Comedy,James L. Brooks,20,
+43,Fatal Attraction,1988,False,0,0.0,Thriller,Adrian Lyne,36,
+44,Hope and Glory,1988,False,4,4.79,Comedy,John Boorman,37,
+45,Moonstruck,1988,False,0,0.0,Comedy,Norman Jewison,26,
+46,Rain Man,1989,True,18,9.53,Drama,Barry Levinson,38,
+47,Mississippi Burning,1989,False,9,5.16,Crime,Alan Parker,39,
+48,The Accidental Tourist,1989,False,0,0.0,Drama,Lawrence Kasdan,22,
+49,Dangerous Liaisons,1989,False,0,0.0,Drama,Stephen Frears,40,
+50,Working Girl,1989,False,0,0.0,Comedy,Mike Nichols,41,
+51,Driving Miss Daisy,1990,True,0,0.0,Drama,Bruce Beresford,23,
+52,Dead Poets Society,1990,False,0,0.0,Drama,Peter Weir,30,
+53,Born on the Fourth of July,1990,False,145,64.58,Biography,Oliver Stone,31,
+54,Field of Dreams,1990,False,0,0.0,Drama,Phil Alden Robinson,42,
+55,My Left Foot,1990,False,0,0.0,Biography,Jim Sheridan,43,
+56,Dances with Wolves,1991,True,0,0.0,Western,Kevin Costner,44,
+57,The Godfather Part III,1991,False,12,4.88,Crime,Francis Ford Coppola,2,
+58,Awakenings,1991,False,1,0.9,Biography,Penny Marshall,45,
+59,Ghost,1991,False,0,0.0,Fantasy,Jerry Zucker,46,
+60,Goodfellas,1991,False,187,82.99,Biography,Martin Scorsese,7,
+61,The Silence of the Lambs,1992,True,14,8.27,Crime,Jonathan Demme,47,
+62,Beauty and the Beast,1992,False,0,0.0,Animation,Gary Trousdale,48,
+63,Bugsy,1992,False,58,29.88,Biography,Barry Levinson,38,
+64,JFK,1992,False,0,0.0,Drama,Oliver Stone,31,
+65,The Prince of Tides,1992,False,0,0.0,Drama,Barbra Streisand,49,
+66,Unforgiven,1993,True,5,2.81,Drama,Clint Eastwood,50,
+67,A Few Good Men,1993,False,0,0.0,Drama,Rob Reiner,51,
+68,Howards End,1993,False,0,0.0,Drama,James Ivory,34,
+69,Scent of a Woman,1993,False,0,0.0,Drama,Martin Brest,52,
+70,The Crying Game,1993,False,74,44.65,Crime,Neil Jordan,53,
+71,Schindler's List,1994,True,8,4.8,Biography,Steven Spielberg,14,
+72,The Fugitive,1994,False,0,0.0,Thriller,Andrew Davis,54,
+73,In the Name of the Father,1994,False,0,0.0,Biography,Jim Sheridan,43,
+74,The Piano,1994,False,2,21.56,Drama,Jane Campion,55,
+75,The Remains of the Day,1994,False,0,0.0,Drama,James Ivory,34,
+76,Forrest Gump,1995,True,4,3.48,Drama,Robert Zemeckis,56,
+77,Pulp Fiction,1995,False,254,103.29,Crime,Quentin Tarantino,57,
+78,Four Weddings and a Funeral,1995,False,0,0.0,Comedy,Mike Newell,58,
+79,The Shawshank Redemption,1995,False,0,0.0,Drama,Frank Darabont,59,
+80,Quiz Show,1995,False,2,1.77,Biography,Robert Redford,6,
+81,Braveheart,1996,True,2,1.42,Biography,Mel Gibson,60,
+82,Apollo 13,1996,False,0,0.0,Biography,Ron Howard,61,
+83,Babe,1996,False,0,0.0,Comedy,Chris Noonan,62,
+84,Il Postino,1996,False,0,0.0,Drama,Michael Radford,63,
+85,Sense and Sensibility,1996,False,0,0.0,Drama,Ang Lee,64,
+86,The English Patient,1997,True,4,1.72,Drama,Anthony Minghella,65,
+87,Fargo,1997,False,75,52.52,Crime,Joel Coen,66,
+88,Jerry Maguire,1997,False,0,0.0,Drama,Cameron Crowe,67,
+89,Secrets & Lies,1997,False,0,0.0,Drama,Mike Leigh,68,
+90,Shine,1997,False,0,0.0,Biography,Scott Hicks,69,
+91,Titanic,1998,True,1,0.75,Drama,James Cameron,70,
+92,Good Will Hunting,1998,False,142,73.24,Drama,Gus Van Sant,71,
+93,As Good as It Gets,1998,False,3,2.51,Comedy,James L. Brooks,20,
+94,L.A. Confidential,1998,False,24,13.2,Crime,Curtis Hanson,72,
+95,The Full Monty,1998,False,28,20.58,Comedy,Peter Cattaneo,73,
+96,Shakespeare in Love,1999,True,0,0.0,Comedy,John Madden,74,
+97,Elizabeth,1999,False,0,0.0,Biography,Shekhar Kapur,75,
+98,Life Is Beautiful,1999,False,0,0.0,Comedy,Roberto Benigni,76,
+99,Saving Private Ryan,1999,False,21,10.58,Drama,Steven Spielberg,14,
+100,The Thin Red Line,1999,False,14,7.66,Drama,Terrence Malick,77,
+101,American Beauty,2000,True,21,12.63,Drama,Sam Mendes,78,
+102,The Cider House Rules,2000,False,0,0.0,Drama,Lasse Hallström,79,
+103,The Green Mile,2000,False,13,5.78,Crime,Frank Darabont,59,
+104,The Insider,2000,False,34,13.97,Biography,Michael Mann,80,
+105,The Sixth Sense,2000,False,0,0.0,Thriller,M. Night Shyamalan,81,
+106,Gladiator,2001,True,0,0.0,Action,Ridley Scott,82,
+107,Chocolat,2001,False,0,0.0,Drama,Lasse Hallström,79,
+108,Erin Brockovich,2001,False,25,13.09,Biography,Steven Soderbergh,83,
+109,Crouching Tiger Hidden Dragon,2001,False,0,0.0,Action,Ang Lee,64,
+110,Traffic,2001,False,0,0.0,Crime,Steven Soderbergh,83,
+111,A Beautiful Mind,2002,True,0,0.0,Biography,Ron Howard,61,
+112,Gosford Park,2002,False,0,0.0,Mystery,Robert Altman,84,
+113,The Lord of the Rings: The Fellowship of the Ring,2002,False,0,0.0,Adventure,Peter Jackson,85,
+114,In the Bedroom,2002,False,7,3.54,Crime,Todd Field,86,
+115,Moulin Rouge!,2002,False,0,0.0,Musical,Baz Luhrmann,87,
+116,Chicago,2003,True,0,0.0,Musical,Rob Marshall,88,
+117,The Pianist,2003,False,2,0.87,Biography,Roman Polanski,10,
+118,Gangs of New York,2003,False,4,1.76,Crime,Martin Scorsese,7,
+119,The Hours,2003,False,1,2.53,Drama,Stephen Daldry,89,
+120,The Lord of the Rings: The Two Towers,2003,False,0,0.0,Adventure,Peter Jackson,85,
+121,The Lord of the Rings: The Return of the King,2004,True,0,0.0,Adventure,Peter Jackson,85,
+122,Lost in Translation,2004,False,0,0.0,Drama,Sofia Coppola,90,
+124,Mystic River,2004,False,67,32.08,Crime,Clint Eastwood,50,
+125,Master and Commander: The Far Side of the World,2004,False,0,0.0,Adventure,Peter Weir,30,
+127,Seabiscuit,2004,False,0,0.0,Biography,Gary Ross,91,
+126,Million Dollar Baby,2005,True,3,2.13,Drama,Clint Eastwood,50,
+128,Finding Neverland,2005,False,0,0.0,Biography,Marc Forster,92,
+129,Sideways,2005,False,7,3.95,Comedy,Alexander Payne,93,
+130,The Aviator,2005,False,1,0.38,Biography,Martin Scorsese,7,
+131,Ray,2005,False,0,0.0,Biography,Taylor Hackford,94,
+132,Brokeback Mountain,2006,False,25,13.86,Drama,Ang Lee,64,
+133,Capote,2006,False,1,13.64,Biography,Bennett Miller,95,
+134,Crash,2006,True,0,0.0,Drama,Paul Haggis,96,
+135,Munich,2006,False,18,8.78,Drama,Steven Spielberg,14,
+137,Good Night and Good Luck,2006,False,0,0.0,Biography,George Clooney,97,
+136,The Departed,2007,True,258,111.05,Crime,Martin Scorsese,7,
+138,Babel,2007,False,0,0.0,Drama,Alejandro González Iñárritu,98,
+139,Letters from Iwo Jima,2007,False,0,0.0,War,Clint Eastwood,50,
+140,Little Miss Sunshine,2007,False,0,0.0,Comedy,Jonathan Dayton,99,
+141,The Queen,2007,False,0,0.0,Biography,Stephen Frears,40,
+142,No Country for Old Men,2008,True,0,0.0,Crime,Joel Coen,66,
+143,Atonement,2008,False,18,10.55,Drama,Joe Wright,100,
+144,Juno,2008,False,0,0.0,Comedy,Jason Reitman,101,
+145,Michael Clayton,2008,False,0,0.0,Thriller,Tony Gilroy,102,
+148,There Will Be Blood,2008,False,0,0.0,Drama,Paul Thomas Anderson,104,
+146,Slumdog Millionaire,2009,True,12,7.68,Crime,Danny Boyle,103,
+147,Frost/Nixon,2009,False,5,3.02,Biography,Ron Howard,61,
+149,The Curious Case of Benjamin Button,2009,False,2,0.78,Drama,David Fincher,105,
+150,Milk,2009,False,0,0.0,Biography,Gus Van Sant,71,
+152,The Reader,2009,False,0,0.0,Drama,Stephen Daldry,89,
+151,The Hurt Locker,2010,True,70,35.75,Drama,Kathryn Bigelow,106,
+153,Avatar,2010,False,0,0.0,Sci-Fi,James Cameron,70,
+154,District 9,2010,False,156,93.85,Action,Neill Blomkamp,107,
+155,The Blind Side,2010,False,0,0.0,Biography,John Lee Hancock,108,
+156,Inglourious Basterds,2010,False,24,9.76,Adventure,Quentin Tarantino,57,
+157,Precious,2010,False,71,43.03,Drama,Lee Daniels,109,
+158,A Serious Man,2010,False,18,10.96,Drama,Joel Coen,66,
+159,An Education,2010,False,0,0.0,Drama,Lone Scherfig,110,
+160,Up,2010,False,0,0.0,Animation,Pete Docter,111,
+163,Up in the Air,2010,False,0,0.0,Comedy,Jason Reitman,101,
+161,The King's Speech,2011,True,19,10.92,Biography,Tom Hooper,112,
+162,The Social Network,2011,False,2,1.15,Biography,David Fincher,105,
+164,127 Hours,2011,False,21,17.66,Biography,Danny Boyle,103,
+165,Black Swan,2011,False,16,10.35,Drama,Darren Aronofsky,113,
+166,The Fighter,2011,False,0,0.0,Biography,David O. Russell,114,
+167,The Kids Are All Right,2011,False,36,22.95,Comedy,Lisa Cholodenko,115,
+168,Inception,2011,False,0,0.0,Sci-Fi,Christopher Nolan,116,
+169,Toy Story 3,2011,False,0,0.0,Animation,Lee Unkrich,117,
+170,True Grit,2011,False,0,0.0,Western,Joel Coen,66,
+171,Winter's Bone,2011,False,0,0.0,Drama,Debra Granik,118,
+172,The Artist,2012,True,0,0.0,Comedy,Michel Hazanavicius,119,
+173,Extremely Loud & Incredibly Close,2012,False,0,0.0,Drama,Stephen Daldry,89,
+174,The Descendants,2012,False,24,14.92,Comedy,Alexander Payne,93,
+175,The Help,2012,False,0,0.0,Drama,Tate Taylor,120,
+176,Hugo,2012,False,0,0.0,Adventure,Martin Scorsese,7,
+177,Moneyball,2012,False,2,2.44,Biography,Bennett Miller,95,
+178,Midnight in Paris,2012,False,0,0.0,Comedy,Woody Allen,32,
+179,The Tree of Life,2012,False,0,0.0,Drama,Terrence Malick,77,
+183,War Horse,2012,False,0,0.0,Drama,Steven Spielberg,14,
+180,Argo,2013,True,24,13.48,Biography,Ben Affleck,121,
+181,Lincoln,2013,False,2,1.25,Biography,Steven Spielberg,14,
+182,Zero Dark Thirty,2013,False,54,23.37,Drama,Kathryn Bigelow,106,
+184,Les Misérables,2013,False,0,0.0,Musical,Tom Hooper,112,
+185,Silver Linings Playbook,2013,False,44,23.34,Comedy,David O. Russell,114,
+186,Django Unchained,2013,False,31,11.64,Drama,Quentin Tarantino,57,
+187,Amour,2013,False,1,0.68,Drama,Michael Haneke,122,
+188,Beasts of the Southern Wild,2013,False,1,1.03,Adventure,Benh Zeitlin,123,
+189,Life of Pi,2013,False,0,0.0,Adventure,Ang Lee,64,
+190,Gravity,2014,False,2,1.62,Drama,Alfonso Cuarón,124,
+191,American Hustle,2014,False,133,62.57,Crime,David O. Russell,114,
+192,Dallas Buyers Club,2014,False,121,70.5,Biography,Jean-Marc Vallée,125,
+193,Her,2014,False,37,20.9,Drama,Spike Jonze,126,
+194,Philomena,2014,False,2,1.38,Biography,Stephen Frears,40,
+195,The Wolf of Wall Street,2014,False,565,197.84,Biography,Martin Scorsese,7,
+196,12 Years a Slave,2014,True,0,0.0,Biography,Steve McQueen,127,
+197,Nebraska,2014,False,2,1.36,Drama,Alexander Payne,93,
+198,Captain Phillips,2014,False,0,0.0,Action,Paul Greengrass,128,
+199,American Sniper,2015,False,113,56.13,Action,Clint Eastwood,50,
+200,Boyhood,2015,False,39,14.71,Drama,Richard Linklater,129,
+201,The Grand Budapest Hotel,2015,False,12,8.97,Comedy,Wes Anderson,130,
+202,Birdman,2015,True,0,0.0,Comedy,Alejandro González Iñárritu,98,
+203,Selma,2015,False,2,1.11,Biography,Ava DuVernay,131,
+204,The Imitation Game,2015,False,0,0.0,Biography,Morten Tyldum,132,
+205,Whiplash,2015,False,92,61.52,Drama,Damien Chazelle,133,
+210,The Theory of Everything,2015,False,0,0.0,Biography,James Marsh,137,
+206,Spotlight,2016,True,6,3.43,Biography,Tom McCarthy,134,
+207,The Revenant,2016,False,16,9.01,Adventure,Alejandro G. Iñárritu,135,
+208,The Big Short,2016,False,82,41.18,Biography,Adam McKay,136,
+209,The Martian,2016,False,4,4.32,Adventure,Ridley Scott,82,
+211,Room,2016,False,12,8.27,Drama,Lenny Abrahamson,138,
+212,Bridge of Spies,2016,False,2,1.05,Drama,Steven Spielberg,14,
+213,Brooklyn,2016,False,1,4.56,Drama,John Crowley,139,
+217,Mad Max: Fury Road,2016,False,0,0.0,Action,George Miller,142,
+214,Moonlight,2017,True,26,19.81,Drama,Barry Jenkins,140,
+215,La La Land,2017,False,1,0.95,Comedy,Damien Chazelle,133,
+216,Manchester by the Sea,2017,False,80,40.08,Drama,Kenneth Lonergan,141,
+218,Fences,2017,False,0,0.0,Drama,Denzel Washington,143,
+219,Arrival,2017,False,1,2.01,Drama,Denis Villeneuve,144,
+220,Hacksaw Ridge,2017,False,0,0.0,Biography,Mel Gibson,60,
+221,Hell or High Water,2017,False,34,27.65,Crime,David Mackenzie,145,
+222,Hidden Figures,2017,False,0,0.0,Biography,Theodore Melfi,146,
+229,Lion,2017,False,0,0.0,Biography,Garth Davis,151,
+223,The Shape of Water,2018,True,11,5.72,Drama,Guillermo del Toro,147,
+224,Three Billboards Outside Ebbing Missouri,2018,False,95,59.69,Comedy,Martin McDonagh,148,
+225,Dunkirk,2018,False,3,2.6,Action,Christopher Nolan,116,
+226,Lady Bird,2018,False,16,12.85,Comedy,Greta Gerwig,149,
+227,Get Out,2018,False,55,33.12,Horror,Jordan Peele,150,
+228,The Post,2018,False,1,0.78,Biography,Steven Spielberg,14,
+230,Call Me by Your Name,2018,False,0,0.0,Drama,Luca Guadagnino,152,
+231,Phantom Thread,2018,False,11,5.93,Drama,Paul Thomas Anderson,104,
+235,Darkest Hour,2018,False,0,0.0,Biography,Joe Wright,100,
+232,Green Book,2019,True,2,1.15,Biography,Peter Farrelly,153,
+233,Roma,2019,False,4,2.81,Drama,Alfonso Cuarón,124,
+234,The Favourite,2019,False,9,5.14,Biography,Yorgos Lanthimos,154,
+236,A Star Is Born,2019,False,110,53.58,Drama,Bradley Cooper,155,
+237,BlacKkKlansman,2019,False,74,34.54,Biography,Spike Lee,156,
+238,Bohemian Rhapsody,2019,False,1,0.55,Biography,Bryan Singer,157,
+239,Vice,2019,False,22,12.33,Biography,Adam McKay,136,
+247,Black Panther,2019,False,0,0.0,Action,Ryan Coogler,162,
+240,Parasite,2020,True,23,12.71,Drama,Bong Joon Ho,158,
+241,The Irishman,2020,False,149,47.3,Biography,Martin Scorsese,7,
+242,1917,2020,False,14,8.33,Action,Sam Mendes,78,
+243,Joker,2020,False,27,14.75,Crime,Todd Phillips,159,
+244,Once Upon a Time in Hollywood,2020,False,116,43.45,Comedy,Quentin Tarantino,57,
+245,Ford v Ferrari,2020,False,1,1.38,Action,James Mangold,160,
+246,Marriage Story,2020,False,42,23.66,Drama,Noah Baumbach,161,
+248,Jojo Rabbit,2020,False,1,0.6,Comedy,Taika Waititi,163,
+249,Little Women,2020,False,0,0.0,Drama,Greta Gerwig,149,
+250,Nomadland,2021,True,0,0.0,Drama,Chloé Zhao,164,
+251,Judas and the Black Messiah,2021,False,134,69.31,Biography,Shaka King,165,
+252,The Trial of the Chicago 7,2021,False,43,24.04,Drama,Aaron Sorkin,166,
+253,Promising Young Woman,2021,False,51,31.15,Crime,Emerald Fennell,167,
+254,Sound of Metal,2021,False,54,29.28,Drama,Darius Marder,168,
+255,Mank,2021,False,5,2.55,Biography,David Fincher,105,
+256,The Father,2021,False,2,1.43,Drama,Florian Zeller,169,
+258,Minari,2021,False,0,0.0,Drama,Lee Isaac Chung,171,
+257,CODA,2022,True,1,0.68,Comedy,Sian Heder,170,
+259,Drive My Car,2022,False,0,0.0,Drama,Ryusuke Hamaguchi,172,
+260,Licorice Pizza,2022,False,45,23.39,Comedy,Paul Thomas Anderson,104,
+261,Dune,2022,False,0,0.0,Action,Denis Villeneuve,144,
+262,King Richard,2022,False,1,2.64,Biography,Reinaldo Marcus Green,173,
+263,Belfast,2022,False,1,8.74,Biography,Kenneth Branagh,174,
+264,Don't Look Up,2022,False,48,20.87,Comedy,Adam McKay,136,
+265,Nightmare Alley,2022,False,11,5.15,Crime,Guillermo del Toro,147,
+266,The Power of the Dog,2022,False,0,0.0,Drama,Jane Campion,55,
+280,West Side Story,2022,False,0,0.0,Musical,Steven Spielberg,14,
+267,Everything Everywhere All at Once,2023,True,8,6.95,Action,Daniel Kwan,175,
+268,Top Gun: Maverick,2023,False,1,0.54,Action,Joseph Kosinski,176,
+269,The Fabelmans,2023,False,1,0.42,Drama,Steven Spielberg,14,
+270,The Banshees of Inisherin,2023,False,6,3.4,Comedy,Martin McDonagh,148,
+271,All Quiet on the Western Front,2023,False,2,1.01,Drama,Edward Berger,177,
+273,Tár,2023,False,6,2.54,Drama,Todd Field,86,
+274,Elvis,2023,False,1,0.46,Biography,Baz Luhrmann,87,
+275,Triangle of Sadness,2023,False,24,10.09,Comedy,Ruben Östlund,178,
+276,Women Talking,2023,False,2,1.88,Drama,Sarah Polley,179,
+277,Oppenheimer,2024,True,8,2.86,Biography,Christopher Nolan,116,
+278,Maestro,2024,False,8,5.83,Biography,Bradley Cooper,155,
+279,American Fiction,2024,False,52,28.56,Comedy,Cord Jefferson,180,
+281,Poor Things,2024,False,38,17.3,Comedy,Yorgos Lanthimos,154,
+282,Barbie,2024,False,0,0.0,Comedy,Greta Gerwig,149,
+283,Past Lives,2024,False,0,0.0,Drama,Celine Song,181,
+284,The Holdovers,2024,False,32,15.28,Comedy,Alexander Payne,93,
+285,Anatomy of a Fall,2024,False,14,6.02,Crime,Justine Triet,182,
+286,Killers of the Flower Moon,2024,False,3,2.21,Crime,Martin Scorsese,7,
+290,Zone of Interest,2024,False,0,0.0,Drama,Jonathan Glazer,185,
+287,Anora,2025,True,491,231.21,Comedy,Sean Baker,183,
+288,The Brutalist,2025,False,5,2.11,Drama,Brady Corbet,184,
+289,A Complete Unknown,2025,False,29,13.91,Biography,James Mangold,160,
+291,Conclave,2025,False,0,0.0,Drama,Edward Berger,177,
+293,Emilia Pérez,2025,False,28,14.32,Crime,Jacques Audiard,186,
+294,Nickel Boys,2025,False,2,0.97,Drama,RaMell Ross,187,
+295,I'm Still Here,2025,False,2,8.29,Biography,Walter Salles,188,
+296,The Substance,2025,False,0,0.0,Horror,Coralie Fargeat,189,
+297,Wicked,2025,False,0,0.0,Musical,Jon M. Chu,190,
+298,September 5,2025,False,0,0.0,Drama,Tim Fehlbaum,191,
