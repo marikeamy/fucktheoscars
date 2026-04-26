@@ -220,11 +220,52 @@ p {
   width: 100vw;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   background: #0D3349;
+  color: #fff;
+  padding: 40px 60px 32px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.section-statues__decades {
+  display: flex;
+  flex: 1;
+}
+
+.decade-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 12px;
+}
+
+.decade-column__label {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.decade-column__films {
+  display: flex;
+  justify-content: center;
 }
 
 /*La section du horizontal-wrapper fait 200vw divisé en deux 100vw par ses enfants. */
 .horizontal-wrapper {
   display: flex;
   width: 300vw;
+}
+
+.decade-column__films circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+
+.decade-column__films circle:hover {
+  transform: scale(2);
 }

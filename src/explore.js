@@ -22,8 +22,6 @@ const oscarWinners = films
     .filter(d => d.won_oscar === true)
     .sort((a, b) => a.oscar_year - b.oscar_year);
 
-console.log(oscarWinners.filter(d => d.oscar_year < 1990))
-
 // SVG, SCALES AND AXES
 
 // create the svgs
