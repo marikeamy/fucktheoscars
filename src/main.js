@@ -1,6 +1,7 @@
 import './style.css' 
 import { getData, getMoviesByDecade } from './data.js'
 import { drawStatues } from './statues.js'
+import { drawEvolution } from './evolution.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -19,11 +20,9 @@ gsap.to(horizontalWrapper, {
     scrollTrigger: {                                                                                                                                  
       trigger: horizontalWrapper,
       pin: true,                                                                                                                                      
-      scrub: true,
+      scrub: 1,
       //end définit combien de scroll vertical déclenche l'animation.
       end: () => "+=" + (window.innerWidth * 2),
-      //Voir les marqueurs de scroll, temporaire
-      markers:true,
       //Demande à GSAP de recalculer les valeurs si la fenêtre change. Permet d'éviter les problèmes
       //de changement de taille de page.
       //Il faut aussi passer end et x en fonction fléchées pour que ça fonctionne.
@@ -36,6 +35,8 @@ window._st = ScrollTrigger.getAll()
 const main = async () => {                                                                                                                          
       const uniqueMovies = await getData()                                                                                                            
       const decades = getMoviesByDecade(uniqueMovies)                                                                                                 
-      drawStatues(decades)                                                                                                                            
+      drawStatues(decades) 
+      
+      drawEvolution(uniqueMovies)
   }               
   main()

@@ -328,3 +328,20 @@ p {
   }   
 
   .finger-fill #skin path { fill: var(--night-blue) !important; }
+
+.section-timeline{
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0D3349;
+  color: #fff;
+  padding: 40px 60px 32px;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.section-timeline__graph {
+    max-width: 900px; /* Adapte cette valeur */
+    margin: 0 auto;   /* Pour centrer le graphique */
+}
