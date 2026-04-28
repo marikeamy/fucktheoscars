@@ -70,13 +70,31 @@ export const drawStatues = (decades) => {
         const drag = d3.drag()                                                                                                                                                                                         
             .on('drag', (event) => {
                 //getBoundingClientRect() ?
-                const h = container.getBoundingClientRect().height                                                                                                                                                     
+                const h = container.getBoundingClientRect().height  
+                //claude chariabia et des maths, un vrai plaisir                                                                                                                                                   
                 fillRatio = Math.max(0, Math.min(1, fillRatio - event.dy / h))                                                                                                                                         
                 fingerFill.style.clipPath = `inset(${(1 - fillRatio) * 100}% 0 0 0)`
                 countEl.textContent = Math.round(fillRatio * +modal.dataset.maxFucks)                                                                                                                                  
             })
 
         d3.select(container).call(drag)
+
+        //Gestion bouton "check"
+        modal.querySelector('.modal-guess__check').onclick = () => {
+            const guess = Math.round(fillRatio * +modal.dataset.maxFucks)                                                                                                                                              
+            const actual = +movie.total_count_fucks                                                                                                                                                                    
+            modal.setAttribute('hidden', '')                                                                                                                                                                           
+            openResultModal(movie, guess, actual)                                                                                                                                                                      
+        } 
+
+        //Ouvrir la page de résultat
+          function openResultModal(movie, guess, actual) {                                                                                                                                                               
+            const modal = document.getElementById('modal-result')
+            modal.querySelector('.modal-result__film-title').textContent = movie.movie_title                                                                                                                           
+            modal.querySelector('.modal-result__guess-value').textContent = guess
+            modal.querySelector('.modal-result__response').textContent = actual                                                                                                                                        
+            modal.removeAttribute('hidden')
+        }          
 
         //Gestion de la croix pour fermer. Possible de faire un esc aussi plus tard ?       
         modal.querySelector('.modal-guess__close').onclick = () => modal.setAttribute('hidden', '')   
