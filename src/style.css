@@ -282,3 +282,8 @@ p {
   gap: 24px;
   box-sizing: border-box;
 }
+
+.section-timeline__graph {
+    max-width: 900px; /* Adapte cette valeur */
+    margin: 0 auto;   /* Pour centrer le graphique */
+}
