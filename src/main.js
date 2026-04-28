@@ -12,9 +12,6 @@ gsap.registerPlugin(ScrollTrigger)
 //L'élément qui se déplacera
 const horizontalWrapper = document.querySelector('.horizontal-wrapper');
 
-  console.log('innerWidth:', window.innerWidth)                                                                                                       
-  console.log('end:', "+=" + (window.innerWidth * 2))   
-
 //Gestion du scroll horizontal
 gsap.to(horizontalWrapper, {     
     //x = de combien on déplace horizontalement                                                                                                                             
