@@ -1,5 +1,8 @@
 import * as d3 from 'd3'
 import { positions } from './statuette-positions.js'
+//Le raw permet de demander à Vite d'importer le SVG en tant qu'image, et pas en tant
+//que ref. Utile pour l'utilisation dans le DOM + la gestion D3.
+import middleFingerSvg from './assets/middle-finger.svg?raw'
 
 export const drawStatues = (decades) => {
 
@@ -47,6 +50,33 @@ export const drawStatues = (decades) => {
         modal.querySelector('.modal-guess__meta').textContent = `${movie.oscar_year} · ${movie.director_name}` 
         modal.querySelector('.modal-guess__genre').textContent = movie.genre                                                
         modal.removeAttribute('hidden')  
+
+        const container = modal.querySelector('.modal-guess__svg-container')
+        container.innerHTML=`
+            <div class= "finger-base">${middleFingerSvg}</div>
+            <div class= "finger-fill">${middleFingerSvg}</div>
+        `
+
+        const fingerFill = container.querySelector('.finger-fill')                                                                                                                                                     
+        const countEl = modal.querySelector('.modal-guess__count')                                                                                                                                                     
+        let fillRatio = 0                                                                                                                                                                                              
+                
+        //Définir un max de + ou - 20% supp. que le nombre total de fucks dans un film. 
+        //Pourcentage calculé de manière random.
+        const max = Math.round(movie.total_count_fucks * (1.1 + Math.random() * 0.2))                                                                                                                                  
+        modal.dataset.maxFucks = max     
+
+        //Gestion du drag interne au fuck.
+        const drag = d3.drag()                                                                                                                                                                                         
+            .on('drag', (event) => {
+                //getBoundingClientRect() ?
+                const h = container.getBoundingClientRect().height                                                                                                                                                     
+                fillRatio = Math.max(0, Math.min(1, fillRatio - event.dy / h))                                                                                                                                         
+                fingerFill.style.clipPath = `inset(${(1 - fillRatio) * 100}% 0 0 0)`
+                countEl.textContent = Math.round(fillRatio * +modal.dataset.maxFucks)                                                                                                                                  
+            })
+
+        d3.select(container).call(drag)
 
         //Gestion de la croix pour fermer. Possible de faire un esc aussi plus tard ?       
         modal.querySelector('.modal-guess__close').onclick = () => modal.setAttribute('hidden', '')   

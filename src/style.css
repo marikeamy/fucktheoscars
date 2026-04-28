@@ -308,3 +308,23 @@ p {
     margin: 0;                                                                                                                                        
   }
 
+/* ==== Gestion du fuck dans le modal ==== */
+
+  .modal-guess__svg-container {
+    position: relative;                                                                                                                                                                                          
+  }
+                                                                                                                                                                                                                 
+  .finger-base svg, .finger-fill svg {
+    height: 200px;
+    width: auto;
+    display: block;                                                                                                                                                                                              
+  }
+                                                                                                                                                                                                                 
+  .finger-fill {  
+    position: absolute;
+    top: 0; left: 0;
+    /* clip-path définit une région de rognage. Inset crée un rectangle avec les mesures désirées. */
+    clip-path: inset(100% 0 0 0);
+  }   
+
+  .finger-fill #skin path { fill: var(--night-blue) !important; }
