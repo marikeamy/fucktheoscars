@@ -104,19 +104,33 @@
         </footer>
       </section>
     </div>
+
+
     <!-- MODAL — Guess the fucks -->
     <div class="modal-guess" id="modal-guess" hidden>
+      <div class="modal-guess__overlay"></div>
       <article class="modal-guess__panel">
         <div class="modal-guess__left">
+          <img class="modal-guess__img" src="" alt="" />
           <h2 class="modal-guess__film-title"></h2>
           <p class="modal-guess__meta"></p>
           <p class="modal-guess__description"></p>
-          <p class="modal-guess__genre"></p>
+          <div class="modal-guess__genres"></div>
         </div>
         <div class="modal-guess__right">
-          <input class="modal-guess__number-input" type="number" min="0" placeholder="0" />
-          <button class="modal-guess__submit" type="button">Check</button>
-          <progress class="modal-guess__progress" value="0" max="100"></progress>
+          <div class="modal-guess__chart">
+            <div class="modal-guess__bar-track">
+              <div class="modal-guess__bar-fill"></div>
+            </div>
+            <div class="modal-guess__axis">
+              <span class="modal-guess__axis-max">400</span>
+              <span class="modal-guess__axis-min">0</span>
+            </div>
+          </div>
+          <div class="modal-guess__input-area">
+            <input class="modal-guess__number-input" type="number" min="0" max="400" placeholder="0" />
+            <button class="modal-guess__submit" type="button">Check</button>
+          </div>
         </div>
       </article>
     </div>
