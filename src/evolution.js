@@ -29,7 +29,7 @@ export const drawEvolution = (films) => {
     const maxFucks = d3.max(films, d => d.total_count_fucks) || 1
     const rScale = d3.scaleSqrt()
         .domain([0, maxFucks])
-        .range([3, 18]) // rayon min/max en px (dans l'espace source 1268px)
+        .range([3, 12]) // rayon min/max en px (dans l'espace source 1268px)
 
     // Conteneur principal
     const container = d3.select('.section-timeline__graph')
@@ -144,9 +144,9 @@ export const drawEvolution = (films) => {
 
     // Oscar winner
     svg.append('circle').attr('cx', legendX).attr('cy', legendY).attr('r', 7).attr('fill', '#FFB703')
-    svg.append('text').attr('x', legendX + 14).attr('y', legendY + 5).attr('fill', '#fff').attr('font-size', 12).text('Oscar winner')
+    svg.append('text').attr('x', legendX + 14).attr('y', legendY + 5).attr('fill', '#fff').attr('font-size', 13).text('Oscar winner')
 
     // Nominé
     svg.append('circle').attr('cx', legendX + 130).attr('cy', legendY).attr('r', 7).attr('fill', '#8ECAE6')
-    svg.append('text').attr('x', legendX + 144).attr('y', legendY + 5).attr('fill', '#fff').attr('font-size', 12).text('Nominated')
+    svg.append('text').attr('x', legendX + 144).attr('y', legendY + 5).attr('fill', '#fff').attr('font-size', 13).text('Nominated')
 }
