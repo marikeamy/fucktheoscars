@@ -269,3 +269,42 @@ p {
 .decade-column__films circle:hover {
   transform: scale(2);
 }
+
+.modal-guess {                                                                                                                                      
+    position: fixed;                                                                                                                                  
+    inset: 0;                                                                                                                                         
+    background: rgba(0,0,0,0.7);                                                                                                                      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;                                                                                                                                    
+  }
+                                                                                                                                                      
+  .modal-guess[hidden] {
+    display: none;
+  }
+
+  .modal-guess__panel {
+    display:flex;
+    gap: 40px;
+    background: var(--yellow);
+    color: var(--night-blue);                                                                                                                                      
+    border-radius: 12px;
+    padding: 40px;                                                                                                                                    
+    max-width: 600px;
+  }
+
+   .modal-guess__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    }       
+
+    .modal-guess__count {                                                                                                                               
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--night-blue);
+    margin: 0;                                                                                                                                        
+  }
+
