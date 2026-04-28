@@ -1,6 +1,7 @@
 import './style.css' 
 import { getData, getMoviesByDecade } from './data.js'
 import { drawStatues } from './statues.js'
+import { drawEvolution } from './evolution.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
@@ -36,6 +37,8 @@ window._st = ScrollTrigger.getAll()
 const main = async () => {                                                                                                                          
       const uniqueMovies = await getData()                                                                                                            
       const decades = getMoviesByDecade(uniqueMovies)                                                                                                 
-      drawStatues(decades)                                                                                                                            
+      drawStatues(decades) 
+      
+      drawEvolution(uniqueMovies)
   }               
   main()
