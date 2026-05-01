@@ -99,9 +99,20 @@
         </div>
 
         <footer class="section-statues__footer">
-          <p class="section-statues__caption"></p>
-          <p class="section-statues__warning"></p>
+          <div class="statues-legend">
+            <span class="statues-legend__item">
+              <span class="statues-legend__dot statues-legend__dot--winner"></span>Oscar winner
+            </span>
+            <span class="statues-legend__item">
+              <span class="statues-legend__dot statues-legend__dot--nominee"></span>Nominated
+            </span>
+            <span class="statues-legend__item">
+              <span class="statues-legend__dot statues-legend__dot--empty"></span>No data
+            </span>
+          </div>
+          <p class="section-statues__ps">P.S: you can't get out of here without taking a guess :)</p>
         </footer>
+
       </section>
     </div>
 
@@ -115,6 +126,7 @@
           <h2 class="modal-guess__film-title"></h2>
           <p class="modal-guess__meta"></p>                                                                                                                   
           <p class="modal-guess__genre"></p>
+          <p class="modal-guess__description"></p>
         </div>
         <div class="modal-guess__right">
           <p class="modal-guess__count">0</p>  
@@ -127,31 +139,21 @@
     <!-- MODAL — Result -->
     <div class="modal-result" id="modal-result" hidden>
       <article class="modal-result__panel">
-        <header class="modal-result__top">
-          <h2 class="modal-result__film-title"></h2>
-          <h3 class="modal-result__actual-label">Actual Total Fucks</h3>
-          <p class="modal-result__genre"></p>
-          <img class="modal-result__poster" src="" alt="" loading="lazy" />
-          <img class="modal-result__still" src="" alt="" loading="lazy" />
-        </header>
-        <div class="modal-result__left">
-          <p class="modal-result__response"></p>
-          <p class="modal-result__guess-label">Your guess</p>
-          <p class="modal-result__guess-value"></p>
-          <p class="modal-result__description"></p>
+        <p class="modal-result__reaction"></p>
+        <h2 class="modal-result__film-title"></h2>
+        <div class="modal-result__scores">
+          <div class="modal-result__score">
+            <p class="modal-result__score-label">Your guess</p>
+            <p class="modal-result__guess-value"></p>
+          </div>
+          <div class="modal-result__score">
+            <p class="modal-result__score-label">Actual fucks</p>
+            <p class="modal-result__response"></p>
+          </div>
         </div>
-        <div class="modal-result__right">
-          <p class="modal-result__citation"></p>
-        </div>
+        <p class="modal-result__comment"></p>
       </article>
     </div>
-
-    <!-- CHART — By genre -->
-    <section class="section-genre">
-      <h2 class="section-genre__title">Total fucks, displayed by genre.</h2>
-      <svg class="section-genre__graph"></svg>
-      <p class="section-genre__caption"></p>
-    </section>
 
     <!-- CHART — Timeline -->
     <section class="section-timeline">
@@ -163,7 +165,7 @@
     <section class="section-conclusion">
       <p class="section-conclusion__text"></p>
     </section>
-
+        <div class="statue-tooltip" id="statue-tooltip"></div>
   </main>
 </body>
 
