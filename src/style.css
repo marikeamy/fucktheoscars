@@ -36,7 +36,7 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--yellow);
+  background-color: #0D3349;
   color: var(--night-blue)
 }
 
@@ -71,6 +71,7 @@ p {
 }
 
 /* page 2, section exploration */
+
 .section-exploration {
   background: #0D3349;
   color: #fff;
@@ -165,7 +166,10 @@ p {
 .section-hero {
   background-color: var(--yellow);
   height: 100vh;
+  width: 100vw;
+  flex-shrink: 0;
   display: flex;
+  position: relative;
 }
 
 .section-hero__content {
@@ -174,7 +178,7 @@ p {
 }
 
 .section-hero__right {
-  margin-right: 5vw;
+  margin-right: 15vw;
   display: flex;
   justify-content: flex-end;
   flex:1;
@@ -218,14 +222,37 @@ p {
 
 .section-statues {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: #0D3349;
   color: #fff;
-  padding: 40px 60px 32px;
-  gap: 24px;
+  padding: 32px 60px 24px;
+  gap: 16px;
   box-sizing: border-box;
+}
+
+.section-statues__title {
+  color: var(--yellow);
+  font-size: 26px;
+}
+
+.section-statues__subtitle {
+  font-size: 16px;
+  color: var(--accent-color-blue);
+}
+
+.section-statues__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-statues__ps {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .section-statues__decades {
@@ -253,7 +280,7 @@ p {
   justify-content: center;
 }
 
-/*La section du horizontal-wrapper fait 200vw divisé en deux 100vw par ses enfants. */
+/*La section du horizontal-wrapper fait 300vw divisé en deux 100vw par ses enfants. */
 .horizontal-wrapper {
   display: flex;
   width: 300vw;
@@ -263,13 +290,265 @@ p {
   transform-box: fill-box;
   transform-origin: center;
   transition: transform 0.15s ease;
+  cursor: default;
+}
+
+.decade-column__films circle.circle--winner {
   cursor: pointer;
 }
 
-.decade-column__films circle:hover {
-  transform: scale(2);
+.decade-column__films circle.circle--winner:hover {
+  transform: scale(1.8);
+  filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.8));
 }
 
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+.modal-guess {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 48, 71, 0.80);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: backdrop-in 0.2s ease;
+}
+
+.modal-guess[hidden] {
+  display: none;
+}
+
+.modal-guess__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(2, 48, 71, 0.1);
+  border: none;
+  color: var(--night-blue);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.modal-guess__close:hover {
+  background: rgba(2, 48, 71, 0.22);
+}
+
+.modal-guess__film-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  padding-right: 40px;
+}
+
+.modal-guess__meta {
+  font-size: 12px;
+  opacity: 0.5;
+  margin: 0 0 10px;
+}
+
+.modal-guess__genre {
+  display: inline-block;
+  font-size: 11px;
+  background: rgba(2, 48, 71, 0.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin: 0 0 16px;
+}
+
+.modal-guess__description {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.65;
+  margin: 0;
+  border-top: 1px solid rgba(2, 48, 71, 0.15);
+  padding-top: 16px;
+}
+
+.modal-guess__check {
+  background: var(--night-blue);
+  color: var(--yellow);
+  border: none;
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.modal-guess__check:hover {
+  opacity: 0.85;
+}
+
+.modal-result {
+  width: 100%;
+  height: 100vh;
+  background: var(--night-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-result[hidden] {
+  display: none;
+}
+
+.modal-result__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  max-width: 560px;
+  padding: 40px;
+  color: #fff;
+}
+
+.modal-result__reaction {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: -1px;
+  margin: 0;
+  line-height: 1;
+}
+
+.modal-result__film-title {
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.modal-result__scores {
+  display: flex;
+  gap: 48px;
+}
+
+.modal-result__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.modal-result__score-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.modal-result__guess-value,
+.modal-result__response {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent-color-blue);
+  margin: 0;
+}
+
+.modal-result__comment {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 400px;
+  margin: 0;
+}
+
+.modal-result__continue {
+  margin-top: 8px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.modal-result__continue:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.modal-guess__panel {
+  display: flex;
+  gap: 0;
+  background: var(--yellow);
+  color: var(--night-blue);
+  border-radius: 20px;
+  max-width: 680px;
+  width: 90vw;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+  position: relative;
+  animation: panel-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-guess__left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-guess__right {
+  width: 200px;
+  border-left: 1px solid rgba(2, 48, 71, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 24px;
+}
+
+.modal-guess__count {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--night-blue);
+  margin: 0;
+  line-height: 1;
+}
+
+/* ==== Gestion du fuck dans le modal ==== */
+
+  .modal-guess__svg-container {
+    position: relative;                                                                                                                                                                                          
+  }
+                                                                                                                                                                                                                 
+  .finger-base svg, .finger-fill svg {
+    height: 200px;
+    width: auto;
+    display: block;                                                                                                                                                                                              
+  }
+                                                                                                                                                                                                                 
+  .finger-fill {  
+    position: absolute;
+    top: 0; left: 0;
+    /* clip-path définit une région de rognage. Inset crée un rectangle avec les mesures désirées. */
+    clip-path: inset(100% 0 0 0);
+  }   
+
+  .finger-fill #skin path { fill: var(--night-blue) !important; }
 
 .section-timeline{
   width: 100vw;
@@ -286,4 +565,40 @@ p {
 .section-timeline__graph {
     max-width: 900px; /* Adapte cette valeur */
     margin: 0 auto;   /* Pour centrer le graphique */
+}
+
+.statues-legend {
+  display: flex;
+  gap: 24px;
+}
+
+.statues-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.statues-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statues-legend__dot--winner  { background: #FFB703; }
+.statues-legend__dot--nominee { background: #8ECAE6; }
+.statues-legend__dot--empty   { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255,255,255,0.3); }
+
+.statue-tooltip {
+    position: fixed;
+    display: none;
+    background: #0D3349;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;                                                                                                                                    
+    font-size: 14px;
+    pointer-events: none;                                                                                                                                  
+    z-index: 999;
 }
