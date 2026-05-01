@@ -4,17 +4,15 @@ import { drawStatues } from './statues.js'
 import { drawEvolution } from './evolution.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import ScrollToPlugin from 'gsap/ScrollToPlugin'
 
-//Enregistrer le plugin.
-//Gsap utilise un système de plug-ins opt-ing, 
-//il faut préciser qu'il faut activer ScrollTrigger pour l'utiliser.
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 //L'élément qui se déplacera
 const horizontalWrapper = document.querySelector('.horizontal-wrapper');
 
 //Gestion du scroll horizontal
-gsap.to(horizontalWrapper, {     
+const horizontalTween = gsap.to(horizontalWrapper, {     
     //x = de combien on déplace horizontalement                                                                                                                             
     x: () => -(window.innerWidth * 2),                                                                                                                                        
     scrollTrigger: {                                                                                                                                  
