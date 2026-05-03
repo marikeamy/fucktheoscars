@@ -154,24 +154,28 @@ export const drawStatues = (decades) => {
             modal.querySelector('.modal-result__reaction').textContent = reaction
             modal.querySelector('.modal-result__comment').textContent = comment
 
-            // Deux citations depuis allFucks.csv, filtrées par movie_id
+            // Reset immédiat des citations (évite que l'ancien contenu reste visible)
             const quotesEl = modal.querySelector('.modal-result__quotes')
-            if (+actual === 0) {
-                quotesEl.hidden = true
-            } else {
-                quotesEl.hidden = false
+            const quoteEls = modal.querySelectorAll('.modal-result__quote')
+            quotesEl.hidden = true
+            quoteEls.forEach(el => {
+                el.hidden = true
+                el.querySelector('.modal-result__quote-text').textContent = ''
+                el.querySelector('.modal-result__quote-timestamp').textContent = ''
+            })
+
+            // Deux citations depuis allFucks.csv, filtrées par movie_id
+            if (actual > 0) {
                 const allFucks = await d3.csv('/data/allFucks.csv')
-                const fucks = allFucks.filter(f => f.movie_id === movie.movie_id).slice(0, 2)
-                const quoteEls = modal.querySelectorAll('.modal-result__quote')
-                quoteEls.forEach((el, i) => {
-                    if (fucks[i]) {
-                        el.hidden = false
-                        el.querySelector('.modal-result__quote-text').textContent = fucks[i].surrounding_text
-                        el.querySelector('.modal-result__quote-timestamp').textContent = fucks[i].timestamp
-                    } else {
-                        el.hidden = true
-                    }
-                })
+                const fucks = allFucks.filter(f => +f.movie_id === +movie.movie_id).slice(0, 2)
+                if (fucks.length > 0) {
+                    quotesEl.hidden = false
+                    fucks.forEach((f, i) => {
+                        quoteEls[i].hidden = false
+                        quoteEls[i].querySelector('.modal-result__quote-text').textContent = f.surrounding_text
+                        quoteEls[i].querySelector('.modal-result__quote-timestamp').textContent = f.timestamp
+                    })
+                }
             }
 
             modal.removeAttribute('hidden')
