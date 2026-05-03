@@ -1,7 +1,7 @@
 import './style.css' 
 import { getData, getMoviesByDecade } from './data.js'
 import { drawStatues } from './statues.js'
-import { drawEvolution } from './evolution.js'
+import { drawEvolution } from './timeline.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
