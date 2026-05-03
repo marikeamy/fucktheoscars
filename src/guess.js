@@ -1,4 +1,4 @@
-const MAX_FUCKS = 400
+const MAX_FUCKS = 1000
 
 const modal = document.getElementById('modal-guess')
 const barFill = modal.querySelector('.modal-guess__bar-fill')

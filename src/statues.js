@@ -85,7 +85,7 @@ export const drawStatues = (decades) => {
                 
         //Définir un max de + ou - 20% supp. que le nombre total de fucks dans un film. 
         //Pourcentage calculé de manière random.
-        const max = Math.round(movie.total_count_fucks * (1.1 + Math.random() * 0.2))                                                                                                                                  
+        const max = Math.max(20, Math.round(+movie.total_count_fucks * (1.1 + Math.random() * 0.2)))                                                                                                                                  
         modal.dataset.maxFucks = max     
 
         //Gestion du drag interne au fuck.
@@ -110,23 +110,40 @@ export const drawStatues = (decades) => {
         } 
 
         //Ouvrir la page de résultat
-          function openResultModal(movie, guess, actual) {
+          async function openResultModal(movie, guess, actual) {
             const modal = document.getElementById('modal-result')
-            modal.querySelector('.modal-result__film-title').textContent = movie.movie_title
-            modal.querySelector('.modal-result__guess-value').textContent = guess
-            modal.querySelector('.modal-result__response').textContent = actual
 
+            // Titre + année
+            modal.querySelector('.modal-result__film-title').textContent = `${movie.movie_title} - ${movie.oscar_year}`
+
+            // Genres (même logique que dans openGuessModal)
+            const genresEl = modal.querySelector('.modal-result__genres')
+            genresEl.innerHTML = ''
+            if (movie.genre?.trim()) {
+                movie.genre.split(',').forEach(g => {
+                    const tag = document.createElement('span')
+                    tag.className = 'modal-result__genre-tag'
+                    tag.textContent = g.trim()
+                    genresEl.appendChild(tag)
+                })
+            }
+
+            // Nombres
+            modal.querySelector('.modal-result__actual-value').textContent = actual
+            modal.querySelector('.modal-result__guess-value').textContent = guess
+
+            // Réaction + commentaire
             const diff = Math.abs(guess - actual)
             const pct = actual > 0 ? diff / actual : 1
 
             let reaction, comment
             if (diff === 0) {
                 reaction = 'PERFECT.'
-                comment = 'You nailed it exactly. Are you sure you haven\'t seen this movie?'
-            } else if (pct <= 0.15) {
+                comment = 'You nailed it exactly. Did you really count?'
+            } else if (pct <= 0.2) {
                 reaction = 'SO CLOSE.'
                 comment = `Only ${diff} fucks off. You clearly have a feel for it.`
-            } else if (pct <= 0.4) {
+            } else if (pct <= 0.6) {
                 reaction = 'NOT BAD.'
                 comment = `You were ${diff} fucks away. Could be worse.`
             } else {
@@ -136,6 +153,31 @@ export const drawStatues = (decades) => {
 
             modal.querySelector('.modal-result__reaction').textContent = reaction
             modal.querySelector('.modal-result__comment').textContent = comment
+
+            // Reset immédiat des citations (évite que l'ancien contenu reste visible)
+            const quotesEl = modal.querySelector('.modal-result__quotes')
+            const quoteEls = modal.querySelectorAll('.modal-result__quote')
+            quotesEl.hidden = true
+            quoteEls.forEach(el => {
+                el.hidden = true
+                el.querySelector('.modal-result__quote-text').textContent = ''
+                el.querySelector('.modal-result__quote-timestamp').textContent = ''
+            })
+
+            // Deux citations depuis allFucks.csv, filtrées par movie_id
+            if (actual > 0) {
+                const allFucks = await d3.csv('/data/allFucks.csv')
+                const fucks = allFucks.filter(f => +f.movie_id === +movie.movie_id).slice(0, 2)
+                if (fucks.length > 0) {
+                    quotesEl.hidden = false
+                    fucks.forEach((f, i) => {
+                        quoteEls[i].hidden = false
+                        quoteEls[i].querySelector('.modal-result__quote-text').textContent = f.surrounding_text
+                        quoteEls[i].querySelector('.modal-result__quote-timestamp').textContent = f.timestamp
+                    })
+                }
+            }
+
             modal.removeAttribute('hidden')
             modal.scrollIntoView({ behavior: 'smooth' })
             document.dispatchEvent(new CustomEvent('guess-submitted'))

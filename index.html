@@ -28,13 +28,19 @@
           <div class="section-hero__right">
             <div class="section-hero__filmstrip">
               <!-- les images (x2 pour le loop) -->
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/platoon/platoon.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/titanic/titanic1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/chicago/chicago1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/schindlers/schindlers1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/gladiator/gladiator1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/braveheart/braveheart1.jpg" alt="" />
               <!-- on duplicate pour qu'il n'y ait pas d'espace blanc avant de recommencer le loop. -->
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
-              <img class="section-hero__still" src="https://placehold.co/450x300" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/platoon/platoon.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/titanic/titanic1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/chicago/chicago1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/schindlers/schindlers1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/gladiator/gladiator1.jpg" alt="" />
+              <img class="section-hero__still" src="/src/assets/images/braveheart/braveheart1.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -129,9 +135,10 @@
           <p class="modal-guess__description"></p>
         </div>
         <div class="modal-guess__right">
-          <p class="modal-guess__count">0</p>  
-          <button class="modal-guess__check">Check</button>                                                                                                             
-          <div class="modal-guess__svg-container"></div>  
+          <p class="modal-guess__count">0</p>
+          <p class="modal-guess__hint">Drag up to set your guess</p>
+          <button class="modal-guess__check">Check</button>
+          <div class="modal-guess__svg-container"></div>
         </div>
       </article>
     </div>
@@ -139,19 +146,46 @@
     <!-- MODAL — Result -->
     <div class="modal-result" id="modal-result" hidden>
       <article class="modal-result__panel">
-        <p class="modal-result__reaction"></p>
-        <h2 class="modal-result__film-title"></h2>
-        <div class="modal-result__scores">
-          <div class="modal-result__score">
-            <p class="modal-result__score-label">Your guess</p>
-            <p class="modal-result__guess-value"></p>
+
+        <div class="modal-result__top">
+          <div class="modal-result__info">
+            <h2 class="modal-result__film-title"></h2>
+            <p class="modal-result__total-label">actual total fucks</p>
+            <div class="modal-result__genres"></div>
           </div>
-          <div class="modal-result__score">
-            <p class="modal-result__score-label">Actual fucks</p>
-            <p class="modal-result__response"></p>
+          <div class="modal-result__images">
+            <div class="modal-result__img-placeholder"></div>
+            <div class="modal-result__img-placeholder"></div>
+            <div class="modal-result__img-placeholder"></div>
+            <div class="modal-result__img-placeholder"></div>
           </div>
         </div>
-        <p class="modal-result__comment"></p>
+
+        <div class="modal-result__bottom">
+          <div class="modal-result__left">
+            <div class="modal-result__counts">
+              <span class="modal-result__actual-value"></span>
+              <div class="modal-result__guess-block">
+                <p class="modal-result__guess-label">your guess</p>
+                <span class="modal-result__guess-value"></span>
+              </div>
+            </div>
+            <p class="modal-result__reaction"></p>
+            <p class="modal-result__comment"></p>
+          </div>
+          <div class="modal-result__quotes">
+            <div class="modal-result__quote">
+              <p class="modal-result__quote-text"></p>
+              <p class="modal-result__quote-timestamp"></p>
+            </div>
+            <div class="modal-result__quote">
+              <p class="modal-result__quote-text"></p>
+              <p class="modal-result__quote-timestamp"></p>
+            </div>
+          </div>
+        </div>
+
+        <button class="modal-result__continue">Continue →</button>
       </article>
     </div>
 
