@@ -264,6 +264,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex: 1;
   gap: 12px;
 }
@@ -398,6 +399,8 @@ p {
   opacity: 0.85;
 }
 
+/* ── MODAL RESULT ── */
+
 .modal-result {
   width: 100%;
   height: 100vh;
@@ -405,6 +408,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 
 .modal-result[hidden] {
@@ -414,66 +418,171 @@ p {
 .modal-result__panel {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  text-align: center;
-  max-width: 560px;
-  padding: 40px;
+  gap: 56px;
+  max-width: 960px;
+  width: 90%;
+  padding: 64px 56px;
   color: #fff;
 }
 
-.modal-result__reaction {
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--yellow);
-  letter-spacing: -1px;
-  margin: 0;
-  line-height: 1;
+/* TOP : info à gauche, images à droite */
+.modal-result__top {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.modal-result__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
 
 .modal-result__film-title {
-  font-size: 20px;
-  color: rgba(255,255,255,0.6);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-color-blue);
   margin: 0;
 }
 
-.modal-result__scores {
-  display: flex;
-  gap: 48px;
+.modal-result__total-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0;
 }
 
-.modal-result__score {
+.modal-result__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.modal-result__genre-tag {
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+.modal-result__images {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.modal-result__img-placeholder {
+  width: 150px;
+  height: 100px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+}
+
+/* BOTTOM : nombres+commentaire à gauche, citations à droite */
+.modal-result__bottom {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.modal-result__left {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
+  gap: 12px;
+  flex: 1;
 }
 
-.modal-result__score-label {
-  font-size: 12px;
+.modal-result__counts {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.modal-result__actual-value {
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.modal-result__guess-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+}
+
+.modal-result__guess-label {
+  font-size: 11px;
   color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin: 0;
 }
 
-.modal-result__guess-value,
-.modal-result__response {
-  font-size: 48px;
+.modal-result__guess-value {
+  font-size: 52px;
   font-weight: 700;
   color: var(--accent-color-blue);
+  line-height: 1;
+}
+
+.modal-result__reaction {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
   margin: 0;
 }
 
 .modal-result__comment {
-  font-size: 16px;
-  color: rgba(255,255,255,0.7);
-  max-width: 400px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
   margin: 0;
 }
 
+/* CITATIONS */
+.modal-result__quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 1;
+}
+
+.modal-result__quote {
+  position: relative;
+  padding: 16px 20px 16px 24px;
+}
+
+.modal-result__quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -14px;
+  left: 8px;
+  font-size: 72px;
+  color: var(--yellow);
+  opacity: 0.4;
+  line-height: 1;
+}
+
+.modal-result__quote-text {
+  font-size: 17px;
+  color: var(--yellow);
+  margin: 0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.modal-result__quote-timestamp {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  margin: 6px 0 0;
+}
+
 .modal-result__continue {
-  margin-top: 8px;
+  align-self: flex-end;
   background: none;
   border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
@@ -575,14 +684,14 @@ p {
 .statues-legend__item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
+  gap: 10px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .statues-legend__dot {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   flex-shrink: 0;
 }
