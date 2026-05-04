@@ -36,6 +36,7 @@
   body {
     margin: 0;
     background: linear-gradient(135deg, #011829 0%, #023047 55%, #0a2e40 100%);
+    background-attachment: fixed;
     min-height: 100vh;
     color: var(--night-blue)
   }
@@ -79,12 +80,13 @@
   .section-exploration {
     background: transparent;
     color: #fff;
-    min-height: 100vh;
-    padding: 60px 40px 40px;
+    height: 100vh;
+    padding: 32px 60px 24px;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
+    box-sizing: border-box;
   }
 
   .section-exploration__subtitle {
@@ -111,7 +113,6 @@
   }
 
   .section-exploration__title {
-    margin: 0 0 12px;
     color: var(--yellow);
     font-size: 26px;
   }
@@ -730,8 +731,7 @@
     flex-direction: column;
     background: transparent;
     color: #fff;
-    padding: 40px 60px 32px;
-    gap: 24px;
+    padding: 32px 60px 24px;
     box-sizing: border-box;
   }
 
@@ -793,4 +793,9 @@
     font-size: 14px;
     pointer-events: none;
     z-index: 999;
+  }
+
+  .section-timeline__subtitle {
+    font-size: 16px;
+    color: var(--accent-color-blue);
   }
