@@ -26,6 +26,7 @@ const oscarWinners = films
 
 // create the svgs
 const timelineSvg = d3.select('.section-exploration__timeline');
+
 const brushSvg = d3.select('.section-exploration__brush');
 
 // Largeur basée sur le conteneur pour être responsive
