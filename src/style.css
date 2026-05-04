@@ -799,3 +799,10 @@
     font-size: 16px;
     color: var(--accent-color-blue);
   }
+
+  .brush .handle {
+    fill: #FFB703;
+    rx: 3px;
+    width: 6px;
+    cursor: ew-resize;
+}
