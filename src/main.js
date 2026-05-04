@@ -12,34 +12,45 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const horizontalWrapper = document.querySelector('.horizontal-wrapper');
 
 //Gestion du scroll horizontal
-const horizontalTween = gsap.to(horizontalWrapper, {     
-    //x = de combien on déplace horizontalement                                                                                                                             
-    x: () => -(window.innerWidth * 2),                                                                                                                                        
-    scrollTrigger: {                                                                                                                                  
+const horizontalTween = gsap.to(horizontalWrapper, {
+    x: () => -(window.innerWidth * 2),
+    scrollTrigger: {
       trigger: horizontalWrapper,
       pin: true,
       scrub: 1,
-      anticipatePin: 1,
-      //end définit combien de scroll vertical déclenche l'animation.
       end: () => "+=" + (window.innerWidth * 2),
-      //Demande à GSAP de recalculer les valeurs si la fenêtre change. Permet d'éviter les problèmes
-      //de changement de taille de page.
-      //Il faut aussi passer end et x en fonction fléchées pour que ça fonctionne.
-      invalidateOnRefresh: true                                                                                                                            
-    }             
+      invalidateOnRefresh: true
+    }
 })
 
 window._st = ScrollTrigger.getAll()
 
-// Bloque le scroll vertical tant qu'aucun guess n'a été soumis
+let heroUnlocked = false
+
 let guessSubmitted = false
 document.addEventListener('guess-submitted', () => { guessSubmitted = true })
 
+document.querySelector('.section-hero__next').addEventListener('click', () => {
+  const overlay = document.getElementById('intro-overlay')
+  overlay.hidden = false
+})
+
+document.querySelector('.intro-overlay__discover').addEventListener('click', () => {
+  const overlay = document.getElementById('intro-overlay')
+  heroUnlocked = true
+  window.scrollTo(0, window.innerWidth)
+  setTimeout(() => { overlay.hidden = true }, 1000)
+})
+
 window.addEventListener('scroll', () => {
-    const pinEnd = window.innerWidth * 2
-    if (!guessSubmitted && window.scrollY > pinEnd) {
-        window.scrollTo(0, pinEnd)
-    }
+  if (!heroUnlocked) {
+    window.scrollTo(0, 0)
+    return
+  }
+  const pinEnd = window.innerWidth * 2
+  if (!guessSubmitted && window.scrollY > pinEnd) {
+    window.scrollTo(0, pinEnd)
+  }
 })
 
 const main = async () => {                                                                                                                          
