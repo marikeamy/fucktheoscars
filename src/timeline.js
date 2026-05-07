@@ -79,7 +79,7 @@ export const drawEvolution = async (films) => {
                     })
                     .on('mousemove', (event) => {
                         tooltip.style.left = (event.clientX + 20) + 'px'
-                        tooltip.style.top  = (event.clientY + 20) + 'px'
+                        tooltip.style.top = (event.clientY + 20) + 'px'
                     })
                     .on('mouseout', function () {
                         d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
@@ -121,7 +121,7 @@ export const drawEvolution = async (films) => {
                 })
                 .on('mousemove', (event) => {
                     tooltip.style.left = (event.clientX + 20) + 'px'
-                    tooltip.style.top  = (event.clientY + 20) + 'px'
+                    tooltip.style.top = (event.clientY + 20) + 'px'
                 })
                 .on('mouseout', function () {
                     d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
@@ -156,50 +156,22 @@ export const drawEvolution = async (films) => {
         svg.append('text')
             .attr('x', x).attr('y', timelineY + 22)
             .attr('text-anchor', 'middle').attr('fill', '#fff')
-            .attr('font-size', 20).attr('opacity', 0.6)
+            .attr('font-size', 16).attr('opacity', 0.6)
             .text(year)
     })
 
 
-    // --- LÉGENDE ---
-    // Plus d'écart sous la timeline
-    const legendY = timelineY + 80
-    const FONT = 20
-    const R = 8
-
-    // GAUCHE — couleurs (aligné à x=0)
-    const leftItems = [
-        { fill: '#FFB703',                  label: 'Oscar winner' },
-        { fill: '#8ECAE6',                  label: 'Nominated'    },
-        { fill: 'rgba(255,255,255,0.08)',    label: 'No data'      },
-    ]
-    leftItems.forEach((item, i) => {
-        const x = i * 220
-        svg.append('circle')
-            .attr('cx', x + R).attr('cy', legendY)
-            .attr('r', R).attr('fill', item.fill)
-        svg.append('text')
-            .attr('x', x + R * 2 + 6).attr('y', legendY + 6)
-            .attr('fill', '#fff').attr('font-size', FONT).attr('opacity', 0.7)
-            .text(item.label)
-    })
-
-    // DROITE — échelle de taille, bulles puis label à leur gauche
+    // Bulles d'échelle dans le SVG HTML (pas dans le grand SVG D3)
+    const scaleSvg = d3.select('.timeline-legend__scale')
     const scaleValues = [0.2, 0.5, 1].map(p => Math.round(maxFucks * p))
-    let cursorX = TOTAL_WIDTH - 10
+    let cx = 80
+        ;[...scaleValues].reverse().forEach(value => {
+            const r = rScale(value)
+            cx -= (r + 6)
+            scaleSvg.append('circle')
+                .attr('cx', cx).attr('cy', 8)
+                .attr('r', r).attr('fill', 'rgba(255,255,255,0.25)')
+            cx -= r
+        })
 
-    ;[...scaleValues].reverse().forEach(value => {
-        const r = rScale(value)
-        cursorX -= (r + 8)
-        svg.append('circle')
-            .attr('cx', cursorX).attr('cy', legendY)
-            .attr('r', r).attr('fill', 'rgba(255,255,255,0.25)')
-        cursorX -= r
-    })
-
-    svg.append('text')
-        .attr('x', cursorX - 10).attr('y', legendY + 6)
-        .attr('text-anchor', 'end')
-        .attr('fill', '#fff').attr('font-size', FONT).attr('opacity', 0.5)
-        .text('size = total nb of fucks')
 }

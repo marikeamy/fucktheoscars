@@ -193,8 +193,32 @@
     <!-- CHART — Timeline -->
     <section class="section-timeline">
       <h2 class="section-timeline__title">But how did the number of fucks evolve with time?</h2>
-      <p class="section-timeline__subtitle">This visualisation shows every nominee and Oscar winning movie, grouped by decade.</p>
+      <p class="section-timeline__subtitle">This visualisation shows every nominee and Oscar winning movie, grouped by
+        decade.</p>
       <svg class="section-timeline__graph"></svg>
+
+      <!-- Légende en HTML, pas dans le SVG -->
+      <div class="section-timeline-legend">
+        <div class="section-timeline-legend__left">
+          <span class="section-timeline-legend__item">
+            <span class="section-timeline-legend__dot" style="background:#FFB703"></span>
+            Oscar winner
+          </span>
+          <span class="section-timeline-legend__item">
+            <span class="section-timeline-legend__dot" style="background:#8ECAE6"></span>
+            Nominated
+          </span>
+          <span class="section-timeline-legend__item">
+            <span class="section-timeline-legend__dot"
+              style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.3)"></span>
+            No data
+          </span>
+        </div>
+        <div class="timeline-legend__right">
+          <span style="opacity:0.5">size = total nb of fucks</span>
+          <svg class="timeline-legend__scale" width="80" height="16"></svg>
+        </div>
+      </div>
     </section>
 
     <!-- CONCLUSION -->

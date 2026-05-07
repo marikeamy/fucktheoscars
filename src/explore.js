@@ -1,4 +1,6 @@
 import * as d3 from 'd3'
+// Import de toutes les images depuis assets/images (Vite les bundle automatiquement)
+const allImages = import.meta.glob('./assets/images/*/*.{jpg,jpeg,png,webp}', { eager: true })
 
 // DATA LOADING AND CLEANING
 const raw = await d3.csv('./data/allMovies.csv')
@@ -37,7 +39,7 @@ await new Promise(resolve => requestAnimationFrame(resolve))
 
 const svgNode = timelineSvg.node()
 
-const width = svgNode.clientWidth || svgNode.parentElement.clientWidth || window.innerWidth - 80; 
+const width = svgNode.clientWidth || svgNode.parentElement.clientWidth || window.innerWidth - 80;
 const timelineHeight = 300;
 const brushHeight = 40;
 const margin = { top: 20, right: 40, bottom: 30, left: 40 };
@@ -101,6 +103,19 @@ const dots = dotsGroup.selectAll('.film-dot')
     .attr('opacity', 0.9)
     .attr('cursor', 'pointer');
 
+function getPosterUrl(movieTitle) {
+    if (!movieTitle) return ''
+
+    const normalize = str => str.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+    const match = Object.entries(allImages).find(([path]) => {
+        const folderName = path.split('/images/')[1]?.split('/')[0] || ''
+        return normalize(folderName) === normalize(movieTitle)
+    })
+
+    return match ? match[1].default : ''
+}
+
 // --- 6. TOOLTIP INTERACTION ---
 const tooltip = d3.select('#film-card');
 
@@ -115,7 +130,7 @@ dots
             .attr('r', 10);
 
         // Injection des données dans la carte html
-        tooltip.select('.film-card__img').attr('src', d.poster_url || '');
+        tooltip.select('.film-card__img').attr('src', getPosterUrl(d.movie_title));
         tooltip.select('.film-card__title').text(`${d.movie_title || 'Unknown'} (${d.oscar_year})`);
         tooltip.select('.film-card__meta').text(`★ Winner | Dir: ${d.director_name || 'Unknown'}`);
         tooltip.select('.film-card__synopsis').text(d.synopsis || '');
