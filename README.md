@@ -18,7 +18,7 @@ Second, our subtitles come from YtsSubs.org, a platform where files are user-upl
 
 Third, all subtitles were collected in English, regardless of the film's original language. For non-English nominees like Parasite, Roma, or Amour, we worked from English translations. This means we're not measuring the original dialogue — we're measuring how a translator chose to render it. A "fuck" in an English subtitle might be standing in for something that carried a completely different weight in Korean or Spanish.
 
-Fourth, film runtime matters. A three-hour epic has more opportunities to drop f-bombs than a ninety-minute drama. In some visualizations we display raw counts; in others we normalize by runtime (fucks per hour) to give a fairer comparison. We try to be clear about which is which.
+Fourth, film runtime matters. A three-hour epic has more opportunities to drop f-bombs than a ninety-minute drama. We used the raw counts in our visualizations for simplicity and to "exagerate" the visualizations, but we could have used the normalized number (by runtime - fucks per hour) to give a fairer comparison. We try to be clear about the data we used.
 
 Fifth, the number of Best Picture nominees has varied over time. There were typically five nominees until 2010, when the Academy expanded the category to up to ten. We included all nominees each year, which means some years are represented by more films than others.
 
@@ -27,42 +27,47 @@ Finally, we came into this project with a hypothesis: that the Oscars tend to re
 ## Methodology
 We downloaded subtitle files for each Best Picture Oscar winner and all nominees over the past 50 years from YtsSubs.org (SRT or SUB format). We then used Claude AI (claude-sonnet-3.5) to identify every instance of the word "fuck" in each file, capturing the timestamp, the exact word form, and the surrounding paragraph for each occurrence.
 For the linguistic classification, labeling each occurrence as an insult, intensifier, expression of shock, sexual reference, and so on. We used Claude to define the categories and apply them to each entry. We then reviewed the full dataset ourselves, correcting the cases where the classification felt off. Each person was responsible for a portion of the review. This means the categories themselves carry some AI-induced subjectivity, and our corrections carry some human-induced subjectivity. Another reviewer might have landed somewhere different.
-Runtime data was collected separately (table no 2) and used to calculate a normalized "fucks per hour" metric for visualizations where raw counts would be misleading. 
 
-### Data came from different sources :
+### Coding
+We used Claude a lot in this project, unfortunately. Based on our wireframes and the precise instructions given to it, it provided us parts of code, which we reviewed and put in our code. Therefore, the code is probably far from good. But we tried to understand everything.
+
+
+### Sources of the data 
 1.	YtsSubs.org (https://yts-subs.com/) -> for subtitles (SRT or SUB file format). 
 YtsSubs is a public platform hosting a large repertoire of movies and their subtitles in multiple languages. Subtitles are user-uploaded, and their extraction method is unknown (see Biases part). Each subtitle file can be rated by other users through a "correspondence" vote system based on likes.
 Users upload subtitles for various reasons: improving accessibility for deaf or hard-of-hearing viewers, filling gaps where official subtitles are unavailable, or simply contributing to an open community resource. Many users also download subtitles to pair them with movies they have streamed or downloaded elsewhere.
-2. Oscars.org (https://awardsdatabase.oscars.org/) -> for every oscar winning movies and nominees of each year since 1980.
+2. Oscars.org (https://awardsdatabase.oscars.org/) -> to get the name of every oscar winning movies and nominees of each year since 1980.
 3. Claude.ai -> for analyzing every occurrence of “fuck” in the subtitles and helping us build our data table.
 4. Our very own minds to review subtitles and context.
 
-
-The main data is stored in a table with the columns listed below: 
+### Data
+The main data (the information about the movies) is stored in a table with the columns listed below: 
 
 | column | type | description |
 |:---|:---|:---|
-| occurrence_id | INTEGER | Unique id of the “fuck” occurence |
 | movie_id | INTEGER | Unique id of the movie related |
-| movie_title | STRING | Title of the movie |
-| genre | STRING | Genre of the movie |
-| director_name | STRING | Director of the movie |
-| director_id | INTEGER | Unique id of the director |
-| oscar_year | INTEGER | Year of the Oscar ceremony |
-| won_oscar | BOOLEAN | True if the movie was the Best Picture Winner, false if it stayed a nominee |
-| exact_word | STRING | Exact word used (example : fucker, fucking, motherfucker…) |
-| surrounding_text | TEXT | Phrase or paragraph surrounding the occurence |
-| linguistic_context | STRING | Context (insult, intensifier, shock, etc.) |
-| timestamp | STRING | Timestamp of the « fuck » occurrence in the movie |
-
-
-We also have another table with the number of fucks / hour, to make the comparison fairer.
-| column | type | description |
-|:---|:---|:---|
-| movie_id | INTEGER | Unique id of the movie related |
-| movie_title | STRING | Title of the movie |
+| movie_title | TEXT | Title of the movie |
+| oscar_year | INTEGER | Oscar year for which the movie was nominated/ won |
+| won_oscar | BOOLEAN | True or false whether the movie won an Oscar |
 | total_count_fucks | INTEGER | Total of the occurrences of the word “fuck” |
 | average_fucks_per_hour | INTEGER | Average of the number of occurrences of the word “fuck” said per hour, in the movie |
+| genre | TEXT | Main genre of the movie |
+| director_name | TEXT | First name and surnom of the movie's director |
+| director_id | INTEGER | Unique id identifying the director |
+| synopsis | TEXT | A summary of the movie |
+
+We also have another table with the number of fucks / hour, to make the comparison fairer.
+
+| column | type | description |
+|:---|:---|:---|
+| movie_id | INTEGER | Unique id of the movie related |
+| occurrence_id | INTEGER | Unique id of the “fuck” occurence |
+| exact_word | TEXT | Exact word used (example : fucker, fucking, motherfucker…) |
+| surrounding_text | TEXT | Phrase or paragraph surrounding the occurence |
+| linguistic_context | TEXT | Context (insult, intensifier, shock, etc.) |
+| timestamp | TEXT | Timestamp of the « fuck » occurrence in the movie |
+| won_oscar | BOOLEAN | True if the movie was the Best Picture Winner, false if it stayed a nominee |
+
 
 
 ## References
@@ -73,3 +78,48 @@ Datanaut (2022) did something pretty close to what we're doing: they looked at p
 Collider (2025) published a ranking of the most profane Best Picture winners (https://collider.com/oscars-best-picture-winners-most-profane-f-bombs-ranked/), counted by f-bombs: a fun list that lines up with some of what we found. Anora is apparently at the top with nearly 479 uses of the f-word, while others like Argo barely swear at all. It's a list, not really an analysis, which is kind of why we wanted to go further.
 
 The Pudding is our main inspiration, both for design and for how we think about the data. They make visual essays about cultural questions using data, and they're always clear about where things come from and what the limits are. Their piece on coughs and Oscars (https://journal-doi.org/10.731/pcbi.1007742/), tracking a totally different kind of moment in award shows, showed us that one small, weird detail can actually say a lot about something much bigger. And can be fun to dig!
+
+
+## Project architecture
+Our repo is structured as below :
+
+```
+public/
+└── data/
+    ├── allMovies.csv         # All Oscar-nominated films (1980–2024) with metadata (see above)
+    └── allFucks.csv          # Individual "fuck" occurrences with timestamps and context (see above)
+
+src/
+├── assets/
+│   ├── images/               # One folder per Oscar-winning film (camelCase), each with 4 scene stills
+│   ├── fonts/                # Custom font files (Brother.otf)
+│   └── svgs/                 # Source SVGs used as layout guides for the visualizations
+│       ├── fuck.svg          # The word "FUCK" made of circles
+│       ├── exclamation.svg   # The "!" made of circles
+│       ├── statuette.svg     # Oscar statuette shape made of circles
+│       └── middle-finger.svg # Used as the interactive guess slider
+│
+├── data.js                   # Data helpers — loads allMovies.csv, deduplicates by movie_id,
+│                             # and groups films into decade buckets (80s, 90s, 00s, 10s)
+│
+├── main.js                   # Entry point — sets up GSAP horizontal scroll (pinned, scrubbed),
+│                             # manages scroll locking (hero unlock + guess gate),
+│                             # loads data and calls drawStatues() and drawEvolution()
+│
+├── explore.js                # Page 2 viz — brushable horizontal timeline of Oscar winners,
+│                             # hoverable film cards with poster, synopsis, genre tags
+│
+├── statues.js                # Page 3 viz — four Oscar statuette shapes (one per decade),
+│                             # dots colored by winner/nominee status, click opens guess modal
+|
+|── guess.js                  # Interactive modal to guess the number of fucks in the chosen (clicked)
+|                             # oscarised movie 
+│
+├── timeline.js               # Page 4 viz — FUCK! typography filled with dots,
+│                             # one letter per decade, dot size = total nb of fucks
+│
+├── fuck-positions.js         # X/Y coordinates of each dot inside the FUCK! SVG, grouped by letter
+├── statuette-positions.js    # X/Y coordinates of each dot inside the statuette SVG
+│
+└── style.css                 # Global stylesheet for the entire site
+```
