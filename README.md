@@ -83,6 +83,7 @@ The Pudding is our main inspiration, both for design and for how we think about 
 ## Project architecture
 Our repo is structured as below :
 
+```
 public/
 └── data/
     ├── allMovies.csv         # All Oscar-nominated films (1980–2024) with metadata (see above)
@@ -121,3 +122,4 @@ src/
 ├── statuette-positions.js    # X/Y coordinates of each dot inside the statuette SVG
 │
 └── style.css                 # Global stylesheet for the entire site
+```
