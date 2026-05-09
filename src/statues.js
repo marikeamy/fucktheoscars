@@ -1,8 +1,16 @@
 import * as d3 from 'd3'
 import { positions } from './statuette-positions.js'
-//Le raw permet de demander à Vite d'importer le SVG en tant qu'image, et pas en tant
-//que ref. Utile pour l'utilisation dans le DOM + la gestion D3.
 import middleFingerSvg from './assets/middle-finger.svg?raw'
+
+const allImages = import.meta.glob('./assets/images/*/*.{jpg,jpeg,png,webp}', { eager: true })
+const normalize = str => str.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+function getMovieImages(movieTitle) {
+    const folderNorm = normalize(movieTitle)
+    return Object.entries(allImages)
+        .filter(([path]) => normalize(path.split('/images/')[1]?.split('/')[0] || '') === folderNorm)
+        .map(([, mod]) => mod.default)
+}
 
 export const drawStatues = (decades) => {
 
@@ -69,34 +77,62 @@ export const drawStatues = (decades) => {
         const modal = document.getElementById('modal-guess')
         modal.querySelector('.modal-guess__film-title').textContent = movie.movie_title
         modal.querySelector('.modal-guess__meta').textContent = `${movie.oscar_year} · ${movie.director_name}` 
-        modal.querySelector('.modal-guess__genre').textContent = movie.genre      
-        modal.querySelector('.modal-guess__description').textContent = movie.synopsis                                           
-        modal.removeAttribute('hidden')  
+        modal.querySelector('.modal-guess__genre').textContent = movie.genre
+        modal.querySelector('.modal-guess__description').textContent = movie.synopsis
+
+        const guessImgs = getMovieImages(movie.movie_title)
+        modal.querySelectorAll('.modal-guess__img-placeholder').forEach((el, i) => {
+            el.innerHTML = ''
+            if (guessImgs[i]) {
+                const img = document.createElement('img')
+                img.src = guessImgs[i]
+                img.alt = ''
+                el.appendChild(img)
+            }
+        })
+
+        modal.removeAttribute('hidden')
+
+        const hintEl = modal.querySelector('.modal-guess__hint')
+        hintEl.style.opacity = '1'
+
+        // Nettoyer une éventuelle flèche d'un précédent open
+        modal.querySelector('.modal-guess__arrow-hint')?.remove()
+        const hintArrow = document.createElement('div')
+        hintArrow.className = 'modal-guess__arrow-hint'
+        hintArrow.textContent = '↑'
 
         const container = modal.querySelector('.modal-guess__svg-container')
         container.innerHTML=`
             <div class= "finger-base">${middleFingerSvg}</div>
             <div class= "finger-fill">${middleFingerSvg}</div>
         `
+        container.appendChild(hintArrow)
 
-        const fingerFill = container.querySelector('.finger-fill')                                                                                                                                                     
-        const countEl = modal.querySelector('.modal-guess__count')                                                                                                                                                     
-        let fillRatio = 0                                                                                                                                                                                              
-                
-        //Définir un max de + ou - 20% supp. que le nombre total de fucks dans un film. 
+        const fingerFill = container.querySelector('.finger-fill')
+        const countEl = modal.querySelector('.modal-guess__count')
+        let fillRatio = 0
+        let hintDismissed = false
+
+        //Définir un max de + ou - 20% supp. que le nombre total de fucks dans un film.
         //Pourcentage calculé de manière random.
-        const max = Math.max(20, Math.round(+movie.total_count_fucks * (1.1 + Math.random() * 0.2)))                                                                                                                                  
-        modal.dataset.maxFucks = max     
+        const max = Math.max(20, Math.round(+movie.total_count_fucks * (1.1 + Math.random() * 0.2)))
+        modal.dataset.maxFucks = max
 
         //Gestion du drag interne au fuck.
-        const drag = d3.drag()                                                                                                                                                                                         
+        const drag = d3.drag()
             .on('drag', (event) => {
+                if (!hintDismissed) {
+                    hintDismissed = true
+                    hintEl.style.opacity = '0'
+                    hintArrow.style.opacity = '0'
+                }
                 //getBoundingClientRect() ?
-                const h = container.getBoundingClientRect().height  
-                //claude chariabia et des maths, un vrai plaisir                                                                                                                                                   
-                fillRatio = Math.max(0, Math.min(1, fillRatio - event.dy / h))                                                                                                                                         
+                const h = container.getBoundingClientRect().height
+                //claude chariabia et des maths, un vrai plaisir
+                fillRatio = Math.max(0, Math.min(1, fillRatio - event.dy / h))
                 fingerFill.style.clipPath = `inset(${(1 - fillRatio) * 100}% 0 0 0)`
-                countEl.textContent = Math.round(fillRatio * +modal.dataset.maxFucks)                                                                                                                                  
+                countEl.textContent = Math.round(fillRatio * +modal.dataset.maxFucks)
             })
 
         d3.select(container).call(drag)
@@ -127,6 +163,19 @@ export const drawStatues = (decades) => {
                     genresEl.appendChild(tag)
                 })
             }
+
+            // Images
+            const placeholders = modal.querySelectorAll('.modal-result__img-placeholder')
+            const imgs = getMovieImages(movie.movie_title)
+            placeholders.forEach((el, i) => {
+                el.innerHTML = ''
+                if (imgs[i]) {
+                    const img = document.createElement('img')
+                    img.src = imgs[i]
+                    img.alt = ''
+                    el.appendChild(img)
+                }
+            })
 
             // Nombres
             modal.querySelector('.modal-result__actual-value').textContent = actual

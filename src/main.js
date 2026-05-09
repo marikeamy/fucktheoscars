@@ -39,7 +39,7 @@ document.querySelector('.intro-overlay__discover').addEventListener('click', () 
   const overlay = document.getElementById('intro-overlay')
   heroUnlocked = true
   window.scrollTo(0, window.innerWidth)
-  setTimeout(() => { overlay.hidden = true }, 1000)
+  overlay.hidden = true
 })
 
 window.addEventListener('scroll', () => {
