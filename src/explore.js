@@ -150,25 +150,25 @@ dots
         tooltip.style('display', 'block')
     })
     .on('mousemove', (event) => {
-    const viz = document.querySelector('.section-exploration__viz')
-    const rect = viz.getBoundingClientRect()
-    const cardNode = tooltip.node()
-    const cardWidth = cardNode.offsetWidth   // ← largeur réelle
-    const cardHeight = cardNode.offsetHeight // ← hauteur réelle
+        const viz = document.querySelector('.section-exploration__viz')
+        const rect = viz.getBoundingClientRect()
+        const cardNode = tooltip.node()
+        const cardWidth = cardNode.offsetWidth   // ← largeur réelle
+        const cardHeight = cardNode.offsetHeight // ← hauteur réelle
 
-    let x = event.clientX - rect.left + 20
-    let y = event.clientY - rect.top + 20
+        let x = event.clientX - rect.left + 20
+        let y = event.clientY - rect.top + 20
 
-    if (event.clientX + cardWidth + 20 > window.innerWidth) {
-        x = event.clientX - rect.left - cardWidth - 5
-    }
+        if (event.clientX + cardWidth + 20 > window.innerWidth) {
+            x = event.clientX - rect.left - cardWidth - 5
+        }
 
-    if (event.clientY + cardHeight + 20 > window.innerHeight) {
-        y = event.clientY - rect.top - cardHeight - 20
-    }
+        if (event.clientY + cardHeight + 20 > window.innerHeight) {
+            y = event.clientY - rect.top - cardHeight - 20
+        }
 
-    tooltip.style('left', x + 'px').style('top', y + 'px')
-})
+        tooltip.style('left', x + 'px').style('top', y + 'px')
+    })
 
     .on('mouseout', function () {
         // Le point redevient normal
@@ -214,19 +214,6 @@ function brushed(event) {
     timelineLine
         .attr('x1', margin.left)
         .attr('x2', width - margin.right);
-}
-
-// --- 8. NEXT PAGE NAVIGATION (HORIZONTAL SCROLL) ---
-const nextBtn = document.querySelector('.section-exploration__next');
-
-if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-        // Avance de 100% de la largeur de la fenêtre (Scroll horizontal pur)
-        window.scrollBy({
-            left: window.innerWidth,
-            behavior: 'smooth'
-        });
-    });
 }
 
 console.log('oscarWinners', oscarWinners)
