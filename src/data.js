@@ -29,7 +29,7 @@ const getMoviesByDecade = (movies) => {
     const movies80s = movies.filter(movie => isFromDecade(movie, 1980, 1990));
     const movies90s = movies.filter(movie => isFromDecade(movie, 1990, 2000));
     const movies00s = movies.filter(movie => isFromDecade(movie, 2000, 2010));
-    const movies10s = movies.filter(movie => isFromDecade(movie, 2010, 2024));
+    const movies10s = movies.filter(movie => isFromDecade(movie, 2010, 2026));
     return {movies80s, movies90s, movies00s, movies10s}
 }
 

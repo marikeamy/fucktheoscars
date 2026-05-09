@@ -41,9 +41,9 @@ export const drawStatues = (decades) => {
 
         //Création des cercles
         svg.selectAll('circle')
-            .data(combined)
+            .data(combined.slice().sort((a, b) => (a.movie?.won_oscar === 'True' ? 1 : 0) - (b.movie?.won_oscar === 'True' ? 1 : 0)))
             .join('circle')
-            .attr('r', 6.5)
+            .attr('r', 5)
             .attr('cx', d => d.cx)
             .attr('cy', d => d.cy)
             .attr('class', d => d.movie?.won_oscar === 'True' ? 'circle--winner' : '')
