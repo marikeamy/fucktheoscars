@@ -1,11 +1,8 @@
-  /*A utiliser uniquement à la fin, quand on aura toute la mise en page
-  
-@font-face {
-  font-family: 'Brother';                                                                                                                                
-  src: url('/src/assets/Brother.otf') format('opentype');                                                                                                
-}
+  @font-face {
+    font-family: 'Brother';
+    src: url('/src/assets/BROTHER-Bold.otf') format('opentype');
+  }
 
-*/
 
   :root {
     --night-blue: #023047;
@@ -44,7 +41,7 @@
   h1,
   h2 {
     font-family: var(--heading);
-    font-weight: 500;
+    font-weight: 700;
     color: inherit;
     line-height: 50px;
   }
@@ -205,6 +202,12 @@
     flex-shrink: 0;
     display: flex;
     position: relative;
+  }
+
+  .section-hero__title {
+    font-family: 'Brother', sans-serif;
+    letter-spacing: 0.01em;
+    /* ajuste selon ton goût */
   }
 
   .section-hero__content {
@@ -728,7 +731,8 @@
 
   .section-timeline {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    gap: auto;
     display: flex;
     flex-direction: column;
     background: transparent;
@@ -738,12 +742,23 @@
   }
 
   .section-timeline__graph {
-    flex: 1;
-    width: 90%;
-    min-height: 0;
     /* crucial avec flexbox */
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .section-timeline__graph circle.timeline-dot {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    cursor: pointer;
+  }
+
+  .section-timeline__graph circle.timeline-dot:hover {
+    transform: scale(1.8);
+    filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.8));
   }
 
   .section-timeline__title {
@@ -758,32 +773,32 @@
     font-size: 16px;
     color: #fff;
     opacity: 0.7;
-}
+  }
 
-.section-timeline-legend__left {
+  .section-timeline-legend__left {
     display: flex;
     gap: 24px;
-}
+  }
 
-.section-timeline-legend__item {
+  .section-timeline-legend__item {
     display: flex;
     align-items: center;
     gap: 8px;
-}
+  }
 
-.section-timeline-legend__dot {
+  .section-timeline-legend__dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     flex-shrink: 0;
-}
+  }
 
-.section-timeline-legend__right {
+  .section-timeline-legend__right {
     display: flex;
     align-items: center;
     gap: 12px;
     opacity: 0.5;
-}
+  }
 
 
   .statues-legend {
@@ -841,4 +856,4 @@
     rx: 3px;
     width: 6px;
     cursor: ew-resize;
-}
+  }
