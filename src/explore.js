@@ -150,12 +150,25 @@ dots
         tooltip.style('display', 'block')
     })
     .on('mousemove', (event) => {
-        const viz = document.querySelector('.section-exploration__viz')
-        const rect = viz.getBoundingClientRect()
-        tooltip
-            .style('left', (event.clientX - rect.left + 20) + 'px')
-            .style('top', (event.clientY - rect.top + 20) + 'px')
-    })
+    const viz = document.querySelector('.section-exploration__viz')
+    const rect = viz.getBoundingClientRect()
+    const cardNode = tooltip.node()
+    const cardWidth = cardNode.offsetWidth   // ← largeur réelle
+    const cardHeight = cardNode.offsetHeight // ← hauteur réelle
+
+    let x = event.clientX - rect.left + 20
+    let y = event.clientY - rect.top + 20
+
+    if (event.clientX + cardWidth + 20 > window.innerWidth) {
+        x = event.clientX - rect.left - cardWidth - 5
+    }
+
+    if (event.clientY + cardHeight + 20 > window.innerHeight) {
+        y = event.clientY - rect.top - cardHeight - 20
+    }
+
+    tooltip.style('left', x + 'px').style('top', y + 'px')
+})
 
     .on('mouseout', function () {
         // Le point redevient normal
