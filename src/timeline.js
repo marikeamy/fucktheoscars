@@ -37,16 +37,14 @@ export const drawEvolution = async (films) => {
     // Lire les dimensions réelles du conteneur
     const graphNode = d3.select('.section-timeline__graph').node()
     await new Promise(resolve => requestAnimationFrame(resolve))
-    const containerW = graphNode.getBoundingClientRect().width || window.innerWidth
-    const containerH = graphNode.getBoundingClientRect().height || window.innerHeight
 
     const svg = d3.select('.section-timeline__graph')
         .attr('viewBox', `0 0 ${TOTAL_WIDTH} ${TOTAL_HEIGHT}`)
-        .attr('width', containerW)
-        .attr('height', containerH)
-        .attr('preserveAspectRatio', 'xMidYMid meet')
+        .attr('height', '70vh')   // hauteur fixe comme statues.js
+        .attr('width', 'auto')    // largeur suit automatiquement
         .style('display', 'block')
         .style('margin', '0 auto')
+        .style('max-width', '100%')  // ← empêche de dépasser en largeur
 
     // Le tooltip (même logique que statues.js)
     const tooltip = document.querySelector('.statue-tooltip')
