@@ -69,6 +69,7 @@ const xAxisMain = d3.axisBottom(xMain).tickValues(tickValues).tickFormat(d3.form
 const axisGroup = timelineSvg.append('g')
     .attr('transform', `translate(0, ${timelineHeight / 2 + 30})`)
     .attr('color', '#fff') // Axe en blanc pour contraster sur le bleu nuit
+    .attr('clip-path', 'url(#clip)')
     .call(xAxisMain);
 
 

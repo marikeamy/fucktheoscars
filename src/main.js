@@ -37,9 +37,13 @@ document.querySelector('.section-hero__next').addEventListener('click', () => {
 
 document.querySelector('.intro-overlay__discover').addEventListener('click', () => {
   const overlay = document.getElementById('intro-overlay')
-  heroUnlocked = true
-  window.scrollTo(0, window.innerWidth)
   overlay.hidden = true
+  heroUnlocked = true
+  // On attend que la modale soit fermée et que GSAP recalcule avant de scroller
+  setTimeout(() => {
+    ScrollTrigger.refresh()
+    window.scrollTo({ top: window.innerWidth * 0.6, behavior: 'smooth' })
+  }, 200)
 })
 
 window.addEventListener('scroll', () => {

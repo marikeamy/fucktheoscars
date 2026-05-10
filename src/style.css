@@ -29,6 +29,7 @@
     margin: 0;
     overscroll-behavior: none;
     scrollbar-width: none;
+    overflow-x: hidden;
   }
 
   html::-webkit-scrollbar {
@@ -40,7 +41,8 @@
     background: linear-gradient(135deg, #011829 0%, #023047 55%, #0a2e40 100%);
     background-attachment: fixed;
     min-height: 100vh;
-    color: var(--night-blue)
+    color: var(--night-blue);
+    overflow-x: hidden;
   }
 
   h1,
@@ -811,13 +813,13 @@
     color: #fff;
     padding: 32px 60px 24px;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .section-timeline__graph {
     /* crucial avec flexbox */
     display: block;
     margin: 0 auto;
-    max-width: 100%;
     flex: 1;
   }
 
