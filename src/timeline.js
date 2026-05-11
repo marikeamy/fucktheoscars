@@ -168,7 +168,7 @@ export const drawEvolution = async (films) => {
             const r = rScale(value)
             cx -= (r + 6)
             scaleSvg.append('circle')
-                .attr('cx', cx).attr('cy', 8)
+                .attr('cx', cx).attr('cy', 16)
                 .attr('r', r).attr('fill', 'rgba(255,255,255,0.25)')
             cx -= r
         })
