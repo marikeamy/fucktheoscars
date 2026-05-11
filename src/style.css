@@ -214,9 +214,9 @@
 
   .section-hero__title {
     font-family: 'Brother', sans-serif;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.03em;
+    /* ajuste selon ton goût */
   }
-
   .section-hero__next {
     position: absolute;
     right: 32px;
