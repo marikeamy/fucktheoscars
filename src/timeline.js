@@ -1,5 +1,7 @@
 import * as d3 from 'd3'
 import { fuckPositions } from './fuck-positions.js'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export const drawEvolution = async (films) => {
 
@@ -44,7 +46,6 @@ export const drawEvolution = async (films) => {
         .attr('width', 'auto')    // largeur suit automatiquement
         .style('display', 'block')
         .style('margin', '0 auto')
-        .style('max-width', '100%')  // ← empêche de dépasser en largeur
 
     // Le tooltip (même logique que statues.js)
     const tooltip = document.querySelector('.statue-tooltip')
@@ -171,5 +172,34 @@ export const drawEvolution = async (films) => {
                 .attr('r', r).attr('fill', 'rgba(255,255,255,0.25)')
             cx -= r
         })
+
+        // --- FAUX SCROLL HORIZONTAL (GSAP) ---
+    
+    // On attend un court instant pour s'assurer que D3 a fini de peindre et que les dimensions sont définitives
+    setTimeout(() => {
+        // Le conteneur qui sera épinglé (remplace par la bonne classe de ta section parent)
+        const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement;
+        const svgElement = svg.node();
+
+        // On calcule la portion de l'image qui dépasse de l'écran à droite
+        // getBoundingClientRect().width nous donne la largeur réelle calculée via le 70vh
+        const overflowWidth = svgElement.getBoundingClientRect().width - window.innerWidth;
+
+        // On n'active l'effet que si l'image est effectivement plus large que l'écran
+        if (overflowWidth > 0) {
+            gsap.to(svgElement, {
+                x: -overflowWidth - 60, // -60 pour avoir une petite marge respirante à la fin
+                ease: "none", // important pour un scroll fluide et linéaire
+                scrollTrigger: {
+                    trigger: sectionContainer,
+                    pin: true, // On épingle la section pendant le scroll
+                    scrub: 1,  // L'animation suit la molette avec 1s de lissage
+                    // La distance de scroll vertical nécessaire pour parcourir toute l'image
+                    end: () => `+=${overflowWidth}`, 
+                    invalidateOnRefresh: true
+                }
+            });
+        }
+    }, 100);
 
 }

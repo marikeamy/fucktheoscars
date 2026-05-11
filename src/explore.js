@@ -69,6 +69,7 @@ const xAxisMain = d3.axisBottom(xMain).tickValues(tickValues).tickFormat(d3.form
 const axisGroup = timelineSvg.append('g')
     .attr('transform', `translate(0, ${timelineHeight / 2 + 30})`)
     .attr('color', '#fff') // Axe en blanc pour contraster sur le bleu nuit
+    .attr('clip-path', 'url(#clip)')
     .call(xAxisMain);
 
 
@@ -76,9 +77,15 @@ const axisGroup = timelineSvg.append('g')
 // Masque pour cacher les points qui sortent de l'écran lors du zoom
 const defs = timelineSvg.append("defs");
 const clipPath = defs.append("clipPath").attr("id", "clip");
+
+// On ajoute un padding pour ne pas couper les points sur les bords
+const clipPadding = 12; 
+
 clipPath.append("rect")
-    .attr("x", margin.left)
-    .attr("width", width - margin.left - margin.right)
+    // On recule le début du masque vers la gauche
+    .attr("x", margin.left - clipPadding)
+    // On compense la largeur totale (padding à gauche + padding à droite)
+    .attr("width", width - margin.left - margin.right + (clipPadding * 2))
     .attr("height", timelineHeight);
 
 const dotsGroup = timelineSvg.append('g').attr("clip-path", "url(#clip)");
