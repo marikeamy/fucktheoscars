@@ -10,8 +10,8 @@
     --accent-color-blue: #8ECAE6;
     --white: #FFFFFF;
 
-    --sans: system-ui, 'Inter', Roboto, sans-serif;
-    --heading: 'system-ui', 'Segoe UI', Roboto, sans-serif;
+    --sans: 'Inter', Roboto, system-ui, sans-serif;
+    --heading: 'Brother', sans-serif;
 
     --whitespace: 10px;
 
@@ -45,12 +45,12 @@
     overflow-x: hidden;
   }
 
-  h1,
-  h2 {
+  h1 {
     font-family: var(--heading);
     font-weight: 700;
     color: inherit;
     line-height: 50px;
+    letter-spacing: 0.01em;
   }
 
   h1 {
@@ -77,6 +77,7 @@
 
   p {
     margin: 0;
+    font-family: var(--sans);
   }
 
   /* page 2, section exploration */
@@ -530,7 +531,7 @@
     max-width: 960px;
     width: 90%;
     padding: 64px 56px;
-    color: #fff;
+    color: var(--white);
   }
 
   /* TOP : info à gauche, images à droite */
@@ -700,7 +701,7 @@
     align-self: flex-end;
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: var(--white);
     font-size: 15px;
     padding: 10px 24px;
     border-radius: 40px;
@@ -780,8 +781,15 @@
   }
 
   @keyframes hint-bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
   }
 
   .finger-base svg,
@@ -810,7 +818,7 @@
     display: flex;
     flex-direction: column;
     background: transparent;
-    color: #fff;
+    color: var(--white);
     padding: 32px 60px 24px;
     box-sizing: border-box;
     overflow: hidden;
@@ -832,7 +840,7 @@
 
   .section-timeline__graph circle.timeline-dot:hover {
     transform: scale(1.8);
-    filter: drop-shadow(0 0 4px rgba(255, 183, 3, 0.8));
+    filter: drop-shadow(0 0 4px var(--yellow));
   }
 
   .section-timeline__title {
@@ -845,7 +853,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    color: #fff;
+    color: var(--white);
     opacity: 0.7;
   }
 
@@ -896,11 +904,11 @@
   }
 
   .statues-legend__dot--winner {
-    background: #FFB703;
+    background: var(--yellow);
   }
 
   .statues-legend__dot--nominee {
-    background: #8ECAE6;
+    background: var(--accent-color-blue);
   }
 
   .statues-legend__dot--empty {
@@ -961,7 +969,7 @@
     margin-top: 8px;
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #fff;
+    color: var(--white);
     font-size: 15px;
     padding: 10px 24px;
     border-radius: 40px;
@@ -978,7 +986,7 @@
     position: fixed;
     display: none;
     background: #0D3349;
-    color: #fff;
+    color: var(--white);
     padding: 6px 12px;
     border-radius: 6px;
     font-size: 14px;
@@ -992,8 +1000,65 @@
   }
 
   .brush .handle {
-    fill: #FFB703;
+    fill: var(--yellow);
     rx: 3px;
     width: 6px;
     cursor: ew-resize;
   }
+
+
+ /* ==== PAGE CONCLUSION ==== */
+
+.section-conclusion {
+  width: 100vw;
+  min-height: 100vh; /* Prend toute la hauteur de l'écran */
+  background-color: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 60px;
+  box-sizing: border-box;
+}
+
+.section-conclusion__content {
+  text-align: center;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.section-conclusion__title {
+  font-family: var(--heading); /* Utilise ta typo custom */
+  font-size: 56px;
+  color: var(--night-blue); /* Bleu sur fond jaune pour la lisibilité */
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.section-conclusion__text {
+  font-size: 18px;
+  color: var(--night-blue); /* Bleu sur fond jaune */
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+.section-conclusion__back-to-top {
+  background: none;
+  border: 2px solid var(--night-blue);
+  color: var(--night-blue);
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px 32px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.section-conclusion__back-to-top:hover {
+  background-color: var(--night-blue);
+  color: var(--yellow);
+  transform: translateY(-2px);
+}
