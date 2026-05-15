@@ -29,16 +29,18 @@ We downloaded subtitle files for each Best Picture Oscar winner and all nominees
 For the linguistic classification, labeling each occurrence as an insult, intensifier, expression of shock, sexual reference, and so on. We used Claude to define the categories and apply them to each entry. We then reviewed the full dataset ourselves, correcting the cases where the classification felt off. Each person was responsible for a portion of the review. This means the categories themselves carry some AI-induced subjectivity, and our corrections carry some human-induced subjectivity. Another reviewer might have landed somewhere different.
 
 ### Coding
-We used Claude a lot in this project, unfortunately. Based on our wireframes and the precise instructions given to it, it provided us parts of code, which we reviewed and put in our code. Therefore, the code is probably far from good. But we tried to understand everything.
-
+We used Claude a lot in this project. Based on our wireframes and the precise instructions given to it, it provided us parts of code, which we reviewed and put in our code. Therefore, the code is probably far from good. But we tried to understand everything.
+This JavaScript project is built with D3.js for data visualization, GSAP for smooth scroll animations, and Vite as the bundler, using npm for package management.
 
 ### Sources of the data 
-1.	YtsSubs.org (https://yts-subs.com/) -> for subtitles (SRT or SUB file format). 
+1. Oscars.org (https://awardsdatabase.oscars.org/) -> to get the name of every oscar winning movies and nominees of each year since 1980.
+2. YtsSubs.org (https://yts-subs.com/) -> for subtitles (SRT or SUB file format). 
 YtsSubs is a public platform hosting a large repertoire of movies and their subtitles in multiple languages. Subtitles are user-uploaded, and their extraction method is unknown (see Biases part). Each subtitle file can be rated by other users through a "correspondence" vote system based on likes.
 Users upload subtitles for various reasons: improving accessibility for deaf or hard-of-hearing viewers, filling gaps where official subtitles are unavailable, or simply contributing to an open community resource. Many users also download subtitles to pair them with movies they have streamed or downloaded elsewhere.
-2. Oscars.org (https://awardsdatabase.oscars.org/) -> to get the name of every oscar winning movies and nominees of each year since 1980.
-3. Claude.ai -> for analyzing every occurrence of “fuck” in the subtitles and helping us build our data table.
-4. Our very own minds to review subtitles and context.
+3. IMDB (https://www.imdb.com/) -> to get the name of the producer, the synopsis and genres of the movies.
+4. FILMGRAB (https://film-grab.com/), Pinterest (https://fr.pinterest.com/) and Google Images https://images.google.com/) to get 4 pictures of each movie.
+5. Claude.ai -> for analyzing every occurrence of “fuck” in the subtitles and helping us build our data table.
+6. Our very own minds to review subtitles and context.
 
 ### Data
 The main data (the information about the movies) is stored in a table with the columns listed below: 
@@ -120,6 +122,7 @@ src/
 │
 ├── fuck-positions.js         # X/Y coordinates of each dot inside the FUCK! SVG, grouped by letter
 ├── statuette-positions.js    # X/Y coordinates of each dot inside the statuette SVG
+├── conclusion.js             # The conclusion of the data viz
 │
 └── style.css                 # Global stylesheet for the entire site
 ```
