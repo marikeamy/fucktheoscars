@@ -33,12 +33,12 @@ We used Claude a lot in this project. Based on our wireframes and the precise in
 This JavaScript project is built with D3.js for data visualization, GSAP for smooth scroll animations, and Vite as the bundler, using npm for package management.
 
 ### Sources of the data 
-1. Oscars.org (https://awardsdatabase.oscars.org/) -> to get the name of every oscar winning movies and nominees of each year since 1980.
-2. YtsSubs.org (https://yts-subs.com/) -> for subtitles (SRT or SUB file format). 
+1. [Oscars.org](https://awardsdatabase.oscars.org/) -> to get the name of every oscar winning movies and nominees of each year since 1980.
+2. [YtsSubs.org](https://yts-subs.com/) -> for subtitles (SRT or SUB file format). 
 YtsSubs is a public platform hosting a large repertoire of movies and their subtitles in multiple languages. Subtitles are user-uploaded, and their extraction method is unknown (see Biases part). Each subtitle file can be rated by other users through a "correspondence" vote system based on likes.
 Users upload subtitles for various reasons: improving accessibility for deaf or hard-of-hearing viewers, filling gaps where official subtitles are unavailable, or simply contributing to an open community resource. Many users also download subtitles to pair them with movies they have streamed or downloaded elsewhere.
-3. IMDB (https://www.imdb.com/) -> to get the name of the producer, the synopsis and genres of the movies.
-4. FILMGRAB (https://film-grab.com/), Pinterest (https://fr.pinterest.com/) and Google Images https://images.google.com/) to get 4 pictures of each movie.
+3. [IMDB](https://www.imdb.com/) -> to get the name of the producer, the synopsis and genres of the movies.
+4. [FILMGRAB](https://film-grab.com/), [Pinterest](https://fr.pinterest.com/) and [Google Images](https://images.google.com/) to get 4 pictures of each movie.
 5. Claude.ai -> for analyzing every occurrence of “fuck” in the subtitles and helping us build our data table.
 6. Our very own minds to review subtitles and context.
 
@@ -75,11 +75,11 @@ We also have another table with the number of fucks / hour, to make the comparis
 ## References
 We're not the first ones to go looking through movie dialogues with a question in mind related to swearing.
 
-Datanaut (2022) did something pretty close to what we're doing: they looked at profanity across Oscar-winning movies from 1927 to 2021 (https://datanaut.blog/posts/profanity-in-oscar-winning-movies/), pulling subtitles from opensubtitles.org and mapping how swearing changed over time. Their scope is bigger (all Oscar categories, all swear words), ours is more focused: just "fuck", just Best Picture, with us manually checking every single occurrence.
+Datanaut (2022) did something pretty close to what we're doing: they looked at [profanity across Oscar-winning movies from 1927 to 2021](https://datanaut.blog/posts/profanity-in-oscar-winning-movies/), pulling subtitles from opensubtitles.org and mapping how swearing changed over time. Their scope is bigger (all Oscar categories, all swear words), ours is more focused: just "fuck", just Best Picture, with us manually checking every single occurrence.
 
-Collider (2025) published a ranking of the most profane Best Picture winners (https://collider.com/oscars-best-picture-winners-most-profane-f-bombs-ranked/), counted by f-bombs: a fun list that lines up with some of what we found. Anora is apparently at the top with nearly 479 uses of the f-word, while others like Argo barely swear at all. It's a list, not really an analysis, which is kind of why we wanted to go further.
+Collider (2025) published a ranking of the [most profane Best Picture winners](https://collider.com/oscars-best-picture-winners-most-profane-f-bombs-ranked/), counted by f-bombs: a fun list that lines up with some of what we found. Anora is apparently at the top with nearly 479 uses of the f-word, while others like Argo barely swear at all. It's a list, not really an analysis, which is kind of why we wanted to go further.
 
-The Pudding is our main inspiration, both for design and for how we think about the data. They make visual essays about cultural questions using data, and they're always clear about where things come from and what the limits are. Their piece on coughs and Oscars (https://journal-doi.org/10.731/pcbi.1007742/), tracking a totally different kind of moment in award shows, showed us that one small, weird detail can actually say a lot about something much bigger. And can be fun to dig!
+The Pudding is our main inspiration, both for design and for how we think about the data. They make visual essays about cultural questions using data, and they're always clear about where things come from and what the limits are. Their piece on [coughs and Oscars](https://journal-doi.org/10.731/pcbi.1007742/), tracking a totally different kind of moment in award shows, showed us that one small, weird detail can actually say a lot about something much bigger. And can be fun to dig!
 
 
 ## Project architecture
