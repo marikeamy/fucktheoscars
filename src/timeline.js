@@ -3,6 +3,17 @@ import { fuckPositions } from './fuck-positions.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+const allImages = import.meta.glob('./assets/images/*/*.{jpg,jpeg,png,webp}', { eager: true })
+const normalize = str => str.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+function getPosterUrl(movieTitle) {
+    const match = Object.entries(allImages).find(([path]) => {
+        const folder = path.split('/images/')[1]?.split('/')[0] || ''
+        return normalize(folder) === normalize(movieTitle)
+    })
+    return match ? match[1].default : ''
+}
+
 export const drawEvolution = async (films) => {
 
     // --- DIMENSIONS ---
@@ -47,8 +58,34 @@ export const drawEvolution = async (films) => {
         .style('display', 'block')
         .style('margin', '0 auto')
 
-    // Le tooltip (même logique que statues.js)
-    const tooltip = document.querySelector('.statue-tooltip')
+    const filmCard = d3.select('#film-card')
+
+    function showFilmCard(event, film) {
+        filmCard.select('.film-card__img').style('display', 'none')
+        filmCard.select('.film-card__title').text(film.movie_title)
+        filmCard.select('.film-card__meta').text(`${film.won_oscar === 'True' || film.won_oscar === true ? '★ Winner' : 'Nominated'} · ${film.oscar_year}`)
+        filmCard.select('.film-card__synopsis').text(`${film.total_count_fucks} fucks`).style('font-size', '22px')
+        filmCard.select('.film-card__genres').html('')
+        filmCard.style('display', 'block')
+        moveFilmCard(event)
+    }
+
+    function moveFilmCard(event) {
+        const cardNode = filmCard.node()
+        const cardWidth = cardNode.offsetWidth
+        const cardHeight = cardNode.offsetHeight
+        let x = event.clientX + 20
+        let y = event.clientY + 20
+        if (event.clientX + cardWidth + 20 > window.innerWidth) x = event.clientX - cardWidth - 5
+        if (event.clientY + cardHeight + 20 > window.innerHeight) y = event.clientY - cardHeight - 20
+        filmCard.style('left', x + 'px').style('top', y + 'px')
+    }
+
+    function hideFilmCard() {
+        filmCard.style('display', 'none')
+        filmCard.select('.film-card__img').style('display', '')
+        filmCard.select('.film-card__synopsis').style('font-size', '')
+    }
 
 
     // --- LETTRES F, U, C, K ---
@@ -73,16 +110,12 @@ export const drawEvolution = async (films) => {
                     .attr('cursor', 'pointer')
                     .on('mouseover', function (event) {
                         d3.select(this).attr('opacity', 1).attr('stroke', '#fff').attr('stroke-width', 2)
-                        tooltip.textContent = `${film.movie_title} (${film.oscar_year}) — ${film.total_count_fucks} fucks`
-                        tooltip.style.display = 'block'
+                        showFilmCard(event, film)
                     })
-                    .on('mousemove', (event) => {
-                        tooltip.style.left = (event.clientX + 20) + 'px'
-                        tooltip.style.top = (event.clientY + 20) + 'px'
-                    })
+                    .on('mousemove', (event) => moveFilmCard(event))
                     .on('mouseout', function () {
                         d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
-                        tooltip.style.display = 'none'
+                        hideFilmCard()
                     })
             } else {
                 // Position vide : bulle fantôme (0 fucks ou pas de film)
@@ -104,7 +137,7 @@ export const drawEvolution = async (films) => {
 
     exclPositions.forEach((pos, i) => {
         const film = exclFilms[i]
-        const circle = exclGroup.append('circle').attr('cx', pos.cx).attr('cy', pos.cy)
+        const circle = exclGroup.append('circle').attr('cx', pos.cx).attr('cy', pos.cy).attr('class', 'timeline-dot')
 
         if (film) {
             const isWinner = film.won_oscar === 'True' || film.won_oscar === true
@@ -115,16 +148,12 @@ export const drawEvolution = async (films) => {
                 .attr('cursor', 'pointer')
                 .on('mouseover', function (event) {
                     d3.select(this).attr('opacity', 1).attr('stroke', '#fff').attr('stroke-width', 2)
-                    tooltip.textContent = `${film.movie_title} (${film.oscar_year}) — ${film.total_count_fucks} fucks`
-                    tooltip.style.display = 'block'
+                    showFilmCard(event, film)
                 })
-                .on('mousemove', (event) => {
-                    tooltip.style.left = (event.clientX + 20) + 'px'
-                    tooltip.style.top = (event.clientY + 20) + 'px'
-                })
+                .on('mousemove', (event) => moveFilmCard(event))
                 .on('mouseout', function () {
                     d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
-                    tooltip.style.display = 'none'
+                    hideFilmCard()
                 })
         } else {
             circle.attr('r', pos.r * 0.6).attr('fill', 'rgba(255,255,255,0.08)')
