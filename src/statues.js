@@ -29,13 +29,22 @@ export const drawStatues = (decades) => {
         //un event listener comprenant toutes les données.
         const combined = positions.map((pos, i) => ({ ...pos, movie: data[i] ?? null }))
 
+        // Résoudre les superpositions avec une simulation de force
+        combined.forEach(d => { d.x = d.cx; d.y = d.cy })
+        const sim = d3.forceSimulation(combined)
+            .force('collide', d3.forceCollide(5.5))
+            .force('x', d3.forceX(d => d.cx).strength(0.8))
+            .force('y', d3.forceY(d => d.cy).strength(0.8))
+            .stop()
+        for (let i = 0; i < 400; i++) sim.tick()
+
         //Création des cercles
         svg.selectAll('circle')
             .data(combined.slice().sort((a, b) => (a.movie?.won_oscar === 'True' ? 1 : 0) - (b.movie?.won_oscar === 'True' ? 1 : 0)))
             .join('circle')
             .attr('r', 5)
-            .attr('cx', d => d.cx)
-            .attr('cy', d => d.cy)
+            .attr('cx', d => d.x)
+            .attr('cy', d => d.y)
             .attr('class', d => d.movie?.won_oscar === 'True' ? 'circle--winner' : '')
             .attr('fill', (d, i) => {
                 //vérifier que le film existe (pour les cercles inactifs)
@@ -54,7 +63,7 @@ export const drawStatues = (decades) => {
             .on('mousemove', (event) => {    
                 //Afficher le tooltip selon une position donnée
                 tooltip.style.left = (event.clientX + 20) + 'px';
-                tooltip.style.top = (event.clientY + 20) + 'px';                                                                                
+                tooltip.style.top = (event.clientY - 10) + 'px';                                                                                
             })                                                                                                                                                       
             .on('mouseout', () => {
                 //désactivation
