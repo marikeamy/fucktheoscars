@@ -229,11 +229,13 @@ p {
 .section-statues__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-statues__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-statues__decades {
@@ -348,11 +350,13 @@ p {
 .section-exploration__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-exploration__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-exploration__viz {
@@ -412,11 +416,13 @@ p {
 .section-timeline__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-timeline__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-timeline__graph {
@@ -433,7 +439,7 @@ p {
 }
 
 .section-timeline__graph circle.timeline-dot:hover {
-  transform: scale(1.8);
+  transform: scale(1.5);
   filter: drop-shadow(0 0 4px var(--yellow));
 }
 
@@ -1010,7 +1016,7 @@ p {
 
 /* Tooltip Film Card (Section Exploration) */
 .film-card {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: #0D3349;
@@ -1022,6 +1028,7 @@ p {
   z-index: 999;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   display: none;
+  color: var(--white);
 }
 
 .film-card__img {
