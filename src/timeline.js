@@ -62,7 +62,7 @@ export const drawEvolution = async (films) => {
 
         positions.forEach((pos, i) => {
             const film = sortedFilms[i]
-            const circle = group.append('circle').attr('cx', pos.cx).attr('cy', pos.cy)
+            const circle = group.append('circle').attr('cx', pos.cx).attr('cy', pos.cy).attr('class', 'timeline-dot')
 
             if (film) {
                 const isWinner = film.won_oscar === 'True' || film.won_oscar === true
@@ -173,33 +173,26 @@ export const drawEvolution = async (films) => {
             cx -= r
         })
 
-        // --- FAUX SCROLL HORIZONTAL (GSAP) ---
-    
-    // On attend un court instant pour s'assurer que D3 a fini de peindre et que les dimensions sont définitives
-    setTimeout(() => {
-        // Le conteneur qui sera épinglé (remplace par la bonne classe de ta section parent)
-        const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement;
-        const svgElement = svg.node();
+    // --- FAUX SCROLL HORIZONTAL (GSAP) ---
+    // On attend que le navigateur ait peint le SVG pour avoir les vraies dimensions
+    await new Promise(resolve => requestAnimationFrame(resolve))
 
-        // On calcule la portion de l'image qui dépasse de l'écran à droite
-        // getBoundingClientRect().width nous donne la largeur réelle calculée via le 70vh
-        const overflowWidth = svgElement.getBoundingClientRect().width - window.innerWidth;
+    const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement
+    const svgElement = svg.node()
+    const overflowWidth = svgElement.getBoundingClientRect().width - window.innerWidth
 
-        // On n'active l'effet que si l'image est effectivement plus large que l'écran
-        if (overflowWidth > 0) {
-            gsap.to(svgElement, {
-                x: -overflowWidth - 60, // -60 pour avoir une petite marge respirante à la fin
-                ease: "none", // important pour un scroll fluide et linéaire
-                scrollTrigger: {
-                    trigger: sectionContainer,
-                    pin: true, // On épingle la section pendant le scroll
-                    scrub: 1,  // L'animation suit la molette avec 1s de lissage
-                    // La distance de scroll vertical nécessaire pour parcourir toute l'image
-                    end: () => `+=${overflowWidth}`, 
-                    invalidateOnRefresh: true
-                }
-            });
-        }
-    }, 100);
+    if (overflowWidth > 0) {
+        gsap.to(svgElement, {
+            x: -overflowWidth - 60,
+            ease: "none",
+            scrollTrigger: {
+                trigger: sectionContainer,
+                pin: true,
+                scrub: 1,
+                end: () => `+=${overflowWidth}`,
+                invalidateOnRefresh: true
+            }
+        })
+    }
 
 }

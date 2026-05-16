@@ -433,7 +433,7 @@ p {
 }
 
 .section-timeline__graph circle.timeline-dot:hover {
-  transform: scale(1.8);
+  transform: scale(1.5);
   filter: drop-shadow(0 0 4px var(--yellow));
 }
 
