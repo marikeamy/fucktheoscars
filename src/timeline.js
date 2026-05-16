@@ -62,7 +62,7 @@ export const drawEvolution = async (films) => {
         filmCard.select('.film-card__img').style('display', 'none')
         filmCard.select('.film-card__title').text(film.movie_title)
         filmCard.select('.film-card__meta').text(`${film.won_oscar === 'True' || film.won_oscar === true ? '★ Winner' : 'Nominated'} · ${film.oscar_year}`)
-        filmCard.select('.film-card__synopsis').text(`${film.total_count_fucks} fucks`).style('font-size', '22px')
+        filmCard.select('.film-card__synopsis').text(`${film.total_count_fucks} fucks`).style('font-size', '16px')
         filmCard.select('.film-card__genres').html('')
         filmCard.style('display', 'block')
         moveFilmCard(event)

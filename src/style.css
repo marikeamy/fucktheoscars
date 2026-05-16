@@ -504,14 +504,14 @@ p {
 .section-conclusion {
   width: 100vw;
   min-height: 100vh;
-  background: transparent; /* ⬅️ Laisse le fond bleu nuit visible */
+  background: var(--yellow); 
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 32px 60px;
   box-sizing: border-box;
   position: relative;
-  z-index: 10;
+  z-index: 9999;
 }
 
 .section-conclusion__content {
@@ -521,28 +521,28 @@ p {
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  color: var(--night-blue);
 }
 
 .section-conclusion__title {
   font-family: var(--heading); 
-  font-size: 64px;
-  color: var(--yellow); /* ⬅️ Texte en jaune */
+  font-size: 56px;
   margin: 0;
   line-height: 1;
   letter-spacing: 0.01em;
 }
 
 .section-conclusion__text {
-  font-size: 24px;
-  color: var(--white); /* Blanc pour contraster et être lisible */
+  font-size: 18px;
+  color: var(--night-blue);
   margin: 0 0 24px 0;
   line-height: 1.4;
 }
 
 .section-conclusion__back-to-top {
   background: none;
-  border: 2px solid var(--yellow); /* ⬅️ Bouton jaune */
-  color: var(--yellow);
+  border: 1px solid var(--night-blue); /* ⬅️ Bouton jaune */
+  color: var(--night-blue);
   font-weight: 700;
   font-size: 16px;
   padding: 12px 32px;
@@ -550,13 +550,13 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  z-index: 20;
-  pointer-events: auto;
+  z-index: 10000;
+  pointer-events: auto !important;
 }
 
 .section-conclusion__back-to-top:hover {
-  background-color: var(--yellow);
-  color: var(--night-blue); /* S'inverse au survol */
+  background-color: var(--night-blue);
+  color: var(--yellow); /* S'inverse au survol */
   transform: translateY(-2px);
 }
 
