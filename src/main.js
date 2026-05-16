@@ -2,6 +2,7 @@ import './style.css'
 import { getData, getMoviesByDecade } from './data.js'
 import { drawStatues } from './statues.js'
 import { drawEvolution } from './timeline.js'
+import { drawConclusion } from './conclusion.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
@@ -62,5 +63,6 @@ const main = async () => {
       const decades = getMoviesByDecade(uniqueMovies)                                                                                                 
       drawStatues(decades) 
       drawEvolution(uniqueMovies)
+      drawConclusion()
   }               
   main()

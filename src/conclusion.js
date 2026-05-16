@@ -3,28 +3,33 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 export const drawConclusion = () => {
     
-    // 1. Animation d'apparition des éléments (titre, texte, bouton) en cascade
-    gsap.from('.section-conclusion__content > *', {
-        y: 50,            // Départ 50px plus bas
-        opacity: 0,       // Départ invisible
-        duration: 1,      // Durée de l'animation
-        stagger: 0.2,     // Décalage de 0.2s entre chaque élément
-        scrollTrigger: {
-            trigger: '.section-conclusion',
-            start: "top 70%", // L'animation se lance quand le haut de la section atteint 70% de la fenêtre
-            toggleActions: "play none none reverse" 
-        }
-    });
-
-    // POUR LINSTANT MARCHE PAS
-    // 2. Bouton "Back to top"
     const backBtn = document.querySelector('.section-conclusion__back-to-top');
+    
     if (backBtn) {
-        backBtn.addEventListener('click', () => {
-            console.log("Clic détecté !"); // Pour vérifier que le bouton marche bien
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             
-            // 2. On rafraîchit la page pour remettre à zéro l'intro et les animations GSAP
-            window.location.reload();
+            // 1. On crée un "rideau" bleu nuit par-dessus tout le site
+            const rideau = document.createElement('div');
+            rideau.style.position = 'fixed';
+            rideau.style.inset = '0';
+            rideau.style.backgroundColor = 'var(--night-blue)';
+            rideau.style.zIndex = '99999'; // Par dessus tout
+            rideau.style.opacity = '0';
+            rideau.style.transition = 'opacity 0.8s ease-in-out'; // Durée du fondu
+            document.body.appendChild(rideau);
+
+            // 2. On lance l'animation du fondu
+            // (Le petit délai de 10ms permet à la transition CSS de s'activer)
+            setTimeout(() => {
+                rideau.style.opacity = '1';
+            }, 10);
+
+            // 3. Une fois que l'écran est tout bleu (après 800ms), on remonte et on recharge
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                window.location.href = window.location.pathname;
+            }, 850);
         });
     }
 }
