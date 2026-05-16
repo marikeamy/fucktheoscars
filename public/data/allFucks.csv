@@ -1,30 +1,29 @@
 movie_id,occurrence_id,exact_word,surrounding_text,linguistic_context,timestamp,won_oscar
 3,1,fuck,"Oh, fuck him. He never picks me.",insult,"00:07:25,400",False
-3,2,fuck,"I did fuck him, and he never picks me either.",insult,"00:07:28,360",False
+3,2,fuck,"I did fuck him, and he never picks me either.",sexual,"00:07:28,360",False
 3,3,fucking,Some fucking father!,general_expletive,"00:10:17,800",False
-3,4,fucking,Goddamn son-of-a-bitch pig-fucking bastards!,general_expletive,"00:12:38,560",False
+3,4,fucking,Goddamn son-of-a-bitch pig-fucking bastards!,insult,"00:12:38,560",False
 3,5,fucking,Turn. That is some fucking music.,general_expletive,"00:29:23,680",False
-3,6,fucking,"Goddamn son of a bitch, pig-fucking bastards!""",general_expletive,"01:42:27,920",False
 6,7,Fuck,"Fuck you, Jarrett.",insult,"00:52:34,712",True
 6,8,fuck,What? Tell me to fuck off!,insult,"00:54:13,440",True
 6,9,fuck,"Well, fuck-- No. I can't do this.",exclamation_shock,"00:54:15,401",True
 6,10,Fuck,"Fuck you, Berger. Fuck you! What?",insult,"00:54:30,958",True
 6,11,Fuck,"Fuck you, Berger. Fuck you! What?",insult,"00:54:30,958",True
 6,12,Fuck,Yeah? Fuck you!,insult,"00:54:32,960",True
-6,13,fuck,and you go home and fuck the daylights out of her!,insult,"00:54:43,806",True
+6,13,fuck,and you go home and fuck the daylights out of her!,sexual,"00:54:43,806",True
 6,14,fuck,The only reason she gives a fuck about it,general_expletive,"01:06:08,903",True
-7,15,fuck,"Jack, tell me, why the fuck do we have to come to Cleveland for you",insult,"00:04:19,190",False
+7,15,fuck,"Jack, tell me, why the fuck do we have to come to Cleveland for you",general_expletive,"00:04:19,190",False
 7,16,fuckin,"Come on, do the fuckin' right thing.",general_expletive,"00:04:23,830",False
 7,17,fuckin,Just like home... all over the fuckin' moolies.,general_expletive,"00:04:35,040",False
 7,18,motherfucker,Knock the motherfucker out. You understand? Knock him out.,compound_expletive,"00:04:37,110",False
 7,19,fuckin,Don't leave. Don't get outta the fuckin' ring. Stay here.,general_expletive,"00:06:44,670",False
 7,20,fuckin,"...on his fuckin' back, they pick up his arm, he's dead.",general_expletive,"00:07:43,860",False
-7,21,fuck,When the fuck you gonna stop with that stuff?,insult,"00:08:08,550",False
-7,22,fuck,"If he's in a good mood, I'll talk to him. What the fuck you want me to do?",insult,"00:09:46,350",False
-7,23,fuckin,- He's got me fuckin' nuts. - You're his brother.,insult,"00:09:55,820",False
-7,24,Fuck,Fuck! I'm sick of you!,insult,"00:10:38,830",False
+7,21,fuck,When the fuck you gonna stop with that stuff?,general_expletive,"00:08:08,550",False
+7,22,fuck,"If he's in a good mood, I'll talk to him. What the fuck you want me to do?",general_expletive,"00:09:46,350",False
+7,23,fuckin,- He's got me fuckin' nuts. - You're his brother.,general_expletive,"00:09:55,820",False
+7,24,Fuck,Fuck! I'm sick of you!,compound_expletive,"00:10:38,830",False
 7,25,fuck,"Oh, fuck!",exclamation_shock,"00:11:25,880",False
-7,26,fuckin,"you can't fuckin' eat and drink like an animal,",insult,"00:11:39,390",False
+7,26,fuckin,"you can't fuckin' eat and drink like an animal,",general_expletive,"00:11:39,390",False
 7,27,fuckin,put up with this fuckin' brasciole here.,general_expletive,"00:11:42,260",False
 7,28,fuckin,"He's a fuckin' heavyweight, you're a middleweight.",insult,"00:12:56,670",False
 7,29,Fuckin,Fuckin' nut.,general_expletive,"00:13:56,060",False
@@ -33,142 +32,141 @@ movie_id,occurrence_id,exact_word,surrounding_text,linguistic_context,timestamp,
 7,32,fuck,- Come on. - Don't fuck around.,general_expletive,"00:14:38,740",False
 7,33,fuckin,"No, your fuckin' cuts are opening and everything.",exclamation_shock,"00:14:46,510",False
 7,34,fucker,- I heard this fucker didn't win the fight. - Take it easy.,general_expletive,"00:15:48,710",False
-7,35,fuck,What the fuck is wrong with you?! You gotta make a fuckin' jerk outta me.,insult,"00:16:32,820",False
-7,36,fuckin,What the fuck is wrong with you?! You gotta make a fuckin' jerk outta me.,insult,"00:16:32,820",False
+7,35,fuck,What the fuck is wrong with you?! You gotta make a fuckin' jerk outta me.,general_expletive,"00:16:32,820",False
+7,36,fuckin,What the fuck is wrong with you?! You gotta make a fuckin' jerk outta me.,general_expletive,"00:16:32,820",False
 7,37,fuckin,I'm a jerk? You're a fuckin' asshole.,insult,"00:16:55,580",False
-7,38,fuck,"What the fuck you hittin' me, huh?!",insult,"00:16:58,250",False
+7,38,fuck,"What the fuck you hittin' me, huh?!",general_expletive,"00:16:58,250",False
 7,39,fuckin,"Yeah, yeah, ya fuckin' hard-on, try this.",general_expletive,"00:17:00,720",False
-7,40,fuck,Ya fuck!,general_expletive,"00:17:12,090",False
+7,40,fuck,Ya fuck!,insult,"00:17:12,090",False
 7,41,fuck,"She's 15 years old, where the fuck's she gonna go?",general_expletive,"00:18:16,520",False
-7,42,fuck,She ain't the kinda girl you just fuck and forget about.,insult,"00:18:34,210",False
-7,43,fuck,You went with her? You didn't try to fuck her?,insult,"00:19:10,510",False
-7,44,fuck,"I try to fuck anything, you know that.",insult,"00:19:12,980",False
+7,42,fuck,She ain't the kinda girl you just fuck and forget about.,sexual,"00:18:34,210",False
+7,43,fuck,You went with her? You didn't try to fuck her?,sexual,"00:19:10,510",False
+7,44,fuck,"I try to fuck anything, you know that.",sexual,"00:19:12,980",False
 7,45,fuck,"Hey, like the big man. Get the fuck outta here.",general_expletive,"00:19:51,520",False
-7,46,fuck,"Keep lookin'. Where the fuck you goin'? You're dead, you're married.",insult,"00:20:18,280",False
+7,46,fuck,"Keep lookin'. Where the fuck you goin'? You're dead, you're married.",general_expletive,"00:20:18,280",False
 7,47,Fuckin,"Fuckin' worm. You go out, I'm goin' out.",insult,"00:20:44,810",False
 7,48,Fuckin,Fuckin' bunch of guineas.,general_expletive,"00:20:51,650",False
-7,49,fuckin,Why don't you fuckin' stop? You're not goin' on business.,insult,"00:20:54,450",False
+7,49,fuckin,Why don't you fuckin' stop? You're not goin' on business.,general_expletive,"00:20:54,450",False
 7,50,fuckin,"with that fuckin' dog, and this one up there.",general_expletive,"00:21:04,790",False
 7,51,Fuckin,"Fuckin' Jew cunt, why don't you hit her in the head with a bat?",insult,"00:21:07,260",False
 7,52,fuck,- What am I supposed to do? - Kill the fuck.,exclamation_shock,"00:21:12,900",False
 7,53,fuckin,"You and your fuckin' ass... you, too ya... go out!",insult,"00:21:17,100",False
-7,54,fuck,- What's the matter with you?! - What the fuck's the matter with you?,insult,"00:21:20,010",False
+7,54,fuck,- What's the matter with you?! - What the fuck's the matter with you?,general_expletive,"00:21:20,010",False
 7,55,fuckin,"- What's the matter with you?! - I could give a shit, ya fuckin' queer!",insult,"00:21:24,210",False
 7,56,motherfuckin,"Nothing. I got trouble with these two motherfuckin' greaseballs downstairs,",compound_expletive,"00:22:19,400",False
-7,57,fuck,"Get the fuck out, you greaseball bastard!",insult,"00:23:55,060",False
-7,58,fuckin,"Get outta here, ya fuckin' bum, ya!",general_expletive,"00:24:00,370",False
+7,57,fuck,"Get the fuck out, you greaseball bastard!",general_expletive,"00:23:55,060",False
+7,58,fuckin,"Get outta here, ya fuckin' bum, ya!",insult,"00:24:00,370",False
 7,59,fuckin,Cocksuckers! I'd like to fuckin'...,general_expletive,"00:39:35,200",False
-7,60,fuckin,They only gave him that fuckin' decision,insult,"00:39:45,350",False
+7,60,fuckin,They only gave him that fuckin' decision,general_expletive,"00:39:45,350",False
 7,61,fuckin,"the fuckin' ass, that's why!",general_expletive,"00:39:57,690",False
 7,62,fuckin,Where'd I get it? Did I pull it out of the fuckin' air?,general_expletive,"00:44:18,950",False
 7,63,fuckin,"- Not a bad kid, that Vickie, ya know. - She's with that fuckin' gorilla.",general_expletive,"00:51:28,980",False
-7,64,fuckin,"I'm only kiddin' you, what a fuckin' kid.",insult,"00:53:21,090",False
+7,64,fuckin,"I'm only kiddin' you, what a fuckin' kid.",general_expletive,"00:53:21,090",False
 7,65,fuckin,"- That's the best fuckin' fighter around. - Hey, Jake.",general_expletive,"00:53:23,930",False
-7,66,fuck,"I don't know, I got a problem... if I should fuck him or fight him.",insult,"00:54:39,970",False
-7,67,Fuck,Must be crazy. Fuck him or fight him.,insult,"00:54:44,840",False
-7,68,fucked,"You're really liable to get fucked with this kid, watch out.",insult,"00:54:48,350",False
-7,69,fuck,You mean you want me to get him to fuck you?,insult,"00:54:53,390",False
-7,70,fuck,"- No, I don't want him to fuck me. - I could do that easily.",insult,"00:54:56,690",False
-7,71,fuckin,"I'll get you both in the ring and give yous both a fuckin' beatin',",insult,"00:55:00,490",False
-7,72,fuck,and you both could fuck each other.,insult,"00:55:02,800",False
-7,73,Fuckin,Fuckin' hard-on.,general_expletive,"00:58:52,660",False
-7,74,Fuckin,- You've gotta be kiddin'. - Fuckin' thing was hangin' off.,insult,"00:59:15,380",False
+7,66,fuck,"I don't know, I got a problem... if I should fuck him or fight him.",sexual,"00:54:39,970",False
+7,67,Fuck,Must be crazy. Fuck him or fight him.,sexual,"00:54:44,840",False
+7,68,fucked,"You're really liable to get fucked with this kid, watch out.",general_expletive,"00:54:48,350",False
+7,69,fuck,You mean you want me to get him to fuck you?,sexual,"00:54:53,390",False
+7,70,fuck,"- No, I don't want him to fuck me. - I could do that easily.",sexual,"00:54:56,690",False
+7,71,fuckin,"I'll get you both in the ring and give yous both a fuckin' beatin',",general_expletive,"00:55:00,490",False
+7,72,fuck,and you both could fuck each other.,sexual,"00:55:02,800",False
+7,73,Fuckin,Fuckin' hard-on.,sexual,"00:58:52,660",False
+7,74,Fuckin,- You've gotta be kiddin'. - Fuckin' thing was hangin' off.,general_expletive,"00:59:15,380",False
 7,75,fuck,Who the fuck cares?,general_expletive,"00:59:43,610",False
-7,76,fuckin,"You think you're right or somethin', the way you're fuckin' yellin'?",insult,"01:00:30,720",False
-7,77,fuck,- What the fuck did you marry him for? - 'Cause I love him.,insult,"01:00:49,310",False
-7,78,fuck,What am I supposed to do? This guy don't even wanna fuck me.,exclamation_shock,"01:00:52,950",False
-7,79,fuckin,You won't have to go fuckin' runnin' around when he does.,insult,"01:01:01,990",False
+7,76,fuckin,"You think you're right or somethin', the way you're fuckin' yellin'?",general_expletive,"01:00:30,720",False
+7,77,fuck,- What the fuck did you marry him for? - 'Cause I love him.,general_expletive,"01:00:49,310",False
+7,78,fuck,What am I supposed to do? This guy don't even wanna fuck me.,sexual,"01:00:52,950",False
+7,79,fuckin,You won't have to go fuckin' runnin' around when he does.,general_expletive,"01:01:01,990",False
 7,80,fuckin,Mind your fuckin' business and shut up.,general_expletive,"01:01:23,440",False
 7,81,Fuckin,- Fuckin' hard-on! - Get off! Get him off!,insult,"01:01:55,070",False
 7,82,fuckin,"I'll bite your fuckin' head off, ya cocksucker!",insult,"01:01:58,340",False
-7,83,fuck,"Get outta here, Joey! What the fuck are you doin'?!",insult,"01:02:01,610",False
-7,84,Fuckin,Fuckin' cunt.,general_expletive,"01:02:11,260",False
-7,85,fuckin,"Oh, scumbag! I'm gonna suck your fuckin' eyes out!",exclamation_shock,"01:02:15,530",False
+7,83,fuck,"Get outta here, Joey! What the fuck are you doin'?!",general_expletive,"01:02:01,610",False
+7,84,Fuckin,Fuckin' cunt.,insult,"01:02:11,260",False
+7,85,fuckin,"Oh, scumbag! I'm gonna suck your fuckin' eyes out!",general_expletive,"01:02:15,530",False
 7,86,fuckin,"Hey, you fuckin'... what are you, nuts?!",insult,"01:02:19,300",False
 7,87,fuckin,He's wrong. No fuckin' trouble in the joint.,exclamation_shock,"01:02:28,710",False
 7,88,fuckin,"I said get outta here, ya fuckin' mamone!",general_expletive,"01:02:36,650",False
-7,89,fuck,"Get back there, ya fuck, ya!",general_expletive,"01:02:39,380",False
-7,90,fucking,"What are you, fucking nuts? You're killin' me.",insult,"01:04:11,240",False
-7,91,fuck,"he don't give a fuck, he's gonna do what he wants to do,",exclamation_shock,"01:05:44,070",False
-7,92,fuckin,"Bust her fuckin' hole, throw her out.",insult,"01:07:21,470",False
-7,93,fuck,"What the fuck you doin'? Hit me, ya fuckin' bum, come on.",insult,"01:10:10,670",False
+7,89,fuck,"Get back there, ya fuck, ya!",insult,"01:02:39,380",False
+7,90,fucking,"What are you, fucking nuts? You're killin' me.",general_expletive,"01:04:11,240",False
+7,91,fuck,"he don't give a fuck, he's gonna do what he wants to do,",general_expletive,"01:05:44,070",False
+7,92,fuckin,"Bust her fuckin' hole, throw her out.",general_expletive,"01:07:21,470",False
+7,93,fuck,"What the fuck you doin'? Hit me, ya fuckin' bum, come on.",general_expletive,"01:10:10,670",False
 7,94,fuckin,"What the fuck you doin'? Hit me, ya fuckin' bum, come on.",insult,"01:10:10,670",False
-7,95,fuck,What the fuck's the matter with you?,insult,"01:10:29,050",False
+7,95,fuck,What the fuck's the matter with you?,general_expletive,"01:10:29,050",False
 7,96,fuckin,You fuckin' bum! You're takin' a dive in the fourth?,insult,"01:10:51,910",False
-7,97,fuck,"What the fuck are you waitin' for to stop the fight, ya jerk?!",insult,"01:11:04,890",False
+7,97,fuck,"What the fuck are you waitin' for to stop the fight, ya jerk?!",general_expletive,"01:11:04,890",False
 7,98,Fuckin,"- Fuckin' go down, will ya? - The referee stops this bout",general_expletive,"01:11:09,930",False
-7,99,fuck,"- What the fuck is so hard about that? - Hey, you don't understand.",insult,"01:12:38,550",False
-7,100,fuckin,You don't have to fuckin' pick him up and help him.,insult,"01:12:50,860",False
-7,101,fuck,"I'm not tellin' her... personally, I don't give a fuck what she eats.",insult,"01:15:12,500",False
-7,102,fuckin,Shut up! I'll fuckin' take care of you later!,insult,"01:17:55,730",False
+7,99,fuck,"- What the fuck is so hard about that? - Hey, you don't understand.",general_expletive,"01:12:38,550",False
+7,100,fuckin,You don't have to fuckin' pick him up and help him.,general_expletive,"01:12:50,860",False
+7,101,fuck,"I'm not tellin' her... personally, I don't give a fuck what she eats.",general_expletive,"01:15:12,500",False
+7,102,fuckin,Shut up! I'll fuckin' take care of you later!,general_expletive,"01:17:55,730",False
 7,103,fuckin,"Hit the fuckin' thing, come on!",general_expletive,"01:18:26,360",False
-7,104,fuckin,"Blow on him, he'll fuckin' fall right over for ya.",insult,"01:20:57,720",False
-7,105,fuck,- Did Salvy fuck Vickie? - What?,exclamation_shock,"01:25:08,570",False
-7,106,fuck,Did Salvy fuck Vickie?,general_expletive,"01:25:11,070",False
+7,104,fuckin,"Blow on him, he'll fuckin' fall right over for ya.",general_expletive,"01:20:57,720",False
+7,105,fuck,- Did Salvy fuck Vickie? - What?,Sexual,"01:25:08,570",False
+7,106,fuck,Did Salvy fuck Vickie?,Sexual,"01:25:11,070",False
 7,107,fuck,"You're killin' yourself, the way you eat, ya fat fuck!",insult,"01:26:20,900",False
 7,108,fuckin,"Me, kill me! Start here! Kill me first, do me a fuckin' favor!",general_expletive,"01:26:27,850",False
 7,109,fuckin,"She really did some job on ya, ya know how fuckin' nuts you are?",insult,"01:26:58,740",False
-7,110,fuck,- Look what she did to you! - You fuck my wife?,insult,"01:27:01,750",False
-7,111,fuck,- What?! - You fuck my wife?,insult,"01:27:04,420",False
+7,110,fuck,- Look what she did to you! - You fuck my wife?,sexual,"01:27:01,750",False
+7,111,fuck,- What?! - You fuck my wife?,sexual,"01:27:04,420",False
 7,112,fuck,"That's a sick question, you're a sick fuck,",insult,"01:27:56,630",False
-7,113,fuckin,Try a little more fuckin' and a little less eatin'.,general_expletive,"01:28:09,710",False
+7,113,fuckin,Try a little more fuckin' and a little less eatin'.,sexual,"01:28:09,710",False
 7,114,fuckin,"Ya understand, ya fuckin' wacko? You're crackin' up.",insult,"01:28:16,920",False
-7,115,Fuckin,"Fuckin' screwball, ya.",general_expletive,"01:28:21,860",False
-7,116,fuck,Why didn't you tell me? Did you fuck my brother?,insult,"01:29:42,970",False
-7,117,fuck,I just wanna ask you one thing. Why'd you fuck Joey?,insult,"01:30:02,090",False
-7,118,fuck,- Why did you fuck them? - Do what? I didn't do anything?!,insult,"01:30:16,840",False
+7,115,Fuckin,"Fuckin' screwball, ya.",insult,"01:28:21,860",False
+7,116,fuck,Why didn't you tell me? Did you fuck my brother?,sexual,"01:29:42,970",False
+7,117,fuck,I just wanna ask you one thing. Why'd you fuck Joey?,sexual,"01:30:02,090",False
+7,118,fuck,- Why did you fuck them? - Do what? I didn't do anything?!,sexual,"01:30:16,840",False
 7,119,fucked,I fucked all of 'em!,general_expletive,"01:30:19,910",False
-7,120,fuck,"- What do you want me to say? - What do you mean, who'd you fuck?",insult,"01:30:21,010",False
+7,120,fuck,"- What do you want me to say? - What do you mean, who'd you fuck?",general_expletive,"01:30:21,010",False
 7,121,fucked,"I fucked all of 'em... Tommy, Salvy, your brother, all of 'em!",general_expletive,"01:30:23,250",False
 7,122,fuckin,and everybody else on the fuckin' street.,general_expletive,"01:30:31,590",False
-7,123,fuckin,Forget fuckin' with you!,insult,"01:30:38,200",False
+7,123,fuckin,Forget fuckin' with you!,general_expletive,"01:30:38,200",False
 7,124,fuckin,"His fuckin' cock's bigger than yours, too!",general_expletive,"01:30:44,200",False
-7,125,fucked,"Ya fucked my wife, huh?!",general_expletive,"01:31:16,130",False
+7,125,fucked,"Ya fucked my wife, huh?!",sexual,"01:31:16,130",False
 7,126,fuckin,I'll fuckin' kill ya!,general_expletive,"01:31:35,820",False
 7,127,fuckin,Your mother sucks fuckin' big fuckin' elephant dicks.,general_expletive,"01:36:40,420",False
 7,128,fuckin,Your mother sucks fuckin' big fuckin' elephant dicks.,general_expletive,"01:36:40,420",False
-7,129,fuck,"Then fuck 'em, let 'em do what they're gonna do.",exclamation_shock,"01:53:54,860",False
+7,129,fuck,"Then fuck 'em, let 'em do what they're gonna do.",general_expletive,"01:53:54,860",False
 7,130,fuckin,"I'll break you on one of my fuckin' farms, you son of a bitch!",insult,"01:54:17,550",False
 7,131,fuck,- Do you hear me? - Go fuck yourself.,insult,"01:54:20,780",False
 7,132,fuck,"Let that son of a bitch sit, fuck him!",insult,"01:54:41,500",False
 7,133,Fuck,Fuck you!,insult,"01:54:45,840",False
-7,134,Fuck,Fuck your mother!,general_expletive,"01:54:49,510",False
+7,134,Fuck,Fuck your mother!,insult,"01:54:49,510",False
 7,135,motherfucker,You motherfucker!,compound_expletive,"01:55:59,680",False
 7,136,fuckin,you're so fuckin' stupid!,insult,"01:56:22,200",False
 7,137,Fuck,- Funny. - Fuck you...,insult,"01:57:29,300",False
 7,138,fuckin,"Yeah, ya fuckin' bum. Give me a break, come on.",general_expletive,"01:59:58,950",False
 18,139,fucked,I'm sick and tired of gettin' fucked around by these people. That's why.,general_expletive,"00:40:10,250",False
 18,140,Fucking,"Sí, gracias. [ English ] Fucking great.",general_expletive,"00:41:00,760",False
-18,141,fucking,Stop fucking around. Shit!,exclamation_shock,"01:00:50,790",False
-21,146,fucking,"There's 106 astronauts in the whole fucking world, and I'm one of them!",insult,"01:16:12,735",True
+18,141,fucking,Stop fucking around. Shit!,general_expletive,"01:00:50,790",False
+21,146,fucking,"There's 106 astronauts in the whole fucking world, and I'm one of them!",general_expletive,"01:16:12,735",True
 21,147,fucking,So fan-fucking-tastic!,intensifier,"01:24:10,254",True
 22,142,Fucking,"Fucking A, Bubba.",general_expletive,"01:24:07,584",False
-22,143,Fucking,"Fucking A, Bubba.",general_expletive,"01:45:59,645",False
 22,144,fuck,"Dear Lord, please don't let me fuck up.",general_expletive,"01:49:29,354",False
 22,145,fucking,Forget the fucking capsule!,general_expletive,"02:03:20,560",False
-28,166,fucking,"Now, don't you get smart, nigger. Get your fucking hands off me.",insult,"00:38:51,913",False
+28,166,fucking,"Now, don't you get smart, nigger. Get your fucking hands off me.",general_expletive,"00:38:51,913",False
 28,167,fucking,"or I'll take your fucking stripes, boy.",general_expletive,"00:50:48,379",False
-28,168,fucking,"If it was Hitler or that fucking Tojo, would you kill him?",insult,"01:31:19,015",False
-28,169,fuck,Then why the fuck didn't you do something?,insult,"01:33:07,415",False
-30,148,fucking,"Shut the fucking blinds, will you?",insult,"00:04:26,926",False
-30,149,fuck,What the fuck is that on your head?,insult,"00:05:07,061",False
+28,168,fucking,"If it was Hitler or that fucking Tojo, would you kill him?",general_expletive,"01:31:19,015",False
+28,169,fuck,Then why the fuck didn't you do something?,general_expletive,"01:33:07,415",False
+30,148,fucking,"Shut the fucking blinds, will you?",general_expletive,"00:04:26,926",False
+30,149,fuck,What the fuck is that on your head?,general_expletive,"00:05:07,061",False
 30,150,fucker,An unconscious oyster's just as horrible as the fucker wide awake...,general_expletive,"00:06:30,670",False
 30,151,fucking,Now look at all this fucking mess!,general_expletive,"00:25:47,271",False
 30,152,Fuck,- Fuck this! - They pulling out?,general_expletive,"00:28:31,184",False
 30,153,fuck,Get the fuck out! Get out of here now!,general_expletive,"00:40:08,409",False
 30,154,fucking,"The problem is, it's all in the wrong fucking place.",general_expletive,"00:49:36,517",False
-30,155,Fuck,Fuck!,general_expletive,"01:08:17,821",False
+30,155,Fuck,Fuck!,exclamation_shock,"01:08:17,821",False
 30,156,fucking,I hope he's got a photo because I don't have any fucking film.,general_expletive,"01:08:51,354",False
-30,157,Fuck,Fuck!,general_expletive,"01:09:55,853",False
+30,157,Fuck,Fuck!,exclamation_shock,"01:09:55,853",False
 30,158,fucking,...and I have got the fucking darkroom!,general_expletive,"01:11:14,598",False
 30,159,fucking,"This fucking paper, I don't know.",general_expletive,"01:11:57,038",False
 30,160,Fuck,"Oh, no. Fuck, it's fogging.",exclamation_shock,"01:12:45,886",False
-30,161,Fuck,Fuck!,general_expletive,"01:13:26,028",False
+30,161,Fuck,Fuck!,exclamation_shock,"01:13:26,028",False
 30,162,fucking,"Man, this fucking room is killing me.",general_expletive,"01:13:33,669",False
-30,163,Fuck,Fuck.,general_expletive,"01:13:45,414",False
+30,163,Fuck,Fuck.,exclamation_shock,"01:13:45,414",False
 30,164,fuck,- I didn't have any idea what... - The fuck you didn't!,insult,"01:51:00,524",False
 30,165,fuck,The fuck you didn't.,insult,"01:51:05,161",False
-32,170,fucking,Can't you see this is a fucking anti-Semitic film?,insult,"00:08:39,047",False
+32,170,fucking,Can't you see this is a fucking anti-Semitic film?,general_expletive,"00:08:39,047",False
 32,171,fucking,as the fucking warden and his torture room.,general_expletive,"00:16:33,062",False
 32,172,Motherfucker,Motherfucker! Motherfucker!,compound_expletive,"00:44:33,115",False
 32,173,Motherfucker,Motherfucker! Motherfucker!,compound_expletive,"00:44:33,115",False
