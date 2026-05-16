@@ -3,6 +3,17 @@ import { fuckPositions } from './fuck-positions.js'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
+const allImages = import.meta.glob('./assets/images/*/*.{jpg,jpeg,png,webp}', { eager: true })
+const normalize = str => str.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+function getPosterUrl(movieTitle) {
+    const match = Object.entries(allImages).find(([path]) => {
+        const folder = path.split('/images/')[1]?.split('/')[0] || ''
+        return normalize(folder) === normalize(movieTitle)
+    })
+    return match ? match[1].default : ''
+}
+
 export const drawEvolution = async (films) => {
 
     // --- DIMENSIONS ---
@@ -36,19 +47,43 @@ export const drawEvolution = async (films) => {
         .domain([0, maxFucks])
         .range([3, 12])
 
-    // Lire les dimensions réelles du conteneur
-    const graphNode = d3.select('.section-timeline__graph').node()
     await new Promise(resolve => requestAnimationFrame(resolve))
 
     const svg = d3.select('.section-timeline__graph')
         .attr('viewBox', `0 0 ${TOTAL_WIDTH} ${TOTAL_HEIGHT}`)
-        .attr('height', '70vh')   // hauteur fixe comme statues.js
-        .attr('width', 'auto')    // largeur suit automatiquement
+        .attr('height', '70vh')
+        .attr('width', 'auto')
         .style('display', 'block')
         .style('margin', '0 auto')
 
-    // Le tooltip (même logique que statues.js)
-    const tooltip = document.querySelector('.statue-tooltip')
+    const filmCard = d3.select('#film-card')
+
+    function showFilmCard(event, film) {
+        filmCard.select('.film-card__img').style('display', 'none')
+        filmCard.select('.film-card__title').text(film.movie_title)
+        filmCard.select('.film-card__meta').text(`${film.won_oscar === 'True' || film.won_oscar === true ? '★ Winner' : 'Nominated'} · ${film.oscar_year}`)
+        filmCard.select('.film-card__synopsis').text(`${film.total_count_fucks} fucks`).style('font-size', '22px')
+        filmCard.select('.film-card__genres').html('')
+        filmCard.style('display', 'block')
+        moveFilmCard(event)
+    }
+
+    function moveFilmCard(event) {
+        const cardNode = filmCard.node()
+        const cardWidth = cardNode.offsetWidth
+        const cardHeight = cardNode.offsetHeight
+        let x = event.clientX + 20
+        let y = event.clientY + 20
+        if (event.clientX + cardWidth + 20 > window.innerWidth) x = event.clientX - cardWidth - 5
+        if (event.clientY + cardHeight + 20 > window.innerHeight) y = event.clientY - cardHeight - 20
+        filmCard.style('left', x + 'px').style('top', y + 'px')
+    }
+
+    function hideFilmCard() {
+        filmCard.style('display', 'none')
+        filmCard.select('.film-card__img').style('display', '')
+        filmCard.select('.film-card__synopsis').style('font-size', '')
+    }
 
 
     // --- LETTRES F, U, C, K ---
@@ -62,7 +97,7 @@ export const drawEvolution = async (films) => {
 
         positions.forEach((pos, i) => {
             const film = sortedFilms[i]
-            const circle = group.append('circle').attr('cx', pos.cx).attr('cy', pos.cy)
+            const circle = group.append('circle').attr('cx', pos.cx).attr('cy', pos.cy).attr('class', 'timeline-dot')
 
             if (film) {
                 const isWinner = film.won_oscar === 'True' || film.won_oscar === true
@@ -73,19 +108,14 @@ export const drawEvolution = async (films) => {
                     .attr('cursor', 'pointer')
                     .on('mouseover', function (event) {
                         d3.select(this).attr('opacity', 1).attr('stroke', '#fff').attr('stroke-width', 2)
-                        tooltip.textContent = `${film.movie_title} (${film.oscar_year}) — ${film.total_count_fucks} fucks`
-                        tooltip.style.display = 'block'
+                        showFilmCard(event, film)
                     })
-                    .on('mousemove', (event) => {
-                        tooltip.style.left = (event.clientX + 20) + 'px'
-                        tooltip.style.top = (event.clientY + 20) + 'px'
-                    })
+                    .on('mousemove', (event) => moveFilmCard(event))
                     .on('mouseout', function () {
                         d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
-                        tooltip.style.display = 'none'
+                        hideFilmCard()
                     })
             } else {
-                // Position vide : bulle fantôme (0 fucks ou pas de film)
                 circle.attr('r', pos.r * 0.6).attr('fill', 'rgba(255,255,255,0.08)')
             }
         })
@@ -96,15 +126,13 @@ export const drawEvolution = async (films) => {
     const exclPositions = fuckPositions['!']?.positions || []
     const exclFilms = [...(filmsByDecade['!'] || [])].sort((a, b) => b.total_count_fucks - a.total_count_fucks)
 
-    // translateX : décale à droite après FUCK + GAP
-    // translateY : remonte le ! pour aligner sa base avec celle de FUCK
     const exclGroup = svg.append('g')
         .attr('class', 'letter-group letter-!')
         .attr('transform', `translate(${FUCK_WIDTH + GAP}, ${CONTENT_OFFSET_Y + EXCL_Y_OFFSET})`)
 
     exclPositions.forEach((pos, i) => {
         const film = exclFilms[i]
-        const circle = exclGroup.append('circle').attr('cx', pos.cx).attr('cy', pos.cy)
+        const circle = exclGroup.append('circle').attr('cx', pos.cx).attr('cy', pos.cy).attr('class', 'timeline-dot')
 
         if (film) {
             const isWinner = film.won_oscar === 'True' || film.won_oscar === true
@@ -124,17 +152,13 @@ export const drawEvolution = async (films) => {
                 })
                 
                 .on('mouseover', function (event) {
-                    // 3. On ne fait plus de stroke/opacity ici, ton CSS s'en charge !
-                    // On utilise JS uniquement pour injecter le texte
-                    tooltip.textContent = `${film.movie_title} (${film.oscar_year}) — ${film.total_count_fucks} fucks`
-                    tooltip.style.display = 'block'
+                    d3.select(this).attr('opacity', 1).attr('stroke', '#fff').attr('stroke-width', 2)
+                    showFilmCard(event, film)
                 })
-                .on('mousemove', (event) => {
-                    tooltip.style.left = (event.clientX + 20) + 'px'
-                    tooltip.style.top = (event.clientY + 20) + 'px'
-                })
+                .on('mousemove', (event) => moveFilmCard(event))
                 .on('mouseout', function () {
-                    tooltip.style.display = 'none'
+                    d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
+                    hideFilmCard()
                 })
         }
     })
@@ -168,7 +192,7 @@ export const drawEvolution = async (films) => {
     })
 
 
-    // Bulles d'échelle dans le SVG HTML (pas dans le grand SVG D3)
+    // Bulles d'échelle
     const scaleSvg = d3.select('.timeline-legend__scale')
     const scaleValues = [0.2, 0.5, 1].map(p => Math.round(maxFucks * p))
     let cx = 80
@@ -181,33 +205,24 @@ export const drawEvolution = async (films) => {
             cx -= r
         })
 
-        // --- FAUX SCROLL HORIZONTAL (GSAP) ---
-    
-    // On attend un court instant pour s'assurer que D3 a fini de peindre et que les dimensions sont définitives
-    setTimeout(() => {
-        // Le conteneur qui sera épinglé (remplace par la bonne classe de ta section parent)
-        const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement;
-        const svgElement = svg.node();
+    // --- SCROLL HORIZONTAL (GSAP) ---
+    await new Promise(resolve => requestAnimationFrame(resolve))
 
-        // On calcule la portion de l'image qui dépasse de l'écran à droite
-        // getBoundingClientRect().width nous donne la largeur réelle calculée via le 70vh
-        const overflowWidth = svgElement.getBoundingClientRect().width - window.innerWidth;
+    const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement
+    const svgElement = svg.node()
+    const overflowWidth = svgElement.getBoundingClientRect().width - window.innerWidth
 
-        // On n'active l'effet que si l'image est effectivement plus large que l'écran
-        if (overflowWidth > 0) {
-            gsap.to(svgElement, {
-                x: -overflowWidth - 60, // -60 pour avoir une petite marge respirante à la fin
-                ease: "none", // important pour un scroll fluide et linéaire
-                scrollTrigger: {
-                    trigger: sectionContainer,
-                    pin: true, // On épingle la section pendant le scroll
-                    scrub: 1,  // L'animation suit la molette avec 1s de lissage
-                    // La distance de scroll vertical nécessaire pour parcourir toute l'image
-                    end: () => `+=${overflowWidth}`, 
-                    invalidateOnRefresh: true
-                }
-            });
-        }
-    }, 100);
-
+    if (overflowWidth > 0) {
+        gsap.to(svgElement, {
+            x: -overflowWidth - 60,
+            ease: "none",
+            scrollTrigger: {
+                trigger: sectionContainer,
+                pin: true,
+                scrub: 1,
+                end: () => `+=${overflowWidth}`,
+                invalidateOnRefresh: true
+            }
+        })
+    }
 }
