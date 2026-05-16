@@ -229,11 +229,13 @@ p {
 .section-statues__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-statues__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-statues__decades {
@@ -348,11 +350,13 @@ p {
 .section-exploration__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-exploration__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-exploration__viz {
@@ -412,11 +416,13 @@ p {
 .section-timeline__title {
   color: var(--yellow);
   font-size: 26px;
+  text-align: center;
 }
 
 .section-timeline__subtitle {
   font-size: 16px;
   color: var(--accent-color-blue);
+  text-align: center;
 }
 
 .section-timeline__graph {
