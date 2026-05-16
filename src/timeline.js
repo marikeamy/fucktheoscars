@@ -108,13 +108,24 @@ export const drawEvolution = async (films) => {
 
         if (film) {
             const isWinner = film.won_oscar === 'True' || film.won_oscar === true
+            
             circle
                 .attr('r', rScale(film.total_count_fucks))
-                .attr('fill', isWinner ? '#FFB703' : '#8ECAE6')
-                .attr('opacity', 0.85)
-                .attr('cursor', 'pointer')
+                .attr('fill', isWinner ? 'var(--yellow)' : 'var(--accent-color-blue)')
+                // 1. AJOUT DE LA CLASSE CSS (active tes effets de hover et ton cursor:pointer !)
+                .attr('class', isWinner ? 'timeline-dot' : '')
+                
+                // 2. AJOUT DU CLIC POUR LA MODALE
+                .on('click', (event) => {
+                    if (isWinner) {
+                        // Assure-toi d'avoir importé ou copié la fonction openGuessModal ici !
+                        openGuessModal(film);
+                    }
+                })
+                
                 .on('mouseover', function (event) {
-                    d3.select(this).attr('opacity', 1).attr('stroke', '#fff').attr('stroke-width', 2)
+                    // 3. On ne fait plus de stroke/opacity ici, ton CSS s'en charge !
+                    // On utilise JS uniquement pour injecter le texte
                     tooltip.textContent = `${film.movie_title} (${film.oscar_year}) — ${film.total_count_fucks} fucks`
                     tooltip.style.display = 'block'
                 })
@@ -123,11 +134,8 @@ export const drawEvolution = async (films) => {
                     tooltip.style.top = (event.clientY + 20) + 'px'
                 })
                 .on('mouseout', function () {
-                    d3.select(this).attr('opacity', 0.85).attr('stroke', 'none')
                     tooltip.style.display = 'none'
                 })
-        } else {
-            circle.attr('r', pos.r * 0.6).attr('fill', 'rgba(255,255,255,0.08)')
         }
     })
 
