@@ -1,6 +1,9 @@
 # fucktheoscars
 Fuck the Oscars is a data vizualisation project about the word "fuck" in movies.
 
+## Disclaimer
+This visualization is designed exclusively for desktop screens. Mobile viewing is currently not supported.
+
 ## Figma Wireframes
 https://www.figma.com/design/Vq8WfQLqmkmZuXfzm2v5Fj/fucktheoscars?node-id=0-1&t=F7RPtT2PqeNy2wte-1
 

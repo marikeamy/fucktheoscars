@@ -362,6 +362,7 @@ p {
   color: var(--yellow);
   font-size: 26px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .section-exploration__subtitle {
@@ -373,6 +374,9 @@ p {
 .section-exploration__viz {
   flex: 1;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section-exploration__timeline {
@@ -380,6 +384,7 @@ p {
   height: 300px;
   overflow: hidden;
   display: block;
+  margin-top: 40px;
 }
 
 .section-exploration__brush {
@@ -1105,4 +1110,5 @@ p {
   font-size: 14px;
   pointer-events: none;
   z-index: 999;
+  transform: translateY(-100%);
 }
