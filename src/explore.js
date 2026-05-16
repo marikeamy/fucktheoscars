@@ -162,13 +162,13 @@ dots
         const cardHeight = cardNode.offsetHeight
 
         let x = event.clientX + 20
-        let y = event.clientY + 20
+        let y = event.clientY - cardHeight - 20
 
         if (event.clientX + cardWidth + 20 > window.innerWidth) {
             x = event.clientX - cardWidth - 5
         }
-        if (event.clientY + cardHeight + 20 > window.innerHeight) {
-            y = event.clientY - cardHeight - 20
+        if (event.clientY - cardHeight - 20 < 0) {
+            y = event.clientY + 20
         }
 
         tooltip.style('left', x + 'px').style('top', y + 'px')
