@@ -137,7 +137,7 @@ dots
             .attr('r', 10);
 
         // Injection des données dans la carte html
-        tooltip.select('.film-card__img').attr('src', getPosterUrl(d.movie_title));
+        tooltip.select('.film-card__img').attr('src', getPosterUrl(d.movie_title)).style('display', '');
         tooltip.select('.film-card__title').text(`${d.movie_title || 'Unknown'} (${d.oscar_year})`);
         tooltip.select('.film-card__meta').text(`★ Winner | Dir: ${d.director_name || 'Unknown'}`);
         tooltip.select('.film-card__synopsis').text(d.synopsis || '');
@@ -157,21 +157,18 @@ dots
         tooltip.style('display', 'block')
     })
     .on('mousemove', (event) => {
-        const viz = document.querySelector('.section-exploration__viz')
-        const rect = viz.getBoundingClientRect()
         const cardNode = tooltip.node()
-        const cardWidth = cardNode.offsetWidth   // ← largeur réelle
-        const cardHeight = cardNode.offsetHeight // ← hauteur réelle
+        const cardWidth = cardNode.offsetWidth
+        const cardHeight = cardNode.offsetHeight
 
-        let x = event.clientX - rect.left + 20
-        let y = event.clientY - rect.top + 20
+        let x = event.clientX + 20
+        let y = event.clientY + 20
 
         if (event.clientX + cardWidth + 20 > window.innerWidth) {
-            x = event.clientX - rect.left - cardWidth - 5
+            x = event.clientX - cardWidth - 5
         }
-
         if (event.clientY + cardHeight + 20 > window.innerHeight) {
-            y = event.clientY - rect.top - cardHeight - 20
+            y = event.clientY - cardHeight - 20
         }
 
         tooltip.style('left', x + 'px').style('top', y + 'px')

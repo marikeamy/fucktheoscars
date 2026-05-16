@@ -57,18 +57,6 @@
         <div class="section-exploration__viz">
           <svg class="section-exploration__timeline"></svg>
           <svg class="section-exploration__brush"></svg>
-
-          <!-- Film card (tooltip) -->
-          <div class="film-card" id="film-card">
-            <img class="film-card__img" src="" alt="" />
-            <div class="film-card__body">
-              <p class="film-card__title"></p>
-              <p class="film-card__meta"></p>
-              <p class="film-card__synopsis"></p>
-              <div class="film-card__genres"></div>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -233,6 +221,17 @@
     <section class="section-conclusion">
       <p class="section-conclusion__text"></p>
     </section>
+    <!-- Film card (tooltip global, utilisé par exploration et timeline) -->
+    <div class="film-card" id="film-card">
+      <img class="film-card__img" src="" alt="" />
+      <div class="film-card__body">
+        <p class="film-card__title"></p>
+        <p class="film-card__meta"></p>
+        <p class="film-card__synopsis"></p>
+        <div class="film-card__genres"></div>
+      </div>
+    </div>
+
     <div class="statue-tooltip" id="statue-tooltip"></div>
   </main>
 </body>
