@@ -153,12 +153,17 @@ export function openGuessModal(movie) {
         }
 
         modal.removeAttribute('hidden')
-        modal.scrollIntoView({ behavior: 'smooth' })
+        document.documentElement.style.overflow = 'hidden'
         document.dispatchEvent(new CustomEvent('guess-submitted'))
 
         modal.querySelector('.modal-result__continue').onclick = () => {
-            modal.setAttribute('hidden', '')
-            document.querySelector('.section-timeline').scrollIntoView({ behavior: 'smooth' })
+            modal.classList.add('modal-result--closing')
+            setTimeout(() => {
+                modal.classList.remove('modal-result--closing')
+                modal.setAttribute('hidden', '')
+                document.documentElement.style.overflow = ''
+                document.querySelector('.section-timeline').scrollIntoView({ behavior: 'smooth' })
+            }, 400)
         }
     }
 }
