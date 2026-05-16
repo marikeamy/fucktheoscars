@@ -161,15 +161,13 @@ dots
         const cardWidth = cardNode.offsetWidth
         const cardHeight = cardNode.offsetHeight
 
+        const titleBottom = document.querySelector('.section-exploration__title').getBoundingClientRect().bottom
+
         let x = event.clientX + 20
         let y = event.clientY - cardHeight - 20
 
-        if (event.clientX + cardWidth + 20 > window.innerWidth) {
-            x = event.clientX - cardWidth - 5
-        }
-        if (event.clientY - cardHeight - 20 < 0) {
-            y = event.clientY + 20
-        }
+        x = Math.max(0, Math.min(x, window.innerWidth - cardWidth))
+        y = Math.max(titleBottom + 16, Math.min(y, window.innerHeight - cardHeight))
 
         tooltip.style('left', x + 'px').style('top', y + 'px')
     })
