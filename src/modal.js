@@ -160,9 +160,9 @@ export function openGuessModal(movie) {
             modal.classList.add('modal-result--closing')
             setTimeout(() => {
                 modal.classList.remove('modal-result--closing')
-                modal.setAttribute('hidden', '')
+            modal.setAttribute('hidden', '')
                 document.documentElement.style.overflow = ''
-                document.querySelector('.section-timeline').scrollIntoView({ behavior: 'smooth' })
+            document.querySelector('.section-timeline').scrollIntoView({ behavior: 'smooth' })
             }, 400)
         }
     }

@@ -47,14 +47,12 @@ export const drawEvolution = async (films) => {
         .domain([0, maxFucks])
         .range([3, 12])
 
-    // Lire les dimensions réelles du conteneur
-    const graphNode = d3.select('.section-timeline__graph').node()
     await new Promise(resolve => requestAnimationFrame(resolve))
 
     const svg = d3.select('.section-timeline__graph')
         .attr('viewBox', `0 0 ${TOTAL_WIDTH} ${TOTAL_HEIGHT}`)
-        .attr('height', '70vh')   // hauteur fixe comme statues.js
-        .attr('width', 'auto')    // largeur suit automatiquement
+        .attr('height', '70vh')
+        .attr('width', 'auto')
         .style('display', 'block')
         .style('margin', '0 auto')
 
@@ -118,7 +116,6 @@ export const drawEvolution = async (films) => {
                         hideFilmCard()
                     })
             } else {
-                // Position vide : bulle fantôme (0 fucks ou pas de film)
                 circle.attr('r', pos.r * 0.6).attr('fill', 'rgba(255,255,255,0.08)')
             }
         })
@@ -129,8 +126,6 @@ export const drawEvolution = async (films) => {
     const exclPositions = fuckPositions['!']?.positions || []
     const exclFilms = [...(filmsByDecade['!'] || [])].sort((a, b) => b.total_count_fucks - a.total_count_fucks)
 
-    // translateX : décale à droite après FUCK + GAP
-    // translateY : remonte le ! pour aligner sa base avec celle de FUCK
     const exclGroup = svg.append('g')
         .attr('class', 'letter-group letter-!')
         .attr('transform', `translate(${FUCK_WIDTH + GAP}, ${CONTENT_OFFSET_Y + EXCL_Y_OFFSET})`)
@@ -189,7 +184,7 @@ export const drawEvolution = async (films) => {
     })
 
 
-    // Bulles d'échelle dans le SVG HTML (pas dans le grand SVG D3)
+    // Bulles d'échelle
     const scaleSvg = d3.select('.timeline-legend__scale')
     const scaleValues = [0.2, 0.5, 1].map(p => Math.round(maxFucks * p))
     let cx = 80
@@ -202,8 +197,7 @@ export const drawEvolution = async (films) => {
             cx -= r
         })
 
-    // --- FAUX SCROLL HORIZONTAL (GSAP) ---
-    // On attend que le navigateur ait peint le SVG pour avoir les vraies dimensions
+    // --- SCROLL HORIZONTAL (GSAP) ---
     await new Promise(resolve => requestAnimationFrame(resolve))
 
     const sectionContainer = document.querySelector('.section-timeline') || svg.node().parentElement
@@ -223,5 +217,4 @@ export const drawEvolution = async (films) => {
             }
         })
     }
-
 }
